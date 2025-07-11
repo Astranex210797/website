@@ -23,13 +23,12 @@ const HomePage = () => {
 
   return (
     <div
-      className="min-h-screen relative text-[#0D3B2E] overflow-hidden"
+      className="min-h-screen relative bg-brand-bg text-gray-900 overflow-hidden"
       style={{
-        backgroundColor: '#F9FAF9', // Global background
+        background: 'linear-gradient(135deg, #e0f7f3 0%, #d3f2eb 100%)',
         animation: 'backgroundShift 20s ease-in-out infinite',
       }}
     >
-      {/* Global Styles with Font and Keyframes */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -45,58 +44,56 @@ const HomePage = () => {
       </style>
 
       <div className="relative z-10">
-        {/* Hero Section */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
-          className="min-h-screen bg-[#F9FAF9]"
+          className="min-h-screen"
         >
           <HeroSection />
         </motion.div>
 
         <div className="px-4 sm:px-6 lg:px-8 pt-20 pb-20">
-
-          {/* Product Grid Section */}
+          {/* ✅ Product Grid Section Added */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-16 bg-white rounded-xl shadow-md p-6"
+            className="mb-20"
           >
             <ProductGrid />
           </motion.div>
 
-          {/* Contact Form Section */}
+          {/* Contact Form */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-16 bg-[#F2F6F5] p-8 rounded-xl shadow-lg"
+            className="mb-20 bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-xl"
           >
             <ContactForm />
           </motion.div>
 
-          {/* Testimonials Section */}
+          {/* Testimonials */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-16 bg-[#0D3B2E] text-white p-8 rounded-xl shadow-xl"
+            className="mb-20"
           >
             <TestimonialsSection />
           </motion.div>
 
-          {/* Partners Section */}
+          {/* Partners */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-16 bg-white rounded-xl p-8 shadow-md"
+            className="mb-20"
           >
             <PartnersSection />
           </motion.div>
