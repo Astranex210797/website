@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
     if (isAutoPlaying) {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-      }, 5000);
+      }, 6000);
       return () => clearInterval(interval);
     }
   }, [isAutoPlaying, testimonials.length]);
@@ -69,52 +69,53 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="py-8 bg-gray-900 text-white"
+      className="py-24 bg-gradient-to-br from-black via-[#0f1f1b] to-[#122219] text-white relative overflow-hidden"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
+      <div className="relative z-10 max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl font-bold mb-2">What Our Clients Say</h2>
-          <p className="text-sm text-gray-300 max-w-xl mx-auto">
-            Here’s what our happy customers say about Peak Elevator Group.
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Testimonials</h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Discover how Peak Elevator Group has elevated lives and spaces across India.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="relative h-48 overflow-hidden rounded-xl">
+          <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl shadow-xl bg-black/10 backdrop-blur-xl border border-white/10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.4 }}
-                className="absolute inset-0 flex items-center justify-center"
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 flex items-center justify-center px-4"
               >
-                <div className="text-center px-4">
-                  <Quote className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                  <blockquote className="text-base italic text-gray-200 mb-4">
+                <div className="text-center max-w-xl">
+                  <Quote className="w-8 h-8 text-green-500 mx-auto mb-4" />
+                  <blockquote className="text-lg md:text-xl italic text-gray-100 mb-6">
                     "{testimonials[currentIndex].quote}"
                   </blockquote>
-                  <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center justify-center gap-3">
                     <img
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
-                      className="w-10 h-10 rounded-full object-cover"
+                      className="w-12 h-12 rounded-full object-cover shadow-md"
                     />
                     <div className="text-left text-sm">
-                      <div className="font-medium text-white">{testimonials[currentIndex].name}</div>
+                      <div className="font-semibold text-white">{testimonials[currentIndex].name}</div>
                       <div className="text-gray-400 text-xs">{testimonials[currentIndex].title}</div>
-                      <div className="flex space-x-0.5 mt-0.5">
+                      <div className="flex space-x-1 mt-1">
                         {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                     </div>
@@ -127,25 +128,25 @@ const TestimonialsSection = () => {
           {/* Arrows */}
           <button
             onClick={() => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-5 h-5 text-white" />
           </button>
           <button
             onClick={() => setCurrentIndex((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-5 h-5 text-white" />
           </button>
 
           {/* Dots */}
-          <div className="flex justify-center mt-4 gap-1">
+          <div className="flex justify-center mt-6 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full ${
-                  index === currentIndex ? 'bg-blue-400' : 'bg-gray-600 hover:bg-gray-500'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'bg-green-400 scale-110' : 'bg-gray-600 hover:bg-gray-500'
                 }`}
               />
             ))}
