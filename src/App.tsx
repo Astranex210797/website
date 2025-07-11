@@ -18,7 +18,12 @@ import ModernizationPage from './pages/services/ModernizationPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div 
+      className="min-h-screen"
+        style={{
+          background: 'linear-gradient(135deg, #c3cfe2 0%, #b7e2c7 100%)',
+        }}
+      >
         <Header />
         <main>
           <Routes>
