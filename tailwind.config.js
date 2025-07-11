@@ -14,7 +14,26 @@ export default {
           bg: '#F2FCF9',          // Soft light background
         },
       },
+      // Custom carousel snap utilities
+      spacing: {
+        'carousel': 'calc(100vw - 2rem)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    // Hide scrollbars utility
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* For Chrome, Safari and Opera */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          /* For IE, Edge and Firefox */
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      });
+    },
+  ],
 };

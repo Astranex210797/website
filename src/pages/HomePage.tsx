@@ -24,9 +24,9 @@ const HomePage = () => {
 
   return (
     <div
-      className="min-h-screen relative bg-[#E8F6F3] text-gray-900 overflow-hidden"
+      className="min-h-screen relative text-brand-text overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #e0f2fe 0%, #d4f1ef 100%)',
+        background: 'linear-gradient(135deg, #145943 0%, #1ABC9C 60%, #F2FCF9 100%)',
         animation: 'backgroundShift 20s ease-in-out infinite',
       }}
     >
@@ -74,7 +74,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-24 bg-white/5 backdrop-blur-lg p-8 rounded-xl shadow-lg"
+            className="mb-24 bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-brand-dark"
           >
             <ContactForm />
           </motion.div>

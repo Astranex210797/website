@@ -43,7 +43,12 @@ const ProductGrid = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section
+      className="py-20"
+      style={{
+        background: 'linear-gradient(135deg, #145943 0%, #1ABC9C 60%, #F2FCF9 100%)',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <motion.div
@@ -53,17 +58,17 @@ const ProductGrid = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0D3B2E] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-4 drop-shadow-lg">
             Our Product Range
           </h2>
-          <p className="text-xl text-[#6C757D] max-w-3xl mx-auto">
+          <p className="text-xl text-brand-gray max-w-3xl mx-auto">
             From residential comfort to industrial strength, we have the perfect lift solution for every need.
           </p>
         </motion.div>
 
         {/* Horizontal Scroll Carousel */}
         <motion.div
-          className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+          className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -88,26 +93,26 @@ const ProductGrid = () => {
               }}
             >
               <Link to={product.link}>
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-[#F2FCF9] to-[#1ABC9C22] shadow-md hover:shadow-xl transition-all duration-500 border border-brand-dark">
                   <div className="aspect-[4/3] overflow-hidden relative">
-                    <motion.img
+                    <img
                       src={product.image}
-                      alt={product.title}
+                      alt={`Image of ${product.title}`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#14594388] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-xl font-bold text-[#0D3B2E] group-hover:text-[#1ABC9C] transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-brand-text group-hover:text-brand transition-colors duration-300">
                       {product.title}
                     </h3>
-                    <p className="text-[#6C757D] italic">{product.subtitle}</p>
+                    <p className="text-brand-gray italic">{product.subtitle}</p>
                   </div>
                   <motion.div
-                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0"
+                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 border border-brand"
                     whileHover={{ rotate: 20 }}
                   >
-                    <ArrowRight className="w-5 h-5 text-[#1ABC9C]" />
+                    <ArrowRight className="w-5 h-5 text-brand" />
                   </motion.div>
                 </div>
               </Link>
@@ -125,7 +130,7 @@ const ProductGrid = () => {
         >
           <Link
             to="/products"
-            className="inline-flex items-center bg-[#1ABC9C] hover:bg-[#145943] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group"
+            className="inline-flex items-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group shadow-lg"
           >
             View All Products
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
