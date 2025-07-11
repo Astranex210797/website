@@ -7,10 +7,9 @@ const HeroSection = () => {
   const { scrollY } = useScroll();
   const navigate = useNavigate();
 
-  // Parallax and scroll-out animation
-  const bgY = useTransform(scrollY, [0, 500], [0, 50]); // Parallax effect
-  const opacity = useTransform(scrollY, [0, 500], [1, 0.3]); // Fade out on scroll
-  const scale = useTransform(scrollY, [0, 500], [1, 0.95]); // Slight scale down on scroll
+  const bgY = useTransform(scrollY, [0, 500], [0, 50]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.3]);
+  const scale = useTransform(scrollY, [0, 500], [1, 0.95]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,32 +50,29 @@ const HeroSection = () => {
 
   return (
     <motion.section
-      className="relative min-h-screen flex items-center justify-start overflow-hidden"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{ opacity, scale }}
     >
-      {/* Background Image with Parallax */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ y: bgY }}
-      >
+      {/* Background Image */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <img
           src="/WhatsApp Image 2025-07-11 at 11.55.53_413f52a1.jpg"
-          alt="Modern elevator interior showcasing luxury and safety"
-          className="w-full h-full min-h-screen object-cover"
+          alt="Modern elevator"
+          className="w-full h-full object-cover"
         />
       </motion.div>
 
-      {/* Content */}
+      {/* Foreground Content */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900"
+        className="relative z-10 w-full max-w-6xl px-4 text-gray-900"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-md">
+        <div className="flex flex-col items-start justify-center h-full max-h-[90vh] space-y-6">
           <motion.h1
             variants={itemVariants}
-            className="text-6xl sm:text-7xl md:text-9xl font-black leading-tight mb-8 tracking-tight shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight"
           >
             Elevating Lives.{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700">
@@ -86,73 +82,70 @@ const HeroSection = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-2xl md:text-3xl text-gray-800 mb-12 leading-loose font-semibold shadow-lg"
+            className="text-lg sm:text-xl md:text-2xl text-gray-800 font-semibold"
           >
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 mb-12"
+            className="flex flex-col sm:flex-row gap-4"
           >
             <button
               onClick={() => navigate('/contact')}
-              className="relative bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-blue-400/50"
+              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-xl text-base font-semibold hover:from-blue-600 hover:to-blue-800 transition-all flex items-center"
             >
               Book a Free Site Visit
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              <div className="absolute inset-0 rounded-xl bg-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <ArrowRight className="ml-2 w-4 h-4" />
             </button>
+
             <button
               onClick={() => navigate('/testimonials')}
-              className="relative border-2 border-blue-500/80 hover:border-blue-500 text-gray-900 hover:bg-blue-500/10 hover:text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
+              className="border border-blue-500 text-gray-900 hover:bg-blue-100 px-6 py-3 rounded-xl text-base font-semibold"
             >
               View Our Work
             </button>
           </motion.div>
 
-          {/* Trust Indicators */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4"
           >
-            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
-              <Shield className="w-10 h-10 text-blue-500" />
+            <div className="flex items-center space-x-3 bg-white/70 backdrop-blur p-3 rounded-lg">
+              <Shield className="w-8 h-8 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-lg">100% Safe</div>
-                <div className="text-sm text-gray-600 shadow-lg">Certified & Tested</div>
+                <div className="font-semibold text-sm">100% Safe</div>
+                <div className="text-xs text-gray-600">Certified & Tested</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
-              <Award className="w-10 h-10 text-blue-500" />
+            <div className="flex items-center space-x-3 bg-white/70 backdrop-blur p-3 rounded-lg">
+              <Award className="w-8 h-8 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-lg">15+ Years</div>
-                <div className="text-sm text-gray-600 shadow-lg">Industry Experience</div>
+                <div className="font-semibold text-sm">15+ Years</div>
+                <div className="text-xs text-gray-600">Industry Experience</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
-              <Clock className="w-10 h-10 text-blue-500" />
+            <div className="flex items-center space-x-3 bg-white/70 backdrop-blur p-3 rounded-lg">
+              <Clock className="w-8 h-8 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-lg">24/7 Support</div>
-                <div className="text-sm text-gray-600 shadow-lg">Emergency Service</div>
+                <div className="font-semibold text-sm">24/7 Support</div>
+                <div className="text-xs text-gray-600">Emergency Service</div>
               </div>
             </div>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator (optional) */}
       <motion.div
-        className="absolute bottom-8 left-8 text-gray-900 z-10"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-gray-900"
         variants={scrollIndicatorVariants}
         animate="animate"
       >
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm font-medium tracking-wide shadow-lg">Discover More</span>
-          <div className="w-8 h-12 border-2 border-gray-900/80 rounded-full flex justify-center">
-            <motion.div
-              className="w-1.5 h-4 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full mt-2"
-            ></motion.div>
+        <div className="flex flex-col items-center space-y-1">
+          <span className="text-xs font-medium">Discover More</span>
+          <div className="w-6 h-10 border-2 border-gray-800 rounded-full flex justify-center">
+            <motion.div className="w-1 h-3 bg-blue-500 mt-1 rounded-full"></motion.div>
           </div>
         </div>
       </motion.div>
