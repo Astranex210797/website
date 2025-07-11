@@ -69,7 +69,7 @@ const ModernizationPage = () => {
               className="relative"
             >
               <img
-                src="https://images.pexels.com/photos/6249509/pexels-photo-6249509.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/Technician.png"
                 alt="Split-frame image showing old vs new elevator with technician holding blueprint symbolizing modernization"
                 className="rounded-2xl shadow-2xl"
               />

@@ -75,7 +75,7 @@ const AMCPage = () => {
               className="relative"
             >
               <img
-                src="https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/Technician.png"
                 alt="Professional technician inspecting elevator control panel with tablet in modern building"
                 className="rounded-2xl shadow-2xl"
               />
