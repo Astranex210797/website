@@ -68,15 +68,15 @@ const HeroSection = () => {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-4xl">
+        <div className="max-w-4xl bg-gray-900/50 backdrop-blur-md p-8 rounded-xl">
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-8xl font-extrabold leading-tight mb-6 tracking-tight text-shadow-lg"
+            className="text-6xl sm:text-7xl md:text-9xl font-extrabold leading-tight mb-8 tracking-tight text-gray-900 shadow-md"
           >
             Elevating Lives.{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700">
@@ -86,7 +86,7 @@ const HeroSection = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-800 mb-10 leading-relaxed font-light"
+            className="text-2xl md:text-3xl text-gray-800 mb-12 leading-loose font-medium shadow-md"
           >
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
@@ -116,25 +116,25 @@ const HeroSection = () => {
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8"
           >
-            <div className="flex items-center space-x-4 bg-blue-50/80 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
               <Shield className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900">100% Safe</div>
-                <div className="text-sm text-gray-600">Certified & Tested</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-md">100% Safe</div>
+                <div className="text-sm text-gray-600 shadow-md">Certified & Tested</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/80 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
               <Award className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900">15+ Years</div>
-                <div className="text-sm text-gray-600">Industry Experience</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-md">15+ Years</div>
+                <div className="text-sm text-gray-600 shadow-md">Industry Experience</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/80 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
               <Clock className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900">24/7 Support</div>
-                <div className="text-sm text-gray-600">Emergency Service</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-md">24/7 Support</div>
+                <div className="text-sm text-gray-600 shadow-md">Emergency Service</div>
               </div>
             </div>
           </motion.div>
@@ -148,8 +148,8 @@ const HeroSection = () => {
         animate="animate"
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm font-medium tracking-wide">Discover More</span>
-          <div className="w-8 h-12 border-2 border-blue-500/80 rounded-full flex justify-center">
+          <span className="text-sm font-medium tracking-wide shadow-md">Discover More</span>
+          <div className="w-8 h-12 border-2 border-gray-900/80 rounded-full flex justify-center">
             <motion.div
               className="w-1.5 h-4 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full mt-2"
             ></motion.div>

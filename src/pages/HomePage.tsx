@@ -44,51 +44,53 @@ const HomePage = () => {
         `}
       </style>
 
-      <div className="relative z-10 pt-20 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10">
         <motion.div
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
-          className="mb-16"
+          className="min-h-screen"
         >
           <HeroSection />
         </motion.div>
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-16"
-        >
-          <ProductGrid />
-        </motion.div>
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-16 bg-white/5 backdrop-blur-lg p-8 rounded-xl shadow-lg"
-        >
-          <ContactForm />
-        </motion.div>
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-16"
-        >
-          <TestimonialsSection />
-        </motion.div>
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-16"
-        >
-          <PartnersSection />
-        </motion.div>
+        <div className="px-4 sm:px-6 lg:px-8 pt-20 pb-20">
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-16"
+          >
+            <ProductGrid />
+          </motion.div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-16 bg-white/5 backdrop-blur-lg p-8 rounded-xl shadow-lg"
+          >
+            <ContactForm />
+          </motion.div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-16"
+          >
+            <TestimonialsSection />
+          </motion.div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-16"
+          >
+            <PartnersSection />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
