@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
 
   const products = [
@@ -36,16 +36,16 @@ const Header = () => {
         duration: 0.3,
         ease: 'easeOut',
         when: 'beforeChildren',
-        staggerChildren: 0.05
-      }
+        staggerChildren: 0.05,
+      },
     },
     exit: {
       opacity: 0,
       height: 0,
       transition: {
         duration: 0.2,
-        ease: 'easeIn'
-      }
+        ease: 'easeIn',
+      },
     },
   };
 
@@ -67,8 +67,8 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                location.pathname === '/' ? 'text-blue-600 font-medium' : ''
+              className={`text-[#0D3B2E] hover:text-[#1ABC9C] transition-colors duration-200 ${
+                location.pathname === '/' ? 'text-[#1ABC9C] font-medium' : ''
               }`}
             >
               Home
@@ -80,7 +80,7 @@ const Header = () => {
               onMouseEnter={() => setActiveDropdown('products')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+              <button className="flex items-center text-[#0D3B2E] hover:text-[#1ABC9C] transition-colors duration-200">
                 Products <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <AnimatePresence>
@@ -96,7 +96,7 @@ const Header = () => {
                       <Link
                         key={product.path}
                         to={product.path}
-                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+                        className="block px-4 py-2.5 text-[#0D3B2E] hover:bg-[#F2F6F5] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {product.name}
                       </Link>
@@ -112,7 +112,7 @@ const Header = () => {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+              <button className="flex items-center text-[#0D3B2E] hover:text-[#1ABC9C] transition-colors duration-200">
                 Services <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <AnimatePresence>
@@ -128,7 +128,7 @@ const Header = () => {
                       <Link
                         key={service.path}
                         to={service.path}
-                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+                        className="block px-4 py-2.5 text-[#0D3B2E] hover:bg-[#F2F6F5] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {service.name}
                       </Link>
@@ -140,16 +140,15 @@ const Header = () => {
 
             <Link
               to="/contact"
-              className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
-                location.pathname === '/contact' ? 'text-blue-600 font-medium' : ''
+              className={`text-[#0D3B2E] hover:text-[#1ABC9C] transition-colors duration-200 ${
+                location.pathname === '/contact' ? 'text-[#1ABC9C] font-medium' : ''
               }`}
             >
               Contact
             </Link>
 
-            {/* Book Free Site Visit → Goes to Contact Page */}
             <Link to="/contact">
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
+              <button className="bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
                 Book Free Site Visit
               </button>
             </Link>
@@ -157,7 +156,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg hover:bg-[#F2F6F5] transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -172,19 +171,19 @@ const Header = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="md:hidden bg-white border-t border-gray-100/50"
+              className="md:hidden bg-[#F9FAF9] border-t border-gray-100/50"
             >
               <div className="py-4 space-y-2">
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors duration-150">Home</Link>
+                  <Link to="/" className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Home</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 py-2">
-                  <div className="text-gray-900 font-medium mb-2">Products</div>
+                  <div className="text-[#0D3B2E] font-medium mb-2">Products</div>
                   {products.map((product) => (
                     <motion.div key={product.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={product.path}
-                        className="block pl-4 py-1.5 text-gray-600 hover:text-blue-600 transition-colors duration-150"
+                        className="block pl-4 py-1.5 text-[#6C757D] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {product.name}
                       </Link>
@@ -192,12 +191,12 @@ const Header = () => {
                   ))}
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 py-2">
-                  <div className="text-gray-900 font-medium mb-2">Services</div>
+                  <div className="text-[#0D3B2E] font-medium mb-2">Services</div>
                   {services.map((service) => (
                     <motion.div key={service.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={service.path}
-                        className="block pl-4 py-1.5 text-gray-600 hover:text-blue-600 transition-colors duration-150"
+                        className="block pl-4 py-1.5 text-[#6C757D] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {service.name}
                       </Link>
@@ -205,11 +204,11 @@ const Header = () => {
                   ))}
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors duration-150">Contact</Link>
+                  <Link to="/contact" className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Contact</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2">
                   <Link to="/contact">
-                    <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
+                    <button className="w-full bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
                       Book Free Site Visit
                     </button>
                   </Link>

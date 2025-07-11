@@ -43,86 +43,71 @@ const ProductGrid = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Title Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0D3B2E] mb-4">
             Our Product Range
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-[#6C757D] max-w-3xl mx-auto">
             From residential comfort to industrial strength, we have the perfect lift solution for every need.
           </p>
         </motion.div>
 
-        {/* Product Grid */}
+        {/* Carousel */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+          className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{
             hidden: {},
             visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
+              transition: { staggerChildren: 0.15 },
             },
           }}
         >
-          {products.map((product, index) => (
+          {products.map((product) => (
             <motion.div
               key={product.id}
-              className="group cursor-pointer"
+              className="min-w-[280px] md:min-w-[320px] lg:min-w-[360px] flex-shrink-0 snap-start group cursor-pointer"
               variants={{
-                hidden: { opacity: 0, y: 50, scale: 0.95 },
+                hidden: { opacity: 0, y: 40 },
                 visible: {
                   opacity: 1,
                   y: 0,
-                  scale: 1,
-                  transition: {
-                    duration: 0.6,
-                    ease: 'easeOut',
-                    type: 'spring',
-                    bounce: 0.3
-                  }
+                  transition: { duration: 0.6, ease: 'easeOut' },
                 },
               }}
-              whileHover={{ scale: 1.03 }}
             >
               <Link to={product.link}>
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500">
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <motion.img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      whileHover={{ rotate: 1 }}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <motion.div
-                    className="p-6"
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="p-5">
+                    <h3 className="text-xl font-bold text-[#0D3B2E] group-hover:text-[#1ABC9C] transition-colors duration-300">
                       {product.title}
                     </h3>
-                    <p className="text-gray-600 italic">{product.subtitle}</p>
-                  </motion.div>
+                    <p className="text-[#6C757D] italic">{product.subtitle}</p>
+                  </div>
                   <motion.div
                     className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0"
                     whileHover={{ rotate: 20 }}
                   >
-                    <ArrowRight className="w-5 h-5 text-blue-600" />
+                    <ArrowRight className="w-5 h-5 text-[#1ABC9C]" />
                   </motion.div>
                 </div>
               </Link>
@@ -136,11 +121,11 @@ const ProductGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mt-12"
         >
           <Link
             to="/products"
-            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group"
+            className="inline-flex items-center bg-[#1ABC9C] hover:bg-[#145943] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group"
           >
             View All Products
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
