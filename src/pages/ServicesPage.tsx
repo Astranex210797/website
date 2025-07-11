@@ -20,7 +20,7 @@ const ServicesPage = () => {
       title: 'Lift Modernization',
       subtitle: 'Upgrade Safety, Speed & Style',
       description: 'Transform your old elevator systems with cutting-edge technology and fresh interiors for enhanced performance and aesthetics.',
-      image: 'https://images.pexels.com/photos/6249509/pexels-photo-6249509.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/oldnew.jpg',
       link: '/lift-modernization',
       features: ['Smart Control Systems', 'Energy Efficiency', 'Modern Aesthetics', 'Enhanced Safety'],
       icon: Wrench
