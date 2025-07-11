@@ -9,7 +9,7 @@ const ProductGrid = () => {
       id: 1,
       title: 'Machine Room Elevator',
       subtitle: 'Traditional power meets modern precision',
-      image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/serious-focused-mature-business-owner-talking-cell.jpg',
       link: '/machine-room-lift'
     },
     {
