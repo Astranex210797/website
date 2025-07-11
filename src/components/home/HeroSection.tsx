@@ -23,46 +23,31 @@ const HeroSection = () => {
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{ opacity, scale }}
     >
-      {/* Background */}
+      {/* Background Image */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img src="/BG.jpg" alt="Elevator background" className="w-full h-full object-cover" />
+        <img
+          src="/BG.jpg"
+          alt="Modern elevator"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/50" />
       </motion.div>
 
-      {/* Content */}
-      <motion.div className="relative z-10 w-full max-w-6xl px-4 text-white"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.2,
-              delayChildren: 0.3,
-            },
-          }
-        }}
-      >
+      {/* Foreground Content */}
+      <motion.div className="relative z-10 w-full max-w-6xl px-4 text-white">
         <div className="flex flex-col items-start justify-center h-full max-h-[90vh] space-y-6">
-          <motion.h1
-            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg"
-          >
+          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg">
             Elevating Lives.{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-700">
               One Lift at a Time.
             </span>
           </motion.h1>
 
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-            className="text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md"
-          >
+          <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md">
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
 
-          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} className="flex flex-col sm:flex-row gap-4">
+          <motion.div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-xl text-base font-semibold hover:from-blue-600 hover:to-blue-800 transition-all flex items-center"
@@ -79,10 +64,7 @@ const HeroSection = () => {
             </button>
           </motion.div>
 
-          {/* Icons */}
-          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4"
-          >
+          <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
             <div className="flex items-center space-x-3 bg-white/20 backdrop-blur p-3 rounded-lg">
               <Shield className="w-8 h-8 text-white" />
               <div>
@@ -105,27 +87,6 @@ const HeroSection = () => {
               </div>
             </div>
           </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-white"
-        animate={{
-          y: [0, 15, 0],
-          opacity: [0.3, 1, 0.3],
-          transition: {
-            duration: 2,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }
-        }}
-      >
-        <div className="flex flex-col items-center space-y-1">
-          <span className="text-xs font-medium">Discover More</span>
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <motion.div className="w-1 h-3 bg-blue-500 mt-1 rounded-full" />
-          </div>
         </div>
       </motion.div>
     </motion.section>

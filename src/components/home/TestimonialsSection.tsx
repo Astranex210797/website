@@ -68,6 +68,7 @@ const TestimonialsSection = () => {
 
   return (
     <section
+      id="testimonials"
       className="py-8 bg-gray-900 text-white"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
