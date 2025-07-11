@@ -56,7 +56,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <img
-          src="/WhatsApp Image 2025-07-11 at 11.55.53_413f52a1.jpg" // Place this image in /public directory
+          src="/BG.jpg" // Place this image in /public directory
           alt="Modern elevator"
           className="w-full h-full object-cover"
         />
