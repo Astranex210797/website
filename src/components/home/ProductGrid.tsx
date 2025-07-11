@@ -45,13 +45,13 @@ const ProductGrid = () => {
     <section
       className="py-20"
       style={{
-        background: 'linear-gradient(135deg, #145943 0%, #1ABC9C 60%, #F2FCF9 100%)',
+        background: 'linear-gradient(120deg, #145943 0%, #1ABC9C 60%, #F2FCF9 100%)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-4 drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-text mb-4 drop-shadow-lg">
             Our Product Range
           </h2>
           <p className="text-xl text-brand-gray max-w-3xl mx-auto">
@@ -60,27 +60,26 @@ const ProductGrid = () => {
         </div>
 
         {/* Simple Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product) => (
             <Link to={product.link} key={product.id}>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-[#F2FCF9] to-[#1ABC9C22] shadow-md hover:shadow-xl transition-all duration-500 border border-brand-dark group">
-                <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="relative overflow-hidden rounded-3xl bg-white/30 backdrop-blur-md shadow-xl border border-brand-dark group transition-all duration-500 hover:scale-105 hover:border-brand">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-3xl">
                   <img
                     src={product.image}
                     alt={`Image of ${product.title}`}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#14594388] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-brand-text group-hover:text-brand transition-colors duration-300">
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-brand-text group-hover:text-brand transition-colors duration-300">
                     {product.title}
                   </h3>
-                  <p className="text-brand-gray italic">{product.subtitle}</p>
+                  <p className="text-brand-gray italic mt-2">{product.subtitle}</p>
                 </div>
-                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 border border-brand">
-                  <ArrowRight className="w-5 h-5 text-brand" />
+                <div className="absolute top-5 right-5 w-11 h-11 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-brand shadow-md">
+                  <ArrowRight className="w-6 h-6 text-brand" />
                 </div>
               </div>
             </Link>
@@ -88,13 +87,13 @@ const ProductGrid = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link
             to="/products"
-            className="inline-flex items-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group shadow-lg"
+            className="inline-flex items-center bg-brand hover:bg-brand-dark text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 group shadow-xl"
           >
             View All Products
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
