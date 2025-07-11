@@ -1,0 +1,210 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, CheckCircle, Package, Shield, Zap } from 'lucide-react';
+
+const HydraulicGoodsLiftPage = () => {
+  const specifications = [
+    'Load Capacity: 500–5000 kg',
+    'Platform Size: Customizable',
+    'Travel Height: Up to 15 meters',
+    'Speed: 0.15–0.25 m/s',
+    'Safety Features: Emergency stop, overload protection',
+    'Control: Push button/Remote operation',
+    'Construction: Heavy-duty steel frame',
+    'Installation: Indoor/Outdoor compatible'
+  ];
+
+  const features = [
+    {
+      icon: Package,
+      title: 'Heavy-Duty Performance',
+      description: 'Engineered to handle substantial loads with consistent reliability'
+    },
+    {
+      icon: Shield,
+      title: 'Enhanced Safety',
+      description: 'Multiple safety systems protect both operators and cargo'
+    },
+    {
+      icon: Zap,
+      title: 'Efficient Operation',
+      description: 'Optimized hydraulic systems for energy-efficient performance'
+    }
+  ];
+
+  return (
+    <div className="pt-16">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-r from-orange-900 to-orange-700 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                Hydraulic Goods Lifts
+              </h1>
+              <p className="text-xl text-orange-100 mb-8 leading-relaxed">
+                Heavy-duty performance, reliable results. Our hydraulic goods lifts are 
+                engineered for industrial and commercial applications where moving weight 
+                with confidence is essential.
+              </p>
+              <button className="bg-white text-orange-900 hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center group">
+                Book a Free Site Visit
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <img
+                src="/WhatsApp Image 2025-07-11 at 12.10.03_3d6771cc.jpg"
+                alt="Heavy-duty hydraulic goods lift for industrial and commercial use"
+                className="rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Why Choose Our Hydraulic Goods Lifts?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built for strength, designed for efficiency, trusted for reliability.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-8 rounded-2xl bg-gray-50 hover:bg-orange-50 transition-colors duration-300"
+              >
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <feature.icon className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Specifications Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Our hydraulic goods lifts are built to handle the toughest industrial 
+                and commercial material handling requirements.
+              </p>
+              <div className="space-y-4">
+                {specifications.map((spec, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-lg">{spec}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-xl"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Ideal For:</h3>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-orange-600 font-bold">🏭</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Manufacturing Plants</h4>
+                    <p className="text-gray-600">Factories, production facilities, assembly lines</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-orange-600 font-bold">📦</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Warehouses</h4>
+                    <p className="text-gray-600">Distribution centers, storage facilities</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-orange-600 font-bold">🏪</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Commercial Buildings</h4>
+                    <p className="text-gray-600">Retail stores, restaurants, service centers</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-orange-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Move Weight with Confidence
+            </h2>
+            <p className="text-xl text-orange-100 mb-8">
+              Streamline your material handling operations with our robust hydraulic goods lifts. 
+              Get expert consultation for your specific requirements.
+            </p>
+            <button className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center mx-auto group">
+              Book a Free Site Visit
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HydraulicGoodsLiftPage;
