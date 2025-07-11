@@ -25,13 +25,14 @@ function App() {
     <Router>
       <div className="min-h-screen relative overflow-hidden bg-white text-gray-900">
 
-        {/* ✅ Fix: Only pure CSS inside <style>. @import should be moved to index.html or CSS file */}
+        {/* ✅ Global Styles — move @import to index.html or a CSS file */}
         <style>
           {`
             body {
               font-family: 'Inter', sans-serif;
               margin: 0;
               padding: 0;
+              background-color: #ffffff;
             }
 
             @keyframes backgroundShift {
@@ -42,18 +43,63 @@ function App() {
           `}
         </style>
 
-        {/* ✅ Load Google Fonts in public/index.html */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> */}
-
         <Header />
 
         <main className="relative z-10 pt-16 pb-20">
           <AnimatePresence mode="wait">
             <Routes>
-              <Route path="/" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><HomePage /></motion.div>} />
-              <Route path="/products" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><ProductsPage /></motion.div>} />
-              <Route path="/services" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><ServicesPage /></motion.div>} />
-              <Route path="/contact" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><ContactPage /></motion.div>} />
+              <Route
+                path="/"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <HomePage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/products"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ProductsPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/services"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ServicesPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ContactPage />
+                  </motion.div>
+                }
+              />
               <Route path="/machine-room-lift" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><MachineRoomLiftPage /></motion.div>} />
               <Route path="/mrl-elevator" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><MRLElevatorPage /></motion.div>} />
               <Route path="/hydraulic-passenger-lift" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: 'easeOut' }}><HydraulicPassengerLiftPage /></motion.div>} />
@@ -67,6 +113,7 @@ function App() {
 
         <Footer />
 
+        {/* Floating Actions */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
