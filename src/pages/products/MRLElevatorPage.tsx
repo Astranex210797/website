@@ -4,12 +4,13 @@ import { ArrowRight, CheckCircle, Zap, Building, Wrench } from 'lucide-react';
 
 const MRLElevatorPage = () => {
   const specifications = [
-    'Capacity: 320–1600 kg',
-    'Maximum Stops: 20 floors',
+    'Capacity: 272–1632 kg',
+    'Maximum Stops: 15 floors',
     'Speed: 1.0–2.5 m/s',
-    'No Machine Room Required',
-    'Space-Saving Design',
-    'Energy Efficient Drive',
+    'Auto/Manual Door Options',
+    'Suitable for Residential & High-rise',
+    'Energy Efficient Drive System',
+    'Customizable Interior Design',
     'Advanced Safety Systems',
     'Modern Control Technology'
   ];
