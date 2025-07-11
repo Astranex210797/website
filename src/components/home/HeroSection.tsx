@@ -5,8 +5,12 @@ import { ArrowRight, Shield, Award, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
-  const bgY = useTransform(scrollY, [0, 500], [0, 50]); // Parallax effect
   const navigate = useNavigate();
+
+  // Parallax and scroll-out animation
+  const bgY = useTransform(scrollY, [0, 500], [0, 50]); // Parallax effect
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.3]); // Fade out on scroll
+  const scale = useTransform(scrollY, [0, 500], [1, 0.95]); // Slight scale down on scroll
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,7 +50,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <motion.section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ opacity, scale }}
+    >
       {/* Background Image with Parallax */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -57,7 +64,6 @@ const HeroSection = () => {
           alt="Modern elevator interior showcasing luxury and safety"
           className="w-full h-full min-h-screen object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-blue-800/20 to-transparent"></div>
       </motion.div>
 
       {/* Content */}
@@ -150,7 +156,7 @@ const HeroSection = () => {
           </div>
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 

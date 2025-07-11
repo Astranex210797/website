@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="/bglogo.jpg" alt="Peak Elevator Group Logo" className="h-12 w-auto" />
+              <img src="/logo.jpg" alt="Peak Elevator Group Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Elevating lives, one lift at a time. We deliver luxury, safety, and innovation 
