@@ -51,7 +51,7 @@ const HeroSection = () => {
 
   return (
     <motion.section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-start overflow-hidden"
       style={{ opacity, scale }}
     >
       {/* Background Image with Parallax */}
@@ -68,15 +68,15 @@ const HeroSection = () => {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-4xl bg-gray-900/50 backdrop-blur-md p-8 rounded-xl">
+        <div className="max-w-md">
           <motion.h1
             variants={itemVariants}
-            className="text-6xl sm:text-7xl md:text-9xl font-extrabold leading-tight mb-8 tracking-tight text-gray-900 shadow-md"
+            className="text-6xl sm:text-7xl md:text-9xl font-black leading-tight mb-8 tracking-tight shadow-lg"
           >
             Elevating Lives.{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700">
@@ -86,7 +86,7 @@ const HeroSection = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-2xl md:text-3xl text-gray-800 mb-12 leading-loose font-medium shadow-md"
+            className="text-2xl md:text-3xl text-gray-800 mb-12 leading-loose font-semibold shadow-lg"
           >
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
@@ -116,25 +116,25 @@ const HeroSection = () => {
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8"
           >
-            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
               <Shield className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-md">100% Safe</div>
-                <div className="text-sm text-gray-600 shadow-md">Certified & Tested</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-lg">100% Safe</div>
+                <div className="text-sm text-gray-600 shadow-lg">Certified & Tested</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
               <Award className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-md">15+ Years</div>
-                <div className="text-sm text-gray-600 shadow-md">Industry Experience</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-lg">15+ Years</div>
+                <div className="text-sm text-gray-600 shadow-lg">Industry Experience</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 bg-blue-50/90 backdrop-blur-sm p-4 rounded-lg">
+            <div className="flex items-center space-x-4 bg-blue-50/95 backdrop-blur-sm p-4 rounded-lg">
               <Clock className="w-10 h-10 text-blue-500" />
               <div>
-                <div className="font-semibold text-lg text-gray-900 shadow-md">24/7 Support</div>
-                <div className="text-sm text-gray-600 shadow-md">Emergency Service</div>
+                <div className="font-semibold text-lg text-gray-900 shadow-lg">24/7 Support</div>
+                <div className="text-sm text-gray-600 shadow-lg">Emergency Service</div>
               </div>
             </div>
           </motion.div>
@@ -143,12 +143,12 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-900 z-10"
+        className="absolute bottom-8 left-8 text-gray-900 z-10"
         variants={scrollIndicatorVariants}
         animate="animate"
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm font-medium tracking-wide shadow-md">Discover More</span>
+          <span className="text-sm font-medium tracking-wide shadow-lg">Discover More</span>
           <div className="w-8 h-12 border-2 border-gray-900/80 rounded-full flex justify-center">
             <motion.div
               className="w-1.5 h-4 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full mt-2"
