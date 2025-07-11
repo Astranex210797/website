@@ -38,7 +38,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-start justify-center h-full max-h-[90vh] space-y-6">
           <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg">
             Elevating Lives.{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-dark to-brand">
+            <span className="text-[#E6FAF4]">
               One Lift at a Time.
             </span>
           </motion.h1>

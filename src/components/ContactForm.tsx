@@ -10,23 +10,18 @@ const ContactForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-black via-[#0A302A] to-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,27 +30,26 @@ const ContactForm = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to elevate your space? Let's discuss your project and find the perfect lift solution.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Let's design the future of vertical mobility together.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-2xl p-8"
+            className="bg-white/5 backdrop-blur-md rounded-2xl p-10 shadow-2xl border border-[#1ABC9C]/30"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold mb-2 text-white">
                     Full Name *
                   </label>
                   <input
@@ -65,12 +59,12 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Your full name"
+                    className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold mb-2 text-white">
                     Phone Number *
                   </label>
                   <input
@@ -80,14 +74,14 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none"
                     placeholder="+91 9999999999"
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold mb-2 text-white">
                   Email Address *
                 </label>
                 <input
@@ -97,13 +91,13 @@ const ContactForm = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="your.email@example.com"
+                  className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none"
+                  placeholder="you@example.com"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold mb-2 text-white">
                   Message
                 </label>
                 <textarea
@@ -112,14 +106,14 @@ const ContactForm = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell us about your project requirements..."
+                  className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none resize-none"
+                  placeholder="Describe your project requirements..."
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center group"
+                className="w-full bg-[#1ABC9C] hover:bg-[#159f84] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group"
               >
                 Send Message
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -127,60 +121,55 @@ const ContactForm = () => {
             </form>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Contact Details */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-10"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Let's Start a Conversation
-              </h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                We're here to help you find the perfect elevator solution. Our team of experts 
-                is ready to discuss your project and provide personalized recommendations.
+              <h3 className="text-2xl font-bold mb-4">Let’s Start a Conversation</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Reach out to our team of lift experts. We’re happy to discuss your next project or answer any questions you might have.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#1ABC9C]/20 rounded-lg flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Call Us</h4>
-                  <p className="text-gray-600">+91 9990858886</p>
+                  <h4 className="font-semibold text-white">Call Us</h4>
+                  <p className="text-gray-300">+91 9990858886</p>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#1ABC9C]/20 rounded-lg flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Email Us</h4>
-                  <p className="text-gray-600">info@peakelevator.com</p>
+                  <h4 className="font-semibold text-white">Email Us</h4>
+                  <p className="text-gray-300">info@peakelevator.com</p>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#1ABC9C]/20 rounded-lg flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Service Area</h4>
-                  <p className="text-gray-600">Delhi/NCR, India</p>
+                  <h4 className="font-semibold text-white">Service Area</h4>
+                  <p className="text-gray-300">Delhi/NCR, India</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-blue-50 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-2">Emergency Support</h4>
-              <p className="text-gray-600 mb-4">
-                Need immediate assistance? Our 24/7 emergency support team is always ready to help.
+            <div className="bg-[#1ABC9C]/10 p-6 rounded-xl border border-[#1ABC9C]/30">
+              <h4 className="font-semibold text-white mb-2">Emergency Support</h4>
+              <p className="text-gray-400 mb-4">
+                Need urgent assistance? Our support team is available 24/7.
               </p>
               <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
                 Emergency Contact

@@ -4,10 +4,10 @@ import ContactForm from '../components/ContactForm';
 
 const ContactPage = () => {
   return (
-    <div className="pt-16 bg-black text-white">
+    <div className="pt-16 bg-[#0D3B2E] text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] opacity-90 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#145943] via-[#0D3B2E] to-[#1ABC9C] opacity-90 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
