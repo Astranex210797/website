@@ -1,3 +1,4 @@
+// HomePage.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/home/HeroSection';
