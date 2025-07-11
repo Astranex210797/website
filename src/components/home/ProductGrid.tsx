@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const ProductGrid = () => {
@@ -51,84 +50,45 @@ const ProductGrid = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-4 drop-shadow-lg">
             Our Product Range
           </h2>
           <p className="text-xl text-brand-gray max-w-3xl mx-auto">
             From residential comfort to industrial strength, we have the perfect lift solution for every need.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Horizontal Scroll Carousel */}
-        <motion.div
-          className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.15 },
-            },
-          }}
-        >
+        {/* Simple Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <motion.div
-              key={product.id}
-              className="min-w-[280px] md:min-w-[320px] lg:min-w-[360px] flex-shrink-0 snap-start group cursor-pointer"
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6, ease: 'easeOut' },
-                },
-              }}
-            >
-              <Link to={product.link}>
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-[#F2FCF9] to-[#1ABC9C22] shadow-md hover:shadow-xl transition-all duration-500 border border-brand-dark">
-                  <div className="aspect-[4/3] overflow-hidden relative">
-                    <img
-                      src={product.image}
-                      alt={`Image of ${product.title}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14594388] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-xl font-bold text-brand-text group-hover:text-brand transition-colors duration-300">
-                      {product.title}
-                    </h3>
-                    <p className="text-brand-gray italic">{product.subtitle}</p>
-                  </div>
-                  <motion.div
-                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 border border-brand"
-                    whileHover={{ rotate: 20 }}
-                  >
-                    <ArrowRight className="w-5 h-5 text-brand" />
-                  </motion.div>
+            <Link to={product.link} key={product.id}>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-[#F2FCF9] to-[#1ABC9C22] shadow-md hover:shadow-xl transition-all duration-500 border border-brand-dark group">
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img
+                    src={product.image}
+                    alt={`Image of ${product.title}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#14594388] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              </Link>
-            </motion.div>
+                <div className="p-5">
+                  <h3 className="text-xl font-bold text-brand-text group-hover:text-brand transition-colors duration-300">
+                    {product.title}
+                  </h3>
+                  <p className="text-brand-gray italic">{product.subtitle}</p>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 border border-brand">
+                  <ArrowRight className="w-5 h-5 text-brand" />
+                </div>
+              </div>
+            </Link>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <Link
             to="/products"
             className="inline-flex items-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group shadow-lg"
@@ -136,7 +96,7 @@ const ProductGrid = () => {
             View All Products
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
