@@ -29,23 +29,23 @@ const Header = () => {
 
   const mobileMenuVariants = {
     hidden: { opacity: 0, height: 0 },
-    visible: { 
-      opacity: 1, 
-      height: 'auto', 
-      transition: { 
-        duration: 0.3, 
+    visible: {
+      opacity: 1,
+      height: 'auto',
+      transition: {
+        duration: 0.3,
         ease: 'easeOut',
         when: 'beforeChildren',
         staggerChildren: 0.05
-      } 
+      }
     },
-    exit: { 
-      opacity: 0, 
-      height: 0, 
-      transition: { 
-        duration: 0.2, 
-        ease: 'easeIn' 
-      } 
+    exit: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.2,
+        ease: 'easeIn'
+      }
     },
   };
 
@@ -65,23 +65,23 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
                 location.pathname === '/' ? 'text-blue-600 font-medium' : ''
               }`}
             >
               Home
             </Link>
-            
+
             {/* Products Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('products')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
-                Products <ChevronDown className="ml-1 w-4 h-4 transition-transform duration-200" />
+                Products <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <AnimatePresence>
                 {activeDropdown === 'products' && (
@@ -107,13 +107,13 @@ const Header = () => {
             </div>
 
             {/* Services Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
-                Services <ChevronDown className="ml-1 w-4 h-4 transition-transform duration-200" />
+                Services <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <AnimatePresence>
                 {activeDropdown === 'services' && (
@@ -138,8 +138,8 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 ${
                 location.pathname === '/contact' ? 'text-blue-600 font-medium' : ''
               }`}
@@ -147,12 +147,15 @@ const Header = () => {
               Contact
             </Link>
 
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-              Book Free Site Visit
-            </button>
+            {/* Book Free Site Visit → Goes to Contact Page */}
+            <Link to="/contact">
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
+                Book Free Site Visit
+              </button>
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -205,9 +208,11 @@ const Header = () => {
                   <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors duration-150">Contact</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2">
-                  <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-                    Book Free Site Visit
-                  </button>
+                  <Link to="/contact">
+                    <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
+                      Book Free Site Visit
+                    </button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
