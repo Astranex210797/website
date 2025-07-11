@@ -22,13 +22,22 @@ import MRLElevatorPage from './pages/products/MRLElevatorPage';
 import AMCPage from './pages/services/AMCPage';
 import ModernizationPage from './pages/services/ModernizationPage';
 
-// ScrollToTop component
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+// Custom PageWrapper with scroll-to-top on route change
+const PageWrapper = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
-  return null;
+  }, [location.pathname]);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
 function App() {
@@ -51,7 +60,6 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
       <div
         className="min-h-screen relative overflow-hidden text-brand-text"
         style={{
@@ -87,16 +95,5 @@ function App() {
     </Router>
   );
 }
-
-const PageWrapper = ({ children }: { children: React.ReactNode }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.5 }}
-  >
-    {children}
-  </motion.div>
-);
 
 export default App;
