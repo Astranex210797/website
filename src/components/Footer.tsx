@@ -28,26 +28,44 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <div className="space-y-2 text-gray-400 text-sm">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <Link to="/products" className="hover:text-white transition-colors">Products</Link>
-              <Link to="/services" className="hover:text-white transition-colors">Services</Link>
-              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
-            </div>
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-gray-400 text-sm pl-2">
+              <li>
+                <Link to="/" className="hover:text-white transition-colors block py-1">Home</Link>
+              </li>
+              <li>
+                <Link to="/products" className="hover:text-white transition-colors block py-1">Products</Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors block py-1">Services</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors block py-1">Contact</Link>
+              </li>
+            </ul>
           </div>
 
           {/* Products */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Our Products</h3>
-            <div className="space-y-2 text-gray-400 text-sm">
-              <Link to="/machine-room-lift" className="hover:text-white transition-colors">Machine Room Elevator</Link>
-              <Link to="/mrl-elevator" className="hover:text-white transition-colors">MRL Elevator</Link>
-              <Link to="/hydraulic-passenger-lift" className="hover:text-white transition-colors">Passenger Lifts</Link>
-              <Link to="/car-lift" className="hover:text-white transition-colors">Car Lifts</Link>
-              <Link to="/hydraulic-goods-lift" className="hover:text-white transition-colors">Goods Lifts</Link>
-            </div>
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4">Our Products</h3>
+            <ul className="space-y-2 text-gray-400 text-sm pl-2">
+              <li>
+                <Link to="/machine-room-lift" className="hover:text-white transition-colors block py-1">Machine Room Elevator</Link>
+              </li>
+              <li>
+                <Link to="/mrl-elevator" className="hover:text-white transition-colors block py-1">MRL Elevator</Link>
+              </li>
+              <li>
+                <Link to="/hydraulic-passenger-lift" className="hover:text-white transition-colors block py-1">Passenger Lifts</Link>
+              </li>
+              <li>
+                <Link to="/car-lift" className="hover:text-white transition-colors block py-1">Car Lifts</Link>
+              </li>
+              <li>
+                <Link to="/hydraulic-goods-lift" className="hover:text-white transition-colors block py-1">Goods Lifts</Link>
+              </li>
+            </ul>
           </div>
 
           {/* Contact Info */}

@@ -48,17 +48,17 @@ const ServicesPage = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-green-900 to-green-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#145943] via-[#1ABC9C] to-[#E6FAF4] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#E6FAF4] drop-shadow-xl">
               Our Services
             </h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl text-[#C3E7DF] max-w-3xl mx-auto">
               From comprehensive maintenance to complete modernization, we provide 
               expert services to keep your elevators performing at their best.
             </p>
@@ -67,7 +67,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {services.map((service, index) => (
@@ -84,35 +84,35 @@ const ServicesPage = () => {
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                        <service.icon className="w-8 h-8 text-blue-600" />
+                      <div className="w-16 h-16 bg-[#1ABC9C]/10 rounded-full flex items-center justify-center">
+                        <service.icon className="w-8 h-8 text-[#1ABC9C]" />
                       </div>
                       <div>
-                        <h2 className="text-4xl font-bold text-gray-900">
+                        <h2 className="text-4xl font-bold text-[#145943]">
                           {service.title}
                         </h2>
-                        <p className="text-lg text-blue-600 italic">
+                        <p className="text-lg text-[#1ABC9C] italic">
                           {service.subtitle}
                         </p>
                       </div>
                     </div>
                     
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className="text-lg text-[#0D3B2E] leading-relaxed">
                       {service.description}
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                          <span className="text-gray-700">{feature}</span>
+                          <div className="w-2 h-2 bg-[#1ABC9C] rounded-full"></div>
+                          <span className="text-[#145943]">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <Link
                       to={service.link}
-                      className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group"
+                      className="inline-flex items-center bg-[#1ABC9C] hover:bg-[#145943] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 group shadow-lg"
                     >
                       Learn More
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -125,9 +125,9 @@ const ServicesPage = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-96 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500"
+                      className="w-full h-96 object-cover rounded-2xl shadow-2xl border-4 border-[#1ABC9C]/30 group-hover:shadow-3xl transition-shadow duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#145943]/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               </motion.div>
@@ -137,7 +137,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#E6FAF4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -146,10 +146,10 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-[#145943] mb-6">
               Why Choose Our Services?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#1ABC9C] max-w-3xl mx-auto">
               We deliver reliable, responsive, and remarkable service that keeps your elevators 
               running smoothly and your passengers safe.
             </p>
@@ -163,13 +163,13 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:bg-[#E6FAF4] hover:shadow-xl transition-shadow duration-300 border border-[#1ABC9C]/20"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-[#1ABC9C]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <item.icon className="w-8 h-8 text-[#1ABC9C]" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold text-[#145943] mb-4">{item.title}</h3>
+                <p className="text-[#0D3B2E]">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -177,7 +177,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Service Taglines */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -186,7 +186,7 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-12">
+            <h2 className="text-4xl font-bold mb-12 text-[#E6FAF4]">
               Our Service Promise
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -208,7 +208,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -216,19 +216,19 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-[#145943] mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-[#1ABC9C] mb-8">
               Whether you need maintenance, modernization, or emergency support, 
               our team is ready to provide expert service tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center group">
+              <button className="bg-[#1ABC9C] hover:bg-[#145943] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center group shadow-lg">
                 Schedule Service
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+              <button className="border-2 border-[#1ABC9C] text-[#1ABC9C] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
                 Emergency Support
               </button>
             </div>

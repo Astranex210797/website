@@ -10,7 +10,7 @@ const ProductsPage = () => {
       title: 'Machine Room Elevator',
       subtitle: 'Traditional power meets modern precision',
       description: 'Proven elevator technology for high-rise buildings, delivering exceptional performance and reliability with dedicated machine room systems.',
-      image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/serious-focused-mature-business-owner-talking-cell.jpg', // updated image path
       link: '/machine-room-lift',
       features: ['272–1632 kg capacity', 'Up to 15 floors', 'Energy efficient', 'Advanced safety']
     },
@@ -55,17 +55,17 @@ const ProductsPage = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#145943] via-[#1ABC9C] to-[#E6FAF4] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#E6FAF4]">
               Our Product Range
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-[#C3E7DF] max-w-3xl mx-auto">
               Discover our comprehensive range of elevator solutions, each engineered 
               for specific applications and designed to exceed expectations.
             </p>
@@ -74,7 +74,7 @@ const ProductsPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {products.map((product, index) => (
@@ -91,13 +91,13 @@ const ProductsPage = () => {
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="space-y-6">
                     <div>
-                      <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                      <h2 className="text-4xl font-bold text-[#145943] mb-4">
                         {product.title}
                       </h2>
-                      <p className="text-xl text-blue-600 italic mb-6">
+                      <p className="text-xl text-[#1ABC9C] italic mb-6">
                         {product.subtitle}
                       </p>
-                      <p className="text-lg text-gray-600 leading-relaxed">
+                      <p className="text-lg text-[#0D3B2E] leading-relaxed">
                         {product.description}
                       </p>
                     </div>
@@ -105,15 +105,15 @@ const ProductsPage = () => {
                     <div className="grid grid-cols-2 gap-4">
                       {product.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                          <span className="text-gray-700">{feature}</span>
+                          <div className="w-2 h-2 bg-[#1ABC9C] rounded-full"></div>
+                          <span className="text-[#145943]">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <Link
                       to={product.link}
-                      className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 group"
+                      className="inline-flex items-center bg-[#1ABC9C] hover:bg-[#145943] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 group shadow-lg"
                     >
                       Learn More
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -126,9 +126,9 @@ const ProductsPage = () => {
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-96 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500"
+                      className="w-full h-96 object-cover rounded-2xl shadow-2xl border-4 border-[#1ABC9C]/30 group-hover:shadow-3xl transition-shadow duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#145943]/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               </motion.div>
@@ -138,7 +138,7 @@ const ProductsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -146,14 +146,14 @@ const ProductsPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
               Need Help Choosing?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-[#C3E7DF] mb-8">
               Our experts are here to help you select the perfect elevator solution 
               for your specific requirements and budget.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center mx-auto group">
+            <button className="bg-[#E6FAF4] hover:bg-[#1ABC9C] text-[#145943] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center mx-auto group shadow-lg">
               Book a Free Consultation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
