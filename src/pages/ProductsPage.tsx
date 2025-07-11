@@ -62,7 +62,7 @@ const ProductsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#E6FAF4]">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#E6FAF4] drop-shadow-xl">
               Our Product Range
             </h1>
             <p className="text-xl text-[#C3E7DF] max-w-3xl mx-auto">
@@ -146,7 +146,7 @@ const ProductsPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
+            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4] drop-shadow-xl">
               Need Help Choosing?
             </h2>
             <p className="text-xl text-[#C3E7DF] mb-8">

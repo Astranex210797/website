@@ -30,42 +30,64 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-400 text-sm pl-2">
-              <li>
-                <Link to="/" className="hover:text-white transition-colors block py-1">Home</Link>
-              </li>
-              <li>
-                <Link to="/products" className="hover:text-white transition-colors block py-1">Products</Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors block py-1">Services</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-white transition-colors block py-1">Contact</Link>
-              </li>
-            </ul>
+            <nav aria-label="Quick Links">
+              <ul className="flex flex-col gap-2 pl-0">
+                <li>
+                  <Link to="/" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           {/* Products */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Our Products</h3>
-            <ul className="space-y-2 text-gray-400 text-sm pl-2">
-              <li>
-                <Link to="/machine-room-lift" className="hover:text-white transition-colors block py-1">Machine Room Elevator</Link>
-              </li>
-              <li>
-                <Link to="/mrl-elevator" className="hover:text-white transition-colors block py-1">MRL Elevator</Link>
-              </li>
-              <li>
-                <Link to="/hydraulic-passenger-lift" className="hover:text-white transition-colors block py-1">Passenger Lifts</Link>
-              </li>
-              <li>
-                <Link to="/car-lift" className="hover:text-white transition-colors block py-1">Car Lifts</Link>
-              </li>
-              <li>
-                <Link to="/hydraulic-goods-lift" className="hover:text-white transition-colors block py-1">Goods Lifts</Link>
-              </li>
-            </ul>
+            <nav aria-label="Product Links">
+              <ul className="flex flex-col gap-2 pl-0">
+                <li>
+                  <Link to="/machine-room-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Machine Room Elevator
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/mrl-elevator" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    MRL Elevator
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/hydraulic-passenger-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Passenger Lifts
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/car-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Car Lifts
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/hydraulic-goods-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                    Goods Lifts
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           {/* Contact Info */}
