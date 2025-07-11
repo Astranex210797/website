@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Shield, Award, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
   const bgY = useTransform(scrollY, [0, 500], [0, 50]); // Parallax effect
+  const navigate = useNavigate();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -87,12 +89,18 @@ const HeroSection = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
-            <button className="relative bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-blue-500/50">
+            <button
+              onClick={() => navigate('/contact')}
+              className="relative bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-blue-500/50"
+            >
               Book a Free Site Visit
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               <div className="absolute inset-0 rounded-xl bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <button className="relative border-2 border-white/80 hover:border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-sm">
+            <button
+              onClick={() => navigate('/testimonials')}
+              className="relative border-2 border-white/80 hover:border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
+            >
               View Our Work
             </button>
           </motion.div>
