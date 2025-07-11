@@ -76,7 +76,7 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">P</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">Peak Elevator Group</span>
+            <img src="/logo.jpg" alt="Peak Elevator Group Logo" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

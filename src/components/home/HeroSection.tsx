@@ -44,22 +44,17 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video with Parallax */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Background Image with Parallax */}
       <motion.div
         className="absolute inset-0 z-0"
         style={{ y: bgY }}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/elevator-hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <img
+          src="/WhatsApp Image 2025-07-11 at 11.55.53_413f52a1.jpg"
+          alt="Modern elevator interior showcasing luxury and safety"
+          className="w-full h-full min-h-screen object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
       </motion.div>
 
