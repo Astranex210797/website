@@ -1,6 +1,6 @@
 // App.tsx
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from './components/Header';
@@ -22,6 +22,15 @@ import MRLElevatorPage from './pages/products/MRLElevatorPage';
 import AMCPage from './pages/services/AMCPage';
 import ModernizationPage from './pages/services/ModernizationPage';
 
+// ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return null;
+};
+
 function App() {
   const [loaded, setLoaded] = useState(false);
 
@@ -42,6 +51,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div
         className="min-h-screen relative overflow-hidden text-brand-text"
         style={{

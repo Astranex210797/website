@@ -48,7 +48,7 @@ const ContactForm = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div>
+                <div className="flex flex-col">
                   <label htmlFor="name" className="block text-lg font-semibold mb-3 text-white">
                     Full Name *
                   </label>
@@ -59,11 +59,11 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-5 rounded-xl bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg"
+                    className="w-full px-8 py-5 rounded-2xl bg-[#121212] border border-[#1ABC9C]/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg shadow-lg transition-all duration-300"
                     placeholder="John Doe"
                   />
                 </div>
-                <div>
+                <div className="flex flex-col">
                   <label htmlFor="phone" className="block text-lg font-semibold mb-3 text-white">
                     Phone Number *
                   </label>
@@ -74,7 +74,7 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-5 rounded-xl bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg"
+                    className="w-full px-8 py-5 rounded-2xl bg-[#121212] border border-[#1ABC9C]/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg shadow-lg transition-all duration-300"
                     placeholder="+91 9999999999"
                   />
                 </div>
