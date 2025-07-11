@@ -4,30 +4,43 @@ import ContactForm from '../components/ContactForm';
 
 const ContactPage = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-black text-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-[#145943] via-[#1ABC9C] to-[#F2FCF9] text-brand-text">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] opacity-90 z-0"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-brand-text drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-2xl tracking-tight">
               Contact Us
             </h1>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              Ready to elevate your space? Get in touch with our experts for personalized
-              elevator solutions and exceptional service.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We're here to design your vertical experience. Reach out for tailored solutions built on innovation, precision, and elegance.
             </p>
           </motion.div>
         </div>
+
+        {/* Background Glow Circles */}
+        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#1ABC9C] opacity-30 blur-[200px] rounded-full"></div>
+        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-[#ffffff] opacity-10 blur-[150px] rounded-full"></div>
       </section>
 
       {/* Contact Form Section */}
-      <div className="max-w-2xl mx-auto -mt-16 mb-16 bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-brand-dark">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-2xl mx-auto -mt-20 mb-24 bg-white/5 backdrop-blur-2xl p-10 rounded-3xl border border-white/10 shadow-2xl"
+      >
+        <h2 className="text-3xl font-semibold mb-8 text-white text-center">
+          Let's Get in Touch
+        </h2>
         <ContactForm />
-      </div>
+      </motion.div>
     </div>
   );
 };
