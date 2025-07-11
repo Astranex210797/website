@@ -19,12 +19,13 @@ import ModernizationPage from './pages/services/ModernizationPage';
 function App() {
   return (
     <Router>
-      <div 
-        className="min-h-screen relative overflow-hidden bg-blue-50 text-gray-900"
-        style={{
-          background: 'linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%)',
-          animation: 'backgroundShift 20s ease-in-out infinite',
-        }}
+  <div 
+    className="min-h-screen relative overflow-hidden bg-white text-gray-900"
+  >
+    {/* Your routes/components here */}
+  </div>
+</Router>
+
       >
         {/* Global Styles with Font */}
         <style>
