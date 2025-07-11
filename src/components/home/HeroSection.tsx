@@ -11,41 +11,11 @@ const HeroSection = () => {
   const opacity = useTransform(scrollY, [0, 500], [1, 0.3]);
   const scale = useTransform(scrollY, [0, 500], [1, 0.95]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        type: 'spring',
-        stiffness: 100,
-      },
-    },
-  };
-
-  const scrollIndicatorVariants = {
-    animate: {
-      y: [0, 15, 0],
-      opacity: [0.3, 1, 0.3],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    },
+  const scrollToTestimonials = () => {
+    const el = document.getElementById('testimonials');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -53,26 +23,30 @@ const HeroSection = () => {
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{ opacity, scale }}
     >
-      {/* Background Image */}
+      {/* Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img
-          src="/BG.jpg" // Place this image in /public directory
-          alt="Modern elevator"
-          className="w-full h-full object-cover"
-        />
+        <img src="/BG.jpg" alt="Elevator background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/50" />
       </motion.div>
 
-      {/* Foreground Content */}
-      <motion.div
-        className="relative z-10 w-full max-w-6xl px-4 text-white"
-        variants={containerVariants}
+      {/* Content */}
+      <motion.div className="relative z-10 w-full max-w-6xl px-4 text-white"
         initial="hidden"
         animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.3,
+            },
+          }
+        }}
       >
         <div className="flex flex-col items-start justify-center h-full max-h-[90vh] space-y-6">
           <motion.h1
-            variants={itemVariants}
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg"
           >
             Elevating Lives.{' '}
@@ -82,16 +56,13 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            variants={itemVariants}
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
             className="text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md"
           >
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-xl text-base font-semibold hover:from-blue-600 hover:to-blue-800 transition-all flex items-center"
@@ -101,15 +72,15 @@ const HeroSection = () => {
             </button>
 
             <button
-              onClick={() => navigate('/testimonials')}
+              onClick={scrollToTestimonials}
               className="border border-white text-white hover:bg-white hover:text-blue-700 px-6 py-3 rounded-xl text-base font-semibold transition"
             >
               View Our Work
             </button>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
+          {/* Icons */}
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4"
           >
             <div className="flex items-center space-x-3 bg-white/20 backdrop-blur p-3 rounded-lg">
@@ -140,13 +111,20 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-white"
-        variants={scrollIndicatorVariants}
-        animate="animate"
+        animate={{
+          y: [0, 15, 0],
+          opacity: [0.3, 1, 0.3],
+          transition: {
+            duration: 2,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }
+        }}
       >
         <div className="flex flex-col items-center space-y-1">
           <span className="text-xs font-medium">Discover More</span>
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <motion.div className="w-1 h-3 bg-blue-500 mt-1 rounded-full"></motion.div>
+            <motion.div className="w-1 h-3 bg-blue-500 mt-1 rounded-full" />
           </div>
         </div>
       </motion.div>
