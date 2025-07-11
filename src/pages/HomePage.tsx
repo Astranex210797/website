@@ -23,12 +23,13 @@ const HomePage = () => {
 
   return (
     <div
-      className="min-h-screen relative bg-brand-bg text-gray-900 overflow-hidden"
+      className="min-h-screen relative bg-[#E8F6F3] text-gray-900 overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #e0f7f3 0%, #d3f2eb 100%)',
+        background: 'linear-gradient(135deg, #e0f2fe 0%, #d4f1ef 100%)',
         animation: 'backgroundShift 20s ease-in-out infinite',
       }}
     >
+      {/* Global Styles */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -44,6 +45,7 @@ const HomePage = () => {
       </style>
 
       <div className="relative z-10">
+        {/* Hero Section */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -54,13 +56,13 @@ const HomePage = () => {
         </motion.div>
 
         <div className="px-4 sm:px-6 lg:px-8 pt-20 pb-20">
-          {/* ✅ Product Grid Section Added */}
+          {/* Product Grid Section (Carousel) */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-20"
+            className="mb-24"
           >
             <ProductGrid />
           </motion.div>
@@ -71,7 +73,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-20 bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-xl"
+            className="mb-24 bg-white/5 backdrop-blur-lg p-8 rounded-xl shadow-lg"
           >
             <ContactForm />
           </motion.div>
@@ -82,7 +84,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-20"
+            className="mb-24"
           >
             <TestimonialsSection />
           </motion.div>
@@ -93,7 +95,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-20"
+            className="mb-24"
           >
             <PartnersSection />
           </motion.div>
