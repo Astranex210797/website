@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
@@ -19,29 +20,186 @@ function App() {
   return (
     <Router>
       <div 
-      className="min-h-screen"
+        className="min-h-screen relative overflow-hidden bg-gray-900 text-white"
         style={{
-          background: 'linear-gradient(135deg, #c3cfe2 0%, #b7e2c7 100%)',
+          background: 'radial-gradient(circle at 50% 50%, #1e3a8a 0%, #111827 100%)',
+          animation: 'backgroundShift 20s ease-in-out infinite',
         }}
       >
+        {/* Global Styles with Font */}
+        <style>
+          {`
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+            body {
+              font-family: 'Inter', sans-serif;
+            }
+            @keyframes backgroundShift {
+              0% { background-position: 50% 50%; }
+              50% { background-position: 60% 60%; }
+              100% { background-position: 50% 50%; }
+            }
+          `}
+        </style>
+
         <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/machine-room-lift" element={<MachineRoomLiftPage />} />
-            <Route path="/mrl-elevator" element={<MRLElevatorPage />} />
-            <Route path="/hydraulic-passenger-lift" element={<HydraulicPassengerLiftPage />} />
-            <Route path="/car-lift" element={<CarLiftPage />} />
-            <Route path="/hydraulic-goods-lift" element={<HydraulicGoodsLiftPage />} />
-            <Route path="/amc-services" element={<AMCPage />} />
-            <Route path="/lift-modernization" element={<ModernizationPage />} />
-          </Routes>
+        <main className="relative z-10 pt-16 pb-20">
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <HomePage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/products"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ProductsPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/services"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ServicesPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ContactPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/machine-room-lift"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <MachineRoomLiftPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/mrl-elevator"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <MRLElevatorPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/hydraulic-passenger-lift"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <HydraulicPassengerLiftPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/car-lift"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <CarLiftPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/hydraulic-goods-lift"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <HydraulicGoodsLiftPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/amc-services"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <AMCPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/lift-modernization"
+                element={
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  >
+                    <ModernizationPage />
+                  </motion.div>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
         </main>
         <Footer />
-        <FloatingActions />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="fixed bottom-8 right-8 z-50"
+        >
+          <FloatingActions />
+        </motion.div>
       </div>
     </Router>
   );
