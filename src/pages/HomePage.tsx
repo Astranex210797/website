@@ -23,9 +23,9 @@ const HomePage = () => {
 
   return (
     <div
-      className="min-h-screen relative bg-gray-900 text-white overflow-hidden"
+      className="min-h-screen relative bg-blue-50 text-gray-900 overflow-hidden"
       style={{
-        background: 'radial-gradient(circle at 50% 50%, #1e3a8a 0%, #111827 100%)',
+        background: 'linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%)',
         animation: 'backgroundShift 20s ease-in-out infinite',
       }}
     >

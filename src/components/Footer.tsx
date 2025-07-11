@@ -9,11 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">P</span>
-              </div>
-              <span className="text-xl font-bold">Peak Elevator Group</span>
+            <div className="flex items-center">
+              <img src="/bglogo.jpg" alt="Peak Elevator Group Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Elevating lives, one lift at a time. We deliver luxury, safety, and innovation 
