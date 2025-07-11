@@ -93,7 +93,7 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <button
-              onClick={() => navigate('/ContactPage')}
+              onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-xl text-base font-semibold hover:from-blue-600 hover:to-blue-800 transition-all flex items-center"
             >
               Book a Free Site Visit
@@ -101,7 +101,7 @@ const HeroSection = () => {
             </button>
 
             <button
-              onClick={() => navigate('/TestimonialsSection')}
+              onClick={() => navigate('/testimonials')}
               className="border border-white text-white hover:bg-white hover:text-blue-700 px-6 py-3 rounded-xl text-base font-semibold transition"
             >
               View Our Work
