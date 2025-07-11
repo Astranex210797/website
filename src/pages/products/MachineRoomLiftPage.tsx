@@ -64,7 +64,7 @@ const MachineRoomLiftPage = () => {
               className="relative"
             >
               <img
-                src="C:\Users\sarth\OneDrive\Desktop\Code\website\public\fashionable-young-beautiful-african-american-business-woman-with-afro-hairstyle-wear-elegant-black-stand-elevator-with-phone-laptop-hands.jpg"
+                src="/machine-room-elevator.jpg"
                 alt="Modern machine room elevator with elegant interior design"
                 className="rounded-2xl shadow-2xl"
               />
