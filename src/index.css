@@ -5,9 +5,12 @@
 /* Luxurious font and background for body */
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #145943 0%, #1ABC9C 60%, #F2FCF9 100%);
+  background: linear-gradient(135deg, #145943 0%, #0D3B2E 40%, #1ABC9C 80%, #F2FCF9 100%);
   color: #0D3B2E;
   min-height: 100vh;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Hide scrollbars for carousels */
@@ -17,4 +20,84 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+/* Luxury input styles */
+input, textarea, select {
+  background: #121212;
+  border-radius: 1rem;
+  border: 1.5px solid #1ABC9C30;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 16px 0 #1abc9c0a;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #1ABC9C;
+  outline: none;
+  box-shadow: 0 4px 24px 0 #1abc9c22;
+}
+
+/* Luxury button styles */
+button {
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 16px 0 #1abc9c0a;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 4px 24px 0 #1abc9c22;
+}
+
+/* Card and container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Utility classes for spacing */
+.mt-4 {
+  margin-top: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+.pt-4 {
+  padding-top: 1.5rem;
+}
+.pb-4 {
+  padding-bottom: 1.5rem;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
 }

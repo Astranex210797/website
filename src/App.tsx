@@ -1,12 +1,13 @@
 // App.tsx
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
 import FullPageLoader from './components/FullPageLoader';
+import ScrollToTop from './components/ScrollToTop';
 
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -22,12 +23,8 @@ import MRLElevatorPage from './pages/products/MRLElevatorPage';
 import AMCPage from './pages/services/AMCPage';
 import ModernizationPage from './pages/services/ModernizationPage';
 
-// Custom PageWrapper with scroll-to-top on route change
+// Custom PageWrapper with animation
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,7 +42,7 @@ function App() {
 
   useEffect(() => {
     const handleLoad = () => {
-      setTimeout(() => setLoaded(true), 1200); // Add slight delay for smoothness
+      setTimeout(() => setLoaded(true), 1200);
     };
 
     if (document.readyState === 'complete') {
@@ -60,6 +57,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div
         className="min-h-screen relative overflow-hidden text-brand-text"
         style={{
@@ -88,7 +86,12 @@ function App() {
 
         <Footer />
 
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="fixed bottom-8 right-8 z-50">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="fixed bottom-8 right-8 z-50"
+        >
           <FloatingActions />
         </motion.div>
       </div>
