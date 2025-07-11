@@ -22,7 +22,7 @@ const ContactForm = () => {
 
   return (
     <section className="py-24 bg-gradient-to-br from-black via-[#0A302A] to-black text-white">
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-24">
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-20 xl:px-28">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,26 +30,27 @@ const ContactForm = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
             Get in Touch
           </h2>
           <p className="text-2xl text-gray-300 max-w-4xl mx-auto">
-            Let's design the future of vertical mobility together.
+            Let’s design the future of vertical mobility together.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 xl:gap-48">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-32">
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-md rounded-3xl p-16 shadow-2xl border border-[#1ABC9C]/30 flex flex-col justify-center"
+            className="bg-white/5 backdrop-blur-xl rounded-3xl p-10 sm:p-12 lg:p-16 shadow-2xl border border-[#1ABC9C]/30"
           >
             <form onSubmit={handleSubmit} className="space-y-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="block text-lg font-semibold mb-3 text-white">
+                  <label htmlFor="name" className="text-base sm:text-lg font-semibold text-white mb-2">
                     Full Name *
                   </label>
                   <input
@@ -59,12 +60,12 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-8 py-5 rounded-2xl bg-[#121212] border border-[#1ABC9C]/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg shadow-lg transition-all duration-300"
+                    className="rounded-xl px-6 py-4 bg-[#121212] border border-[#1ABC9C]/40 placeholder-gray-400 text-white text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] transition"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone" className="block text-lg font-semibold mb-3 text-white">
+                  <label htmlFor="phone" className="text-base sm:text-lg font-semibold text-white mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -74,14 +75,14 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-8 py-5 rounded-2xl bg-[#121212] border border-[#1ABC9C]/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg shadow-lg transition-all duration-300"
+                    className="rounded-xl px-6 py-4 bg-[#121212] border border-[#1ABC9C]/40 placeholder-gray-400 text-white text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] transition"
                     placeholder="+91 9999999999"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-lg font-semibold mb-3 text-white">
+                <label htmlFor="email" className="text-base sm:text-lg font-semibold text-white mb-2">
                   Email Address *
                 </label>
                 <input
@@ -91,13 +92,13 @@ const ContactForm = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-6 py-5 rounded-xl bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg"
+                  className="w-full rounded-xl px-6 py-4 bg-[#121212] border border-[#1ABC9C]/40 placeholder-gray-400 text-white text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] transition"
                   placeholder="you@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-lg font-semibold mb-3 text-white">
+                <label htmlFor="message" className="text-base sm:text-lg font-semibold text-white mb-2">
                   Message
                 </label>
                 <textarea
@@ -106,17 +107,17 @@ const ContactForm = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-6 py-5 rounded-xl bg-[#121212] border border-[#1ABC9C]/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#1ABC9C] focus:outline-none text-lg resize-none"
+                  className="w-full rounded-xl px-6 py-4 bg-[#121212] border border-[#1ABC9C]/40 placeholder-gray-400 text-white text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] transition resize-none"
                   placeholder="Describe your project requirements..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#1ABC9C] hover:bg-[#159f84] text-black px-12 py-6 rounded-xl font-bold text-2xl transition-all duration-300 flex items-center justify-center group"
+                className="w-full bg-[#1ABC9C] hover:bg-[#159f84] text-black font-semibold text-xl py-4 rounded-xl transition flex items-center justify-center group"
               >
                 Send Message
-                <Send className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
+                <Send className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
           </motion.div>
@@ -127,51 +128,51 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-20 flex flex-col justify-center px-2"
+            className="space-y-16 flex flex-col justify-center px-2"
           >
             <div>
-              <h3 className="text-3xl font-bold mb-8">Let’s Start a Conversation</h3>
-              <p className="text-2xl text-gray-300 leading-relaxed">
-                Reach out to our team of lift experts. We’re happy to discuss your next project or answer any questions you might have.
+              <h3 className="text-3xl font-bold mb-6">Let’s Start a Conversation</h3>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Reach out to our team of lift experts. We’re happy to discuss your next project or answer any questions.
               </p>
             </div>
 
-            <div className="space-y-12">
-              <div className="flex items-center space-x-8">
-                <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
-                  <Phone className="w-8 h-8 text-[#1ABC9C]" />
+            <div className="space-y-10">
+              <div className="flex items-center space-x-6">
+                <div className="w-14 h-14 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-xl">Call Us</h4>
-                  <p className="text-2xl text-gray-300">+91 9990858886</p>
+                  <h4 className="font-semibold text-white text-lg">Call Us</h4>
+                  <p className="text-xl text-gray-300">+91 9990858886</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-8">
-                <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-[#1ABC9C]" />
+              <div className="flex items-center space-x-6">
+                <div className="w-14 h-14 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-xl">Email Us</h4>
-                  <p className="text-2xl text-gray-300">info@peakelevator.com</p>
+                  <h4 className="font-semibold text-white text-lg">Email Us</h4>
+                  <p className="text-xl text-gray-300">info@peakelevator.com</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-8">
-                <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-[#1ABC9C]" />
+              <div className="flex items-center space-x-6">
+                <div className="w-14 h-14 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[#1ABC9C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-xl">Service Area</h4>
-                  <p className="text-2xl text-gray-300">Delhi/NCR, India</p>
+                  <h4 className="font-semibold text-white text-lg">Service Area</h4>
+                  <p className="text-xl text-gray-300">Delhi/NCR, India</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#1ABC9C]/10 p-12 rounded-2xl border border-[#1ABC9C]/30 mt-8">
-              <h4 className="font-semibold text-white mb-4 text-2xl">Emergency Support</h4>
-              <p className="text-xl text-gray-400 mb-6">
+            <div className="bg-[#1ABC9C]/10 p-10 rounded-2xl border border-[#1ABC9C]/30">
+              <h4 className="font-semibold text-white mb-3 text-xl">Emergency Support</h4>
+              <p className="text-base text-gray-400 mb-4">
                 Need urgent assistance? Our support team is available 24/7.
               </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl font-medium text-xl transition-colors">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-medium text-base transition">
                 Emergency Contact
               </button>
             </div>
