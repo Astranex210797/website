@@ -38,7 +38,7 @@ const ContactForm = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 xl:gap-48">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -127,7 +127,7 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-16 flex flex-col justify-center"
+            className="space-y-20 flex flex-col justify-center px-2"
           >
             <div>
               <h3 className="text-3xl font-bold mb-8">Let’s Start a Conversation</h3>
@@ -136,8 +136,8 @@ const ContactForm = () => {
               </p>
             </div>
 
-            <div className="space-y-10">
-              <div className="flex items-center space-x-7">
+            <div className="space-y-12">
+              <div className="flex items-center space-x-8">
                 <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
                   <Phone className="w-8 h-8 text-[#1ABC9C]" />
                 </div>
@@ -146,7 +146,7 @@ const ContactForm = () => {
                   <p className="text-2xl text-gray-300">+91 9990858886</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-7">
+              <div className="flex items-center space-x-8">
                 <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
                   <Mail className="w-8 h-8 text-[#1ABC9C]" />
                 </div>
@@ -155,7 +155,7 @@ const ContactForm = () => {
                   <p className="text-2xl text-gray-300">info@peakelevator.com</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-7">
+              <div className="flex items-center space-x-8">
                 <div className="w-16 h-16 bg-[#1ABC9C]/20 rounded-xl flex items-center justify-center">
                   <MapPin className="w-8 h-8 text-[#1ABC9C]" />
                 </div>
@@ -166,12 +166,12 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="bg-[#1ABC9C]/10 p-8 rounded-2xl border border-[#1ABC9C]/30">
-              <h4 className="font-semibold text-white mb-3 text-xl">Emergency Support</h4>
-              <p className="text-lg text-gray-400 mb-4">
+            <div className="bg-[#1ABC9C]/10 p-12 rounded-2xl border border-[#1ABC9C]/30 mt-8">
+              <h4 className="font-semibold text-white mb-4 text-2xl">Emergency Support</h4>
+              <p className="text-xl text-gray-400 mb-6">
                 Need urgent assistance? Our support team is available 24/7.
               </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-medium text-lg transition-colors">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl font-medium text-xl transition-colors">
                 Emergency Contact
               </button>
             </div>
