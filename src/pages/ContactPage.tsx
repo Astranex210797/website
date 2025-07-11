@@ -29,18 +29,24 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-2xl mx-auto -mt-20 mb-24 bg-white/5 backdrop-blur-2xl p-10 rounded-3xl border border-white/10 shadow-2xl"
-      >
-        <h2 className="text-3xl font-semibold mb-8 text-white text-center">
-          Let's Get in Touch
-        </h2>
-        <ContactForm />
-      </motion.div>
+      <section className="relative py-10 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-2xl p-0 rounded-3xl border border-white/10 shadow-2xl"
+          >
+            <div className="py-12 px-4 sm:px-8 lg:px-16">
+              <h2 className="text-4xl font-semibold mb-10 text-white text-center">
+                Let's Get in Touch
+              </h2>
+              <ContactForm />
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
