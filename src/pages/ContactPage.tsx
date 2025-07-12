@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden pt-16">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-16 px-4 text-center">
+      <section className="relative flex flex-col items-center justify-center py-8 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-8 px-4">
+      <section className="relative py-4 px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
