@@ -66,7 +66,6 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="mb-12"
           >
             <PartnersSection />
           </motion.div>
