@@ -8,6 +8,10 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const products = [
     { name: 'Machine Room Elevator', path: '/machine-room-lift' },
     { name: 'MRL Elevator', path: '/mrl-elevator' },
@@ -175,7 +179,7 @@ const Header = () => {
             >
               <div className="py-4 space-y-2">
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/" className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Home</Link>
+                  <Link to="/" onClick={closeMenu} className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Home</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 py-2">
                   <div className="text-[#0D3B2E] font-medium mb-2">Products</div>
@@ -183,6 +187,7 @@ const Header = () => {
                     <motion.div key={product.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={product.path}
+                        onClick={closeMenu}
                         className="block pl-4 py-1.5 text-[#6C757D] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {product.name}
@@ -196,6 +201,7 @@ const Header = () => {
                     <motion.div key={service.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={service.path}
+                        onClick={closeMenu}
                         className="block pl-4 py-1.5 text-[#6C757D] hover:text-[#1ABC9C] transition-colors duration-150"
                       >
                         {service.name}
@@ -204,11 +210,11 @@ const Header = () => {
                   ))}
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/contact" className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Contact</Link>
+                  <Link to="/contact" onClick={closeMenu} className="block px-4 py-2 text-[#0D3B2E] hover:bg-[#F2F6F5] transition-colors duration-150">Contact</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2">
                   <Link to="/contact">
-                    <button className="w-full bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
+                    <button onClick={closeMenu} className="w-full bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
                       Book Free Site Visit
                     </button>
                   </Link>

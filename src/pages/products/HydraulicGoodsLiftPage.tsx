@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Package, Shield, Zap } from 'lucide-react';
 
@@ -53,7 +54,7 @@ const HydraulicGoodsLiftPage = () => {
                 with confidence is essential.
               </p>
               <button className="bg-[#1ABC9C] text-[#145943] hover:bg-[#E6FAF4] hover:text-[#0D3B2E] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                Book a Free Site Visit
+                <Link to="/contact">Book a Free Site Visit</Link>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -197,7 +198,7 @@ const HydraulicGoodsLiftPage = () => {
               Get expert consultation for your specific requirements.
             </p>
             <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              Book a Free Site Visit
+              <Link to="/contact">Book a Free Site Visit</Link>
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

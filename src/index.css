@@ -5,12 +5,36 @@
 /* Luxurious font and background for body */
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #145943 0%, #0D3B2E 40%, #1ABC9C 80%, #F2FCF9 100%);
+  background: white;
   color: #0D3B2E;
   min-height: 100vh;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth animations */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Hide scrollbars for carousels */
@@ -24,19 +48,19 @@ body {
 
 /* Luxury input styles */
 input, textarea, select {
-  background: #121212;
+  background: white;
   border-radius: 1rem;
-  border: 1.5px solid #1ABC9C30;
-  color: #fff;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
   font-size: 1.1rem;
   padding: 1rem 1.5rem;
   transition: border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 16px 0 #1abc9c0a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 input:focus, textarea:focus, select:focus {
   border-color: #1ABC9C;
   outline: none;
-  box-shadow: 0 4px 24px 0 #1abc9c22;
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
 }
 
 /* Luxury button styles */

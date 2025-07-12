@@ -63,30 +63,6 @@ const HeroSection = () => {
               View Our Work
             </button>
           </motion.div>
-
-          <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-            <div className="flex items-center space-x-3 bg-brand/20 backdrop-blur p-3 rounded-lg">
-              <Shield className="w-8 h-8 text-brand" />
-              <div>
-                <div className="font-semibold text-sm text-brand-dark">100% Safe</div>
-                <div className="text-xs text-brand-dark/80">Certified & Tested</div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-3 bg-brand/20 backdrop-blur p-3 rounded-lg">
-              <Award className="w-8 h-8 text-brand" />
-              <div>
-                <div className="font-semibold text-sm text-brand-dark">15+ Years</div>
-                <div className="text-xs text-brand-dark/80">Industry Experience</div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-3 bg-brand/20 backdrop-blur p-3 rounded-lg">
-              <Clock className="w-8 h-8 text-brand" />
-              <div>
-                <div className="font-semibold text-sm text-brand-dark">24/7 Support</div>
-                <div className="text-xs text-brand-dark/80">Emergency Service</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </motion.div>
     </motion.section>

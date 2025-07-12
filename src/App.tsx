@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
+import QuickEnquiry from './components/QuickEnquiry';
 import FullPageLoader from './components/FullPageLoader';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -59,10 +60,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div
-        className="min-h-screen relative overflow-hidden text-brand-text"
-        style={{
-          background: 'linear-gradient(135deg, #145943 0%, #0D3B2E 40%, #1ABC9C 80%, #F2FCF9 100%)',
-        }}
+        className="min-h-screen relative overflow-hidden text-brand-text bg-white"
       >
         <Header />
 
@@ -85,6 +83,8 @@ function App() {
         </main>
 
         <Footer />
+
+        <QuickEnquiry />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

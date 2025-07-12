@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Clock, Shield, Wrench, Phone } from 'lucide-react';
 
@@ -64,7 +65,7 @@ const AMCPage = () => {
                 your vertical transportation never lets you down.
               </p>
               <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                Claim Your Free Technical Visit
+                <Link to="/contact">Claim Your Free Technical Visit</Link>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -255,7 +256,7 @@ const AMCPage = () => {
               Start your AMC plan today and experience worry-free elevator operation.
             </p>
             <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              Claim Your Free Technical Visit
+              <Link to="/contact">Claim Your Free Technical Visit</Link>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
