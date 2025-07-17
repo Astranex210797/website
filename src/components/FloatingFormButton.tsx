@@ -30,7 +30,9 @@ const FloatingFormButton = () => {
     });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -39,14 +41,14 @@ const FloatingFormButton = () => {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button - Adjusted Position */}
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsFormOpen(true)}
-        className="fixed right-6 top-1/2 -translate-y-1/2 z-50 w-12 h-12 btn-bottle-green rounded-full shadow-lg flex items-center justify-center"
+        className="fixed right-6 top-1/3 -translate-y-1/2 z-[55] w-12 h-12 btn-bottle-green rounded-full shadow-lg flex items-center justify-center"
         aria-label="Open inquiry form"
       >
         <FileText className="w-5 h-5" />
