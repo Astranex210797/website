@@ -21,7 +21,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
@@ -30,7 +30,7 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200"
+            className="bg-gradient-to-br from-gray-100 via-white to-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -45,7 +45,7 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] focus:border-transparent transition"
+                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
                     placeholder="John Doe"
                   />
                 </div>
@@ -60,7 +60,7 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] focus:border-transparent transition"
+                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
                     placeholder="+91 9999999999"
                   />
                 </div>
@@ -77,7 +77,7 @@ const ContactForm = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] focus:border-transparent transition"
+                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
                   placeholder="you@example.com"
                 />
               </div>
@@ -92,14 +92,14 @@ const ContactForm = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] focus:border-transparent transition resize-none"
+                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition resize-none"
                   placeholder="Describe your project requirements..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#1ABC9C] hover:bg-[#159f84] text-white font-medium text-base py-3 rounded-lg transition flex items-center justify-center group"
+                className="w-full bg-gradient-to-r from-gray-400 to-gray-300 hover:from-gray-300 hover:to-gray-200 text-gray-800 font-medium text-base py-3 rounded-lg transition flex items-center justify-center group shadow-lg"
               >
                 Send Message
                 <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -116,50 +116,40 @@ const ContactForm = () => {
             className="space-y-8 flex flex-col justify-center"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#145943]">Let's Start a Conversation</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-700">Let's Start a Conversation</h3>
               <p className="text-base text-gray-600 leading-relaxed">
                 Reach out to our team of elevator experts. We're here to discuss your project and provide tailored solutions.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#1ABC9C]/10 rounded-lg flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-[#1ABC9C]" />
+            <div className="space-y-4">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <Phone className="w-5 h-5 text-gray-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#145943] text-base">Call Us</h4>
+                  <h4 className="font-medium text-gray-700 text-base">Call Us</h4>
                   <p className="text-base text-gray-600">+91 9990858886</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#1ABC9C]/10 rounded-lg flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-[#1ABC9C]" />
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <Mail className="w-5 h-5 text-gray-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#145943] text-base">Email Us</h4>
+                  <h4 className="font-medium text-gray-700 text-base">Email Us</h4>
                   <p className="text-base text-gray-600">info@peakelevator.com</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#1ABC9C]/10 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-[#1ABC9C]" />
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <MapPin className="w-5 h-5 text-gray-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#145943] text-base">Service Area</h4>
+                  <h4 className="font-medium text-gray-700 text-base">Service Area</h4>
                   <p className="text-base text-gray-600">Delhi/NCR, India</p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-              <h4 className="font-medium text-red-800 mb-2 text-base">Emergency Support</h4>
-              <p className="text-sm text-red-600 mb-4">
-                Need urgent assistance? Our support team is available 24/7.
-              </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium text-sm transition">
-                Emergency Contact
-              </button>
             </div>
           </motion.div>
         </div>

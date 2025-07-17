@@ -55,7 +55,7 @@ const MRLElevatorPage = () => {
                 maximizing your building's usable space.
               </p>
               <button className="bg-[#1ABC9C] text-[#145943] hover:bg-[#E6FAF4] hover:text-[#0D3B2E] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                <Link to="/contact">Book a Free Site Visit</Link>
+                <Link to="/contact">Book Site Visit</Link>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -293,7 +293,7 @@ const MRLElevatorPage = () => {
               Get expert consultation and see why MRL is the smart choice for modern construction.
             </p>
             <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              <Link to="/contact">Book a Free Site Visit</Link>
+              <Link to="/contact">Book Site Visit</Link>
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

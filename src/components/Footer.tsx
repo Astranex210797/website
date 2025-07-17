@@ -53,24 +53,24 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <nav aria-label="Quick Links">
-              <ul className="flex flex-col gap-2 pl-0">
+              <ul className="flex flex-col gap-1 pl-0">
                 <li>
-                  <Link to="/" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/products" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Products
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/services" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -82,29 +82,29 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Our Products</h3>
             <nav aria-label="Product Links">
-              <ul className="flex flex-col gap-2 pl-0">
+              <ul className="flex flex-col gap-1 pl-0">
                 <li>
-                  <Link to="/machine-room-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/machine-room-lift" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Machine Room Elevator
                   </Link>
                 </li>
                 <li>
-                  <Link to="/mrl-elevator" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/mrl-elevator" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     MRL Elevator
                   </Link>
                 </li>
                 <li>
-                  <Link to="/hydraulic-passenger-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/hydraulic-passenger-lift" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Passenger Lifts
                   </Link>
                 </li>
                 <li>
-                  <Link to="/car-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/car-lift" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Car Lifts
                   </Link>
                 </li>
                 <li>
-                  <Link to="/hydraulic-goods-lift" className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#1ABC9C]/10 hover:text-white transition-colors">
+                  <Link to="/hydraulic-goods-lift" className="flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-400/10 hover:text-white transition-colors">
                     Goods Lifts
                   </Link>
                 </li>

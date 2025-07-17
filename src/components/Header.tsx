@@ -152,8 +152,8 @@ const Header = () => {
             </Link>
 
             <Link to="/contact">
-              <button className="bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
-                Book Free Site Visit
+              <button className="bg-gradient-to-r from-gray-400 to-gray-300 text-gray-800 px-6 py-2 rounded-lg hover:from-gray-300 hover:to-gray-200 transition-colors duration-200 font-medium shadow-md">
+                Book Site Visit
               </button>
             </Link>
           </div>
@@ -214,8 +214,8 @@ const Header = () => {
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2">
                   <Link to="/contact">
-                    <button onClick={closeMenu} className="w-full bg-[#1ABC9C] text-white px-6 py-2 rounded-lg hover:bg-[#145943] transition-colors duration-200 font-medium">
-                      Book Free Site Visit
+                    <button onClick={closeMenu} className="w-full bg-gradient-to-r from-gray-400 to-gray-300 text-gray-800 px-6 py-2 rounded-lg hover:from-gray-300 hover:to-gray-200 transition-colors duration-200 font-medium shadow-md">
+                      Book Site Visit
                     </button>
                   </Link>
                 </motion.div>

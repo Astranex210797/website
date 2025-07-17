@@ -19,11 +19,11 @@ const QuickEnquiry = () => {
     >
       <button
         onClick={handleClick}
-        className="bg-[#1ABC9C] hover:bg-[#145943] text-white px-3 py-8 rounded-l-lg shadow-lg transition-colors duration-300 flex items-center group"
+        className="bg-gradient-to-b from-gray-400 to-gray-300 hover:from-gray-300 hover:to-gray-200 text-gray-800 px-3 py-8 rounded-l-lg shadow-lg transition-colors duration-300 flex items-center group"
         style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
       >
         <MessageSquare className="w-5 h-5 mb-2 group-hover:scale-110 transition-transform" />
-        <span className="font-medium text-sm tracking-wider">QUICK ENQUIRY</span>
+        <span className="font-medium text-sm tracking-wider">GET IN TOUCH</span>
       </button>
     </motion.div>
   );

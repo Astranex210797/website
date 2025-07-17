@@ -59,7 +59,7 @@ const ModernizationPage = () => {
                 transformation, and future-readiness.
               </p>
               <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                <Link to="/contact">Claim Your Free Technical Visit</Link>
+                <Link to="/contact">Book Site Visit</Link>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -309,7 +309,7 @@ const ModernizationPage = () => {
               experts will assess your current system and design the perfect upgrade solution.
             </p>
             <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              <Link to="/contact">Claim Your Free Technical Visit</Link>
+              <Link to="/contact">Book Site Visit</Link>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

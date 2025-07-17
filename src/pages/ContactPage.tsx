@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden pt-16">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-8 px-4 text-center">
+      <section className="relative flex flex-col items-center justify-center py-6 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,14 +16,14 @@ const ContactPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#145943]">
             Contact Us
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to elevate your space? Get in touch for expert consultation and tailored elevator solutions.
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+            Get in touch for expert consultation and tailored elevator solutions.
           </p>
         </motion.div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-4 px-4">
+      <section className="relative py-2 px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

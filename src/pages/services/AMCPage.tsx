@@ -65,7 +65,7 @@ const AMCPage = () => {
                 your vertical transportation never lets you down.
               </p>
               <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                <Link to="/contact">Claim Your Free Technical Visit</Link>
+                <Link to="/contact">Book Site Visit</Link>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -211,7 +211,7 @@ const AMCPage = () => {
       </section>
 
       {/* Emergency Support Section */}
-      <section className="py-20 bg-[#E74C3C] text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-400 to-gray-300 text-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -219,44 +219,15 @@ const AMCPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Phone className="w-16 h-16 mx-auto mb-6 text-[#E6FAF4]" />
-            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
-              Emergency Support Available
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">
+              Professional Maintenance Services
             </h2>
-            <p className="text-xl text-[#C3E7DF] mb-8">
-              Elevator breakdown? Don't worry. Our emergency response team is available 
-              24/7 to get your elevators back in service quickly and safely.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#E6FAF4] text-[#E74C3C] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Call Emergency: +91 9990858886
-              </button>
-              <button className="border-2 border-[#E6FAF4] text-[#E6FAF4] hover:bg-[#E6FAF4] hover:text-[#E74C3C] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Schedule Maintenance
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
-              Protect Your Investment
-            </h2>
-            <p className="text-xl text-[#C3E7DF] mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Regular maintenance extends elevator life, ensures safety, and prevents costly breakdowns. 
               Start your AMC plan today and experience worry-free elevator operation.
             </p>
-            <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              <Link to="/contact">Claim Your Free Technical Visit</Link>
+            <button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center mx-auto group shadow-lg border border-gray-300">
+              <Link to="/contact">Book Site Visit</Link>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

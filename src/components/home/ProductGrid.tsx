@@ -44,52 +44,52 @@ const ProductGrid = () => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="py-24"
-      style={{ background: 'linear-gradient(120deg, #0D3B2E 0%, #0f1f17 100%)' }}
+      className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight drop-shadow-xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-4 tracking-tight">
             Our Product Range
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Residential elegance to industrial might — discover lifts that redefine elevation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <Link to={product.link} className="group">
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-[#0D3B2E] to-[#111] border border-[#1ABC9C]/20 shadow-[0_20px_80px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.03]">
-                  <div className="aspect-[4/3] overflow-hidden rounded-t-3xl">
+              <Link to={product.link} className="group block">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-[1.02]">
+                  <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                     <img
                       src={product.image}
                       alt={`Image of ${product.title}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold text-white group-hover:text-[#1ABC9C] transition-colors duration-300">
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold text-gray-700 group-hover:text-gray-600 transition-colors duration-300">
                       {product.title}
                     </h3>
-                    <p className="text-gray-400 italic mt-2 text-sm">
+                    <p className="text-gray-500 italic mt-2 text-sm">
                       {product.subtitle}
                     </p>
                   </div>
-                  <div className="absolute top-5 right-5 w-11 h-11 bg-[#0D3B2E]/80 backdrop-blur-lg rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-[#1ABC9C] shadow-md">
-                    <ArrowRight className="w-5 h-5 text-[#1ABC9C]" />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-gray-200 shadow-sm">
+                    <ArrowRight className="w-4 h-4 text-gray-600" />
                   </div>
                 </div>
               </Link>
@@ -97,10 +97,10 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20">
+        <div className="text-center mt-16">
           <Link
             to="/products"
-            className="inline-flex items-center bg-[#1ABC9C] hover:bg-[#0D3B2E] text-black hover:text-white px-10 py-5 rounded-full font-semibold text-lg transition-all duration-300 group shadow-xl border border-[#1ABC9C] hover:border-white"
+            className="inline-flex items-center bg-gradient-to-r from-gray-400 to-gray-300 hover:from-gray-300 hover:to-gray-200 text-gray-800 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 group shadow-lg border border-gray-300"
           >
             View All Products
             <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />

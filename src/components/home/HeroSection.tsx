@@ -20,7 +20,7 @@ const HeroSection = () => {
 
   return (
     <motion.section
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-[70vh] flex items-center justify-center overflow-hidden"
       style={{ opacity, scale }}
     >
       {/* Background Image */}
@@ -28,7 +28,8 @@ const HeroSection = () => {
         <img
           src="/BG.jpg"
           alt="Modern elevator"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
+          style={{ objectPosition: 'center 60%' }}
         />
         <div className="absolute inset-0 bg-black/50" />
       </motion.div>
@@ -50,15 +51,15 @@ const HeroSection = () => {
           <motion.div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="bg-gradient-to-r from-brand-dark to-brand text-white px-6 py-3 rounded-xl text-base font-semibold hover:from-brand hover:to-brand-dark transition-all flex items-center"
+              className="bg-gradient-to-r from-gray-400 to-gray-300 text-gray-800 px-6 py-3 rounded-xl text-base font-semibold hover:from-gray-300 hover:to-gray-200 transition-all flex items-center shadow-lg"
             >
-              Book a Free Site Visit
+              Book a Site Visit
               <ArrowRight className="ml-2 w-4 h-4" />
             </button>
 
             <button
               onClick={scrollToTestimonials}
-              className="border border-brand text-brand hover:bg-brand hover:text-white px-6 py-3 rounded-xl text-base font-semibold transition"
+              className="border border-gray-300 text-gray-200 hover:bg-gray-300 hover:text-gray-800 px-6 py-3 rounded-xl text-base font-semibold transition"
             >
               View Our Work
             </button>
