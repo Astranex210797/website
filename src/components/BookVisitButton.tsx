@@ -144,7 +144,7 @@ const BookVisitButton = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration-300 ${
+                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration- fragm300 ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg hover:bg-gradient-to-r hover:from-emerald-900 hover:to-emerald-700'
                     }`}
                     aria-label="Submit form"
@@ -175,7 +175,7 @@ const BookVisitButton = () => {
                       </span>
                     ) : (
                       <>
-                        <Send size=>
+                        <Send size={18} />
                         Submit
                       </>
                     )}
