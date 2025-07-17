@@ -1,4 +1,3 @@
-// HomePage.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/home/HeroSection';
@@ -23,9 +22,7 @@ const HomePage = () => {
   };
 
   return (
-    <div
-      className="min-h-screen relative text-brand-text overflow-hidden bg-white"
-    >
+    <div className="min-h-screen relative text-brand-text overflow-hidden bg-white">
       <div className="relative z-10">
         {/* Hero Section */}
         <motion.div
@@ -37,8 +34,9 @@ const HomePage = () => {
           <HeroSection />
         </motion.div>
 
-        <div className="px-4 sm:px-6 lg:px-8 pt-8 pb-8">
-          {/* Product Grid Section (Carousel) */}
+        {/* Removed top padding between Hero and Product Grid */}
+        <div className="px-4 sm:px-6 lg:px-8 pt-0 pb-8">
+          {/* Product Grid Section */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"
