@@ -35,23 +35,23 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Foreground Content */}
-      <motion.div className="relative z-10 w-full max-w-6xl px-4 text-white">
+      <motion.div className="relative z-10 w-full max-w-6xl px-4 text-white bg-pearlescent-subtle/10 backdrop-blur-sm rounded-2xl p-8">
         <div className="flex flex-col items-start justify-center h-full max-h-[90vh] space-y-6">
-          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg">
+          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-2xl text-white">
             Elevating Lives.{' '}
-            <span className="text-[#E6FAF4]">
+            <span className="text-white/90">
               One Lift at a Time.
             </span>
           </motion.h1>
 
-          <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md text-brand-bg">
+          <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-lg text-white/90">
             Luxury, safety, and innovation — crafted for every journey.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="bg-gradient-to-r from-gray-400 to-gray-300 text-gray-800 px-6 py-3 rounded-xl text-base font-semibold hover:from-gray-300 hover:to-gray-200 transition-all flex items-center shadow-lg"
+              className="btn-bottle-green px-6 py-3 rounded-xl text-base font-semibold transition-all flex items-center shadow-lg"
             >
               Book a Site Visit
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -59,7 +59,7 @@ const HeroSection = () => {
 
             <button
               onClick={scrollToTestimonials}
-              className="border border-gray-300 text-gray-200 hover:bg-gray-300 hover:text-gray-800 px-6 py-3 rounded-xl text-base font-semibold transition"
+              className="border-2 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl text-base font-semibold transition-all"
             >
               View Our Work
             </button>

@@ -21,7 +21,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-8 bg-white">
+    <section className="py-8 bg-pearlescent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
@@ -30,12 +30,12 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-gray-100 via-white to-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200"
+            className="bg-pearlescent-subtle rounded-2xl p-6 sm:p-8 shadow-lg border border-bottle-green-solid/20"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="text-sm font-medium text-bottle-green-solid mb-2">
                     Full Name *
                   </label>
                   <input
@@ -45,12 +45,12 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
+                    className="rounded-lg px-4 py-3 bg-pearlescent border border-bottle-green-solid/30 placeholder-bottle-green-solid/50 text-bottle-green-solid text-sm focus:outline-none focus:ring-2 focus:ring-bottle-green focus:border-transparent transition"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className="text-sm font-medium text-bottle-green-solid mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -60,14 +60,14 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
+                    className="rounded-lg px-4 py-3 bg-pearlescent border border-bottle-green-solid/30 placeholder-bottle-green-solid/50 text-bottle-green-solid text-sm focus:outline-none focus:ring-2 focus:ring-bottle-green focus:border-transparent transition"
                     placeholder="+91 9999999999"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="text-sm font-medium text-bottle-green-solid mb-2">
                   Email Address *
                 </label>
                 <input
@@ -77,13 +77,13 @@ const ContactForm = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition"
+                  className="w-full rounded-lg px-4 py-3 bg-pearlescent border border-bottle-green-solid/30 placeholder-bottle-green-solid/50 text-bottle-green-solid text-sm focus:outline-none focus:ring-2 focus:ring-bottle-green focus:border-transparent transition"
                   placeholder="you@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="text-sm font-medium text-bottle-green-solid mb-2">
                   Message
                 </label>
                 <textarea
@@ -92,14 +92,14 @@ const ContactForm = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full rounded-lg px-4 py-3 bg-white border border-gray-300 placeholder-gray-500 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition resize-none"
+                  className="w-full rounded-lg px-4 py-3 bg-pearlescent border border-bottle-green-solid/30 placeholder-bottle-green-solid/50 text-bottle-green-solid text-sm focus:outline-none focus:ring-2 focus:ring-bottle-green focus:border-transparent transition resize-none"
                   placeholder="Describe your project requirements..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-gray-400 to-gray-300 hover:from-gray-300 hover:to-gray-200 text-gray-800 font-medium text-base py-3 rounded-lg transition flex items-center justify-center group shadow-lg"
+                className="w-full btn-bottle-green font-medium text-base py-3 rounded-lg transition flex items-center justify-center group shadow-lg"
               >
                 Send Message
                 <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -116,38 +116,38 @@ const ContactForm = () => {
             className="space-y-8 flex flex-col justify-center"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-700">Let's Start a Conversation</h3>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-4 text-bottle-green">Let's Start a Conversation</h3>
+              <p className="text-base text-bottle-green-solid/80 leading-relaxed">
                 Reach out to our team of elevator experts. We're here to discuss your project and provide tailored solutions.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <Phone className="w-5 h-5 text-gray-600" />
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-bottle-green" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-700 text-base">Call Us</h4>
-                  <p className="text-base text-gray-600">+91 9990858886</p>
+                  <h4 className="font-medium text-bottle-green text-base">Call Us</h4>
+                  <p className="text-base text-bottle-green-solid/80">+91 9990858886</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <Mail className="w-5 h-5 text-gray-600" />
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-bottle-green" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-700 text-base">Email Us</h4>
-                  <p className="text-base text-gray-600">info@peakelevator.com</p>
+                  <h4 className="font-medium text-bottle-green text-base">Email Us</h4>
+                  <p className="text-base text-bottle-green-solid/80">info@peakelevator.com</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <MapPin className="w-5 h-5 text-gray-600" />
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-bottle-green" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-700 text-base">Service Area</h4>
-                  <p className="text-base text-gray-600">Delhi/NCR, India</p>
+                  <h4 className="font-medium text-bottle-green text-base">Service Area</h4>
+                  <p className="text-base text-bottle-green-solid/80">Delhi/NCR, India</p>
                 </div>
               </div>
             </div>

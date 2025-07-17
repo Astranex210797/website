@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import FloatingActions from './components/FloatingActions';
+import FloatingFormButton from './components/FloatingFormButton';
 import QuickEnquiry from './components/QuickEnquiry';
 import FullPageLoader from './components/FullPageLoader';
 import ScrollToTop from './components/ScrollToTop';
@@ -60,7 +60,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div
-        className="min-h-screen relative overflow-hidden text-brand-text bg-white"
+        className="min-h-screen relative overflow-hidden text-bottle-green-solid bg-pearlescent"
       >
         <Header />
 
@@ -86,14 +86,7 @@ function App() {
 
         <QuickEnquiry />
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="fixed bottom-8 right-8 z-50"
-        >
-          <FloatingActions />
-        </motion.div>
+        <FloatingFormButton />
       </div>
     </Router>
   );

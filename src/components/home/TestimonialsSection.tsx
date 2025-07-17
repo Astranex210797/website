@@ -69,11 +69,11 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-gradient-to-br from-gray-600 via-gray-500 to-gray-400 text-white relative overflow-hidden"
+      className="py-24 bg-pearlescent-subtle text-bottle-green-solid relative overflow-hidden"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
       <div className="relative z-10 max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,14 +82,14 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#E6FAF4] drop-shadow-lg">Client Testimonials</h2>
-          <p className="text-lg text-[#C3E7DF] max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-bottle-green drop-shadow-lg">Client Testimonials</h2>
+          <p className="text-lg text-bottle-green-solid/80 max-w-2xl mx-auto">
             Discover how Peak Elevator Group has elevated lives and spaces across India.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl shadow-2xl bg-white/10 backdrop-blur-xl border border-gray-300/30">
+          <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl shadow-2xl bg-pearlescent backdrop-blur-xl border border-bottle-green-solid/20">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -100,22 +100,22 @@ const TestimonialsSection = () => {
                 className="absolute inset-0 flex items-center justify-center px-4"
               >
                 <div className="text-center max-w-xl">
-                  <Quote className="w-8 h-8 text-[#1ABC9C] mx-auto mb-4" />
-                  <blockquote className="text-lg md:text-xl italic text-white mb-6">
+                  <Quote className="w-8 h-8 text-bottle-green mx-auto mb-4" />
+                  <blockquote className="text-lg md:text-xl italic text-bottle-green-solid mb-6">
                     "{testimonials[currentIndex].quote}"
                   </blockquote>
                   <div className="flex items-center justify-center gap-3">
                     <img
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
-                      className="w-12 h-12 rounded-full object-cover shadow-lg border-2 border-[#1ABC9C]"
+                      className="w-12 h-12 rounded-full object-cover shadow-lg border-2 border-bottle-green"
                     />
                     <div className="text-left text-sm">
-                      <div className="font-semibold text-white">{testimonials[currentIndex].name}</div>
-                      <div className="text-gray-200 text-xs">{testimonials[currentIndex].title}</div>
+                      <div className="font-semibold text-bottle-green">{testimonials[currentIndex].name}</div>
+                      <div className="text-bottle-green-solid/70 text-xs">{testimonials[currentIndex].title}</div>
                       <div className="flex space-x-1 mt-1">
                         {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
+                          <Star key={i} className="w-4 h-4 fill-bottle-green text-bottle-green" />
                         ))}
                       </div>
                     </div>
@@ -128,15 +128,15 @@ const TestimonialsSection = () => {
           {/* Arrows */}
           <button
             onClick={() => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1ABC9C]/30 hover:bg-[#1ABC9C]/50 backdrop-blur-md rounded-full flex items-center justify-center border border-[#E6FAF4]/30 shadow"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-bottle-green-solid/20 hover:bg-bottle-green-solid/40 backdrop-blur-md rounded-full flex items-center justify-center border border-bottle-green-solid/30 shadow"
           >
-            <ChevronLeft className="w-5 h-5 text-[#E6FAF4]" />
+            <ChevronLeft className="w-5 h-5 text-bottle-green-solid" />
           </button>
           <button
             onClick={() => setCurrentIndex((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1ABC9C]/30 hover:bg-[#1ABC9C]/50 backdrop-blur-md rounded-full flex items-center justify-center border border-[#E6FAF4]/30 shadow"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-bottle-green-solid/20 hover:bg-bottle-green-solid/40 backdrop-blur-md rounded-full flex items-center justify-center border border-bottle-green-solid/30 shadow"
           >
-            <ChevronRight className="w-5 h-5 text-[#E6FAF4]" />
+            <ChevronRight className="w-5 h-5 text-bottle-green-solid" />
           </button>
 
           {/* Dots */}
@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-[#1ABC9C] scale-110 border-2 border-[#E6FAF4]' : 'bg-[#C3E7DF] hover:bg-[#1ABC9C]/60'
+                  index === currentIndex ? 'bg-bottle-green scale-110 border-2 border-bottle-green-solid' : 'bg-bottle-green-solid/40 hover:bg-bottle-green/60'
                 }`}
               />
             ))}
