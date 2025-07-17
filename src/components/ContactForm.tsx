@@ -10,13 +10,13 @@ const ContactForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -24,7 +24,7 @@ const ContactForm = () => {
     <section className="py-8 bg-pearlescent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Form */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -113,41 +113,43 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8 flex flex-col justify-center"
+            className="space-y-6 flex flex-col justify-center"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-bottle-green">Let's Start a Conversation</h3>
+              <h3 className="text-2xl font-bold mb-3 text-bottle-green">Let's Start a Conversation</h3>
               <p className="text-base text-bottle-green-solid/80 leading-relaxed">
                 Reach out to our team of elevator experts. We're here to discuss your project and provide tailored solutions.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
+            <div className="space-y-3">
+              <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-bottle-green" />
                 </div>
-                <div>
-                  <h4 className="font-medium text-bottle-green text-base">Call Us</h4>
-                  <p className="text-base text-bottle-green-solid/80">+91 9990858886</p>
+                <div className="leading-tight">
+                  <h4 className="font-medium text-bottle-green text-base mb-0.5">Call Us</h4>
+                  <p className="text-sm text-bottle-green-solid/80">+91 9990858886</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
+
+              <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-bottle-green" />
                 </div>
-                <div>
-                  <h4 className="font-medium text-bottle-green text-base">Email Us</h4>
-                  <p className="text-base text-bottle-green-solid/80">info@peakelevator.com</p>
+                <div className="leading-tight">
+                  <h4 className="font-medium text-bottle-green text-base mb-0.5">Email Us</h4>
+                  <p className="text-sm text-bottle-green-solid/80">info@peakelevator.com</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
+
+              <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-pearlescent-subtle rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-bottle-green" />
                 </div>
-                <div>
-                  <h4 className="font-medium text-bottle-green text-base">Service Area</h4>
-                  <p className="text-base text-bottle-green-solid/80">Delhi/NCR, India</p>
+                <div className="leading-tight">
+                  <h4 className="font-medium text-bottle-green text-base mb-0.5">Service Area</h4>
+                  <p className="text-sm text-bottle-green-solid/80">Delhi/NCR, India</p>
                 </div>
               </div>
             </div>
