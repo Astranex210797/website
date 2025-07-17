@@ -35,21 +35,6 @@ const MachineRoomLiftPage = () => {
 
   return (
     <div className="pt-16 relative">
-      {/* Enhanced Floating Book a Visit Button */}
-      <motion.button
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed left-0 top-1/2 transform -translate-y-1/2 origin-top-left rotate-[-90deg] z-50 
-                   bg-gradient-to-r from-bottle-green to-emerald-500 text-white text-sm md:text-base 
-                   px-5 py-2.5 font-bold rounded-r-full shadow-xl tracking-wide transition-all 
-                   animate-pulse"
-        onClick={() => window.location.href = '/contact'}
-      >
-        Book a Visit
-      </motion.button>
-
       {/* Top Intro Section */}
       <section
         className="relative h-[55vh] flex items-center justify-center bg-cover bg-center text-white px-6 text-center"
@@ -73,12 +58,22 @@ const MachineRoomLiftPage = () => {
           >
             Designed for efficiency and reliability, our machine room elevators provide a robust solution for mid to high-rise buildings.
           </motion.p>
-          <Link
+
+          {/* Enhanced Button */}
+          <motion(Link)
             to="/contact"
-            className="inline-flex items-center gap-2 bg-white text-bottle-green font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 bg-white text-bottle-green font-bold text-base md:text-lg px-7 py-3.5 rounded-full shadow-lg border-2 border-bottle-green transition duration-200 hover:bg-gray-100"
           >
-            Book a Visit <ArrowRight className="w-4 h-4" />
-          </Link>
+            Book a Visit
+            <motion(ArrowRight)
+              className="w-5 h-5"
+              initial={{ x: 0 }}
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            />
+          </motion(Link)>
         </div>
       </section>
 
