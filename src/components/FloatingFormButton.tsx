@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, X, Send } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 
 const FloatingFormButton = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -40,17 +40,17 @@ const FloatingFormButton = () => {
 
   return (
     <>
-      {/* Floating Button - Now at extreme right */}
+      {/* Book a Visit Button - Left Side Middle */}
       <motion.button
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => setIsFormOpen(true)}
-        className="fixed right-0 top-1/3 -translate-y-1/2 z-[55] w-12 h-12 mr-2 btn-bottle-green rounded-full shadow-lg flex items-center justify-center"
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-[55] px-5 py-2 rounded-r-lg bg-bottle-green text-white font-semibold shadow-lg"
         aria-label="Open inquiry form"
       >
-        <FileText className="w-5 h-5" />
+        Book a Visit
       </motion.button>
 
       {/* Form Overlay */}
