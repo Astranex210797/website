@@ -3,6 +3,7 @@ import HeroSection from '../components/home/HeroSection';
 import ProductGrid from '../components/home/ProductGrid';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import PartnersSection from '../components/home/PartnersSection';
+import BookVisitButton from '../components/BookVisitButton';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,10 @@ const HomePage = () => {
 
       {/* Content Sections with tighter spacing */}
       <div className="px-4 sm:px-6 lg:px-8 space-y-12 pt-6 pb-12">
+        {/* Book Visit Button Section */}
+        <div className="flex justify-center">
+          <BookVisitButton />
+        </div>
         <ProductGrid />
         <TestimonialsSection />
         <PartnersSection />
