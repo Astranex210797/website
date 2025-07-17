@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, X, CalendarCheck } from 'lucide-react';
+import { ArrowRight, Send, X } from 'lucide-react';
 
-const FloatingVisitButton = () => {
+const BookVisitButton = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -26,27 +26,19 @@ const FloatingVisitButton = () => {
 
   return (
     <>
-      {/* Vertical Floating Button */}
-      <motion.button
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4 }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setIsFormOpen(true)}
-        className="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-b from-emerald-600 to-emerald-800 text-white px-2 py-4 rounded-r-lg shadow-xl hover:brightness-110 transition-all duration-300"
-        style={{
-          writingMode: 'vertical-rl',
-          textOrientation: 'upright',
-          letterSpacing: '1px',
-        }}
-      >
-        <div className="flex items-center justify-center gap-1 rotate-180">
-          <CalendarCheck size={16} /> Book a Visit
-        </div>
-      </motion.button>
+      {/* Main Button */}
+      <div className="w-full flex justify-center mt-10">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsFormOpen(true)}
+          className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-lg shadow-xl flex items-center gap-2 transition-all text-sm sm:text-base font-medium"
+        >
+          Book a Visit <ArrowRight size={18} />
+        </motion.button>
+      </div>
 
-      {/* Centered Popup Form */}
+      {/* Popup Form */}
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
@@ -114,4 +106,4 @@ const FloatingVisitButton = () => {
   );
 };
 
-export default FloatingVisitButton;
+export default BookVisitButton;
