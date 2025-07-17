@@ -75,7 +75,7 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-black via-[#0f1f1b] to-[#122219] text-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 text-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

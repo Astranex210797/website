@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-gradient-to-br from-[#145943] via-[#0D3B2E] to-[#1ABC9C] text-white relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-gray-600 via-gray-500 to-gray-400 text-white relative overflow-hidden"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl shadow-2xl bg-white/10 backdrop-blur-xl border border-[#1ABC9C]/30">
+          <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl shadow-2xl bg-white/10 backdrop-blur-xl border border-gray-300/30">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
               >
                 <div className="text-center max-w-xl">
                   <Quote className="w-8 h-8 text-[#1ABC9C] mx-auto mb-4" />
-                  <blockquote className="text-lg md:text-xl italic text-[#E6FAF4] mb-6">
+                  <blockquote className="text-lg md:text-xl italic text-white mb-6">
                     "{testimonials[currentIndex].quote}"
                   </blockquote>
                   <div className="flex items-center justify-center gap-3">
@@ -111,8 +111,8 @@ const TestimonialsSection = () => {
                       className="w-12 h-12 rounded-full object-cover shadow-lg border-2 border-[#1ABC9C]"
                     />
                     <div className="text-left text-sm">
-                      <div className="font-semibold text-[#E6FAF4]">{testimonials[currentIndex].name}</div>
-                      <div className="text-[#C3E7DF] text-xs">{testimonials[currentIndex].title}</div>
+                      <div className="font-semibold text-white">{testimonials[currentIndex].name}</div>
+                      <div className="text-gray-200 text-xs">{testimonials[currentIndex].title}</div>
                       <div className="flex space-x-1 mt-1">
                         {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
