@@ -46,12 +46,7 @@ const BookVisitButton = () => {
   return (
     <>
       {/* Floating Button - Vertically Oriented on Left Border */}
-      <motion.div
-        className="fixed left-0 top-1/2 -translate-y-1/2 z-50"
-        initial={{ x: -100 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
         <motion.button
           whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(13, 59, 46, 0.3)' }}
           whileTap={{ scale: 0.95 }}
@@ -62,7 +57,7 @@ const BookVisitButton = () => {
           Book a Visit
           <ArrowRight size={20} />
         </motion.button>
-      </motion.div>
+      </div>
 
       {/* Popup Form */}
       <AnimatePresence>
@@ -144,7 +139,7 @@ const BookVisitButton = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration- fragm300 ${
+                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration-300 ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg hover:bg-gradient-to-r hover:from-emerald-900 hover:to-emerald-700'
                     }`}
                     aria-label="Submit form"
