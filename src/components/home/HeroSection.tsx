@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden mb-0">
+    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden m-0">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -27,18 +27,18 @@ const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-6xl px-4 py-4 text-white bg-pearlescent-subtle/10 backdrop-blur-lg rounded-3xl border border-white/10 shadow-xl">
+      <div className="relative z-10 w-full max-w-6xl text-white bg-pearlescent-subtle/10 backdrop-blur-lg rounded-3xl border border-white/10 shadow-xl">
         <div className="flex flex-col items-start justify-center gap-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-xl text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-xl text-white px-4">
             Elevating Lives.{' '}
             <span className="text-white/90">One Lift at a Time.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl font-medium drop-shadow text-white/90 max-w-2xl">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium drop-shadow text-white/90 max-w-2xl px-4">
             Luxury, safety, and innovation — crafted for every journey.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 px-4 pb-4">
             <button
               onClick={() => navigate('/contact')}
               className="btn-bottle-green px-6 py-3 rounded-xl text-base font-semibold flex items-center shadow-md"

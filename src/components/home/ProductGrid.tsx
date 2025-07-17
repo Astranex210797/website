@@ -43,8 +43,8 @@ const ProductGrid = () => {
   ];
 
   return (
-    <section className="pt-6 pb-8 bg-pearlescent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-pearlescent m-0">
+      <div className="max-w-7xl mx-auto px-0">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-bottle-green mb-4 tracking-tight">
             Our Product Range
@@ -54,7 +54,7 @@ const ProductGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
             <div key={product.id}>
               <Link to={product.link} className="group block">
@@ -85,7 +85,7 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10">
           <Link
             to="/products"
             className="inline-flex items-center btn-bottle-green px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
