@@ -1,10 +1,9 @@
-// App.tsx
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import FloatingFormButton from './components/FloatingFormButton';
+import BookVisitButton from './components/BookVisitButton';
 import FloatingActions from './components/FloatingActions';
 import QuickEnquiry from './components/QuickEnquiry';
 import FullPageLoader from './components/FullPageLoader';
@@ -25,7 +24,7 @@ import AMCPage from './pages/services/AMCPage';
 import ModernizationPage from './pages/services/ModernizationPage';
 
 // No animation wrapper (fully static and snappy)
-const PageWrapper = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+const PageWrapper = ({ children }) => <>{children}</>;
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -70,7 +69,7 @@ function App() {
         <Footer />
 
         <QuickEnquiry />
-        <FloatingFormButton />
+        <BookVisitButton />
         <FloatingActions />
       </div>
     </Router>
