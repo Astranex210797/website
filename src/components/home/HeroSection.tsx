@@ -1,3 +1,4 @@
+// HeroSection.tsx
 import React from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +8,6 @@ const HeroSection = () => {
   const { scrollY } = useScroll();
   const navigate = useNavigate();
 
-  // Smooth scroll-based transforms
   const bgY = useSpring(useTransform(scrollY, [0, 700], [0, 100]), {
     stiffness: 100,
     damping: 30,
@@ -35,10 +35,9 @@ const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative h-[60vh] flex items-center justify-center overflow-hidden mb-0"
+        className="relative h-[50vh] flex items-center justify-center overflow-hidden mb-[-1rem]"
         style={{ opacity, scale, willChange: 'opacity, transform' }}
       >
-        {/* Background Image with parallax */}
         <motion.div
           className="absolute inset-0 z-0 will-change-transform"
           style={{ y: bgY, transform: 'translateZ(0)' }}
@@ -54,7 +53,6 @@ const HeroSection = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 2.5, ease: 'easeOut' }}
           />
-
           <motion.div
             className="absolute inset-0 bg-black/40"
             initial={{ opacity: 0 }}
@@ -63,7 +61,6 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Foreground Content */}
         <motion.div
           className="relative z-10 w-full max-w-6xl px-4 py-6 text-white bg-pearlescent-subtle/10 backdrop-blur-lg rounded-3xl border border-white/10 shadow-xl"
           initial={{ y: 50, opacity: 0 }}
