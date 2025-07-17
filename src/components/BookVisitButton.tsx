@@ -47,16 +47,15 @@ const BookVisitButton = () => {
     <>
       {/* Floating Button - Vertically Oriented on Left Border */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
-        <motion.button
-          whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(13, 59, 46, 0.3)' }}
-          whileTap={{ scale: 0.95 }}
+        <button
           onClick={() => setIsFormOpen(true)}
-          className="bg-gradient-to-b from-emerald-800 to-emerald-600 text-white px-6 py-4 rounded-r-lg shadow-xl flex items-center gap-2 text-lg font-serif font-medium transition-all duration-300 -rotate-90 origin-left"
+          className="btn-bottle-green px-3 py-8 rounded-r-lg shadow-lg transition-colors duration-300 flex items-center group"
+          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
           aria-label="Book a site visit"
         >
-          Book a Visit
-          <ArrowRight size={20} />
-        </motion.button>
+          <ArrowRight className="w-5 h-5 mb-2 group-hover:scale-110 transition-transform" />
+          <span className="font-medium text-sm tracking-wider text-white">Book a Visit</span>
+        </button>
       </div>
 
       {/* Popup Form */}
@@ -137,10 +136,8 @@ const BookVisitButton = () => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration-300 ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg hover:bg-gradient-to-r hover:from-emerald-900 hover:to-emerald-700'
+                    className={`w-full btn-bottle-green text-white py-3 rounded-lg flex items-center justify-center gap-2 font-medium text-sm tracking-wider transition-colors duration-300 ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg'
                     }`}
                     aria-label="Submit form"
                   >
