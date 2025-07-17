@@ -1,25 +1,19 @@
-// HomePage.tsx
 import React from 'react';
 import HeroSection from '../components/home/HeroSection';
 import ProductGrid from '../components/home/ProductGrid';
-import ContactForm from '../components/ContactForm';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import PartnersSection from '../components/home/PartnersSection';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen relative text-brand-text overflow-hidden bg-white">
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <HeroSection />
+    <div className="min-h-screen text-brand-text overflow-hidden bg-white">
+      {/* Hero Section - no extra spacing */}
+      <HeroSection />
 
-        {/* Product Grid Section */}
+      {/* Content Sections with tighter spacing */}
+      <div className="px-4 sm:px-6 lg:px-8 space-y-12 pt-6 pb-12">
         <ProductGrid />
-
-        {/* Testimonials */}
         <TestimonialsSection />
-
-        {/* Partners */}
         <PartnersSection />
       </div>
     </div>
