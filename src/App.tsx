@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingFormButton from './components/FloatingFormButton';
+import FloatingActions from './components/FloatingActions'; // ✅ Newly added
 import QuickEnquiry from './components/QuickEnquiry';
 import FullPageLoader from './components/FullPageLoader';
 import ScrollToTop from './components/ScrollToTop';
@@ -59,9 +60,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div
-        className="min-h-screen relative overflow-hidden text-bottle-green-solid bg-pearlescent"
-      >
+      <div className="min-h-screen relative overflow-hidden text-bottle-green-solid bg-pearlescent">
         <Header />
 
         <main className="relative z-10 pt-16 pb-20">
@@ -85,8 +84,8 @@ function App() {
         <Footer />
 
         <QuickEnquiry />
-
         <FloatingFormButton />
+        <FloatingActions /> {/* ✅ This line renders the WhatsApp and Call buttons */}
       </div>
     </Router>
   );
