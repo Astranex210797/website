@@ -48,7 +48,7 @@ const MachineRoomLiftPage = () => {
         </div>
 
         {/* Foreground Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[400px]">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const MachineRoomLiftPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-10"
+            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-10 max-w-3xl"
           >
             Elevate with Power, Precision, and Style
           </motion.p>
@@ -69,6 +69,7 @@ const MachineRoomLiftPage = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
+            className="flex justify-center"
           >
             <Link to="/contact">
               <button className="bg-gradient-to-r from-[#E6FAF4] to-[#1ABC9C] text-[#0D3B2E] px-8 py-4 rounded-full font-bold text-lg shadow-xl flex items-center gap-3 transition-all duration-300 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
@@ -189,7 +190,7 @@ const MachineRoomLiftPage = () => {
 
       {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,14 +200,16 @@ const MachineRoomLiftPage = () => {
             <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
               Ready to Elevate Your Building?
             </h2>
-            <p className="text-xl text-[#C3E7DF] mb-8">
+            <p className="text-xl text-[#C3E7DF] mb-8 max-w-3xl">
               Let our experts help you choose the perfect machine room elevator solution 
               for your project. Get a free consultation today.
             </p>
-            <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              <Link to="/contact">Book Site Visit</Link>
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Link to="/contact">
+              <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
+                Book Site Visit
+                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
