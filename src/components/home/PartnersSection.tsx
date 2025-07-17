@@ -4,44 +4,44 @@ import { motion } from 'framer-motion';
 // Counter animation hook
 const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     if (!shouldStart) return;
-    
+
     let startTime: number;
     let animationFrame: number;
-    
+
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
+
       setCount(Math.floor(progress * end));
-      
+
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
       }
     };
-    
+
     animationFrame = requestAnimationFrame(animate);
-    
+
     return () => {
       if (animationFrame) {
         cancelAnimationFrame(animationFrame);
       }
     };
   }, [end, duration, shouldStart]);
-  
+
   return count;
 };
 
 const PartnersSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   const projectsCount = useCountUp(500, 2000, isVisible);
   const yearsCount = useCountUp(15, 2000, isVisible);
   const supportHours = useCountUp(24, 1500, isVisible);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -51,11 +51,11 @@ const PartnersSection = () => {
       },
       { threshold: 0.3 }
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -75,7 +75,7 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
+    <section className="py-5 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-3 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
