@@ -23,7 +23,7 @@ const Footer = () => {
             <li><Link to="/" className="hover:text-brand transition">Home</Link></li>
             <li><Link to="/about" className="hover:text-brand transition">About Us</Link></li>
             <li><Link to="/products" className="hover:text-brand transition">Products</Link></li>
-            <li><Link to="/projects" className="hover:text-brand transition">Projects</Link></li>
+            <li><Link to="/services" className="hover:text-brand transition">Services</Link></li>
             <li><Link to="/contact" className="hover:text-brand transition">Contact</Link></li>
           </ul>
         </div>
@@ -43,19 +43,28 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="https://www.instagram.com/peakelevatorgroup?igsh=MXB5bmcybGJ6aXY2MA%3D%3D&utm_source=qr"
-              target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition">
+            <a
+              href="https://www.instagram.com/peakelevatorgroup?igsh=MXB5bmcybGJ6aXY2MA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition"
+            >
               <FaInstagram className="w-5 h-5" />
             </a>
-            <a href="https://www.facebook.com" // Replace with real link
-              target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition">
+            <a
+              href="https://www.facebook.com" // Replace with real link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition"
+            >
               <FaFacebookF className="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com" // Replace with real link
-              target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition">
+            <a
+              href="https://www.linkedin.com" // Replace with real link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center hover:bg-brand-dark transition"
+            >
               <FaLinkedinIn className="w-5 h-5" />
             </a>
           </div>
