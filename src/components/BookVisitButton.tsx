@@ -23,7 +23,6 @@ const BookVisitButton = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
     setTimeout(() => {
       console.log(formData);
       setIsSubmitting(false);
@@ -46,19 +45,24 @@ const BookVisitButton = () => {
 
   return (
     <>
-      {/* Main Button */}
-      <div className="w-full flex justify-center mt-10">
+      {/* Floating Button - Vertically Oriented on Left Border */}
+      <motion.div
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-50"
+        initial={{ x: -100 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.button
-          whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)' }}
+          whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(13, 59, 46, 0.3)' }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsFormOpen(true)}
-          className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white px-8 py-4 rounded-full shadow-lg flex items-center gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-600 hover:to-emerald-800"
+          className="bg-gradient-to-b from-emerald-800 to-emerald-600 text-white px-6 py-4 rounded-r-lg shadow-xl flex items-center gap-2 text-lg font-serif font-medium transition-all duration-300 -rotate-90 origin-left"
           aria-label="Book a site visit"
         >
           Book a Visit
           <ArrowRight size={20} />
         </motion.button>
-      </div>
+      </motion.div>
 
       {/* Popup Form */}
       <AnimatePresence>
@@ -68,36 +72,36 @@ const BookVisitButton = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4"
             role="dialog"
             aria-modal="true"
             aria-labelledby="form-title"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md relative border border-emerald-100">
+            <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md relative border border-emerald-200/50">
               {/* Close Button */}
               <button
                 onClick={() => setIsFormOpen(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors"
+                className="absolute top-4 right-4 text-emerald-800 hover:text-emerald-900 transition-colors"
                 aria-label="Close form"
               >
                 <X size={24} />
               </button>
 
               {/* Form Content */}
-              <h2 id="form-title" className="text-2xl font-bold mb-6 text-emerald-700 text-center">
-                Book a Site Visit
+              <h2 id="form-title" className="text-3xl font-serif font-bold mb-6 text-emerald-800 text-center">
+                Schedule a Site Visit
               </h2>
 
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-center text-emerald-600 font-semibold"
+                  className="text-center text-emerald-700 font-serif text-lg"
                 >
                   Thank you! Your request has been submitted.
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {[
                     { name: 'name', type: 'text', placeholder: 'Your Name', required: true },
                     { name: 'phone', type: 'tel', placeholder: 'Phone Number', required: true },
@@ -114,8 +118,8 @@ const BookVisitButton = () => {
                       onChange={handleChange}
                       placeholder={field.placeholder}
                       required={field.required}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 bg-gray-50 text-gray-800 placeholder-gray-400"
-                      whileFocus={{ scale: 1.02 }}
+                      className="w-full px-4 py-3 border border-emerald-200/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 bg-gray-50 text-emerald-900 placeholder-emerald-400/70 font-serif"
+                      whileFocus={{ scale: 1.01 }}
                       aria-required={field.required}
                       aria-label={field.placeholder}
                     />
@@ -125,8 +129,8 @@ const BookVisitButton = () => {
                     name="liftType"
                     value={formData.liftType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 bg-gray-50 text-gray-800"
-                    whileFocus={{ scale: 1.02 }}
+                    className="w-full px-4 py-3 border border-emerald-200/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 bg-gray-50 text-emerald-900 font-serif"
+                    whileFocus={{ scale: 1.01 }}
                     aria-label="Select Lift Type"
                   >
                     <option value="">Select Lift Type</option>
@@ -140,8 +144,8 @@ const BookVisitButton = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-semibold transition-all duration-300 ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg'
+                    className={`w-full bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 font-serif font-semibold transition-all duration-300 ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg hover:bg-gradient-to-r hover:from-emerald-900 hover:to-emerald-700'
                     }`}
                     aria-label="Submit form"
                   >
@@ -171,7 +175,8 @@ const BookVisitButton = () => {
                       </span>
                     ) : (
                       <>
-                        <Send size={18} /> Submit
+                        <Send size=>
+                        Submit
                       </>
                     )}
                   </motion.button>
