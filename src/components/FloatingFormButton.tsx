@@ -40,14 +40,18 @@ const FloatingFormButton = () => {
 
   return (
     <>
-      {/* Book a Visit Button - Left Side Middle */}
+      {/* Vertically Rotated Button */}
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsFormOpen(true)}
-        className="fixed left-0 top-1/2 -translate-y-1/2 z-[55] px-5 py-2 rounded-r-lg bg-bottle-green text-white font-semibold shadow-lg"
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-[55] px-5 py-2 bg-bottle-green text-white font-semibold shadow-lg rounded-tr-lg rounded-br-lg"
+        style={{
+          transform: 'rotate(-90deg) translateX(-50%)',
+          transformOrigin: 'top left'
+        }}
         aria-label="Open inquiry form"
       >
         Book a Visit
@@ -71,7 +75,6 @@ const FloatingFormButton = () => {
               className="bg-pearlescent rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-bottle-green">Quick Inquiry</h2>
                 <button
@@ -82,7 +85,6 @@ const FloatingFormButton = () => {
                 </button>
               </div>
 
-              {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-bottle-green-solid mb-2">
