@@ -1,19 +1,9 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+// ProductGrid.tsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const ProductGrid = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
-
   const products = [
     {
       id: 1,
@@ -53,22 +43,9 @@ const ProductGrid = () => {
   ];
 
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.8, ease: 'easeOut' }
-        }
-      }}
-      className="pt-10 pb-20 bg-pearlescent perspective-[1000px]"
-    >
+    <section className="pt-6 pb-8 bg-pearlescent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-bottle-green mb-4 tracking-tight">
             Our Product Range
           </h2>
@@ -78,54 +55,47 @@ const ProductGrid = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <motion.div
-              key={product.id}
-              className="transform-style-preserve-3d"
-              initial={{ opacity: 0, rotateY: 25 }}
-              whileInView={{ opacity: 1, rotateY: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
+          {products.map((product) => (
+            <div key={product.id}>
               <Link to={product.link} className="group block">
-                <div className="relative overflow-hidden rounded-2xl bg-pearlescent-subtle border border-gray-200/50 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+                <div className="relative overflow-hidden rounded-2xl bg-pearlescent-subtle border border-gray-200/50 shadow-lg">
                   <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
                     <img
                       src={product.image}
                       alt={`Image of ${product.title}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-xl font-semibold text-bottle-green group-hover:text-bottle-green-solid transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-bottle-green">
                       {product.title}
                     </h3>
                     <p className="text-bottle-green-solid/70 italic mt-2 text-sm">
                       {product.subtitle}
                     </p>
                   </div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-gray-200/50 shadow-lg">
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-gray-200/50 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <ArrowRight className="w-4 h-4 text-bottle-green-solid" />
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <Link
             to="/products"
-            className="inline-flex items-center btn-bottle-green px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 group shadow-lg"
+            className="inline-flex items-center btn-bottle-green px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
           >
             View All Products
-            <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-3 w-5 h-5" />
           </Link>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
