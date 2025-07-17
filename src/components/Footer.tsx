@@ -1,78 +1,60 @@
+// components/Footer.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-pearlescent-subtle border-t border-gray-200/70 text-sm text-bottle-green">
-      <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-        
+    <footer className="bg-[#0e1a16] text-white px-6 md:px-16 py-10 border-t border-green-800 text-sm">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Company Info */}
-        <div>
-          <h3 className="text-lg font-semibold text-bottle-green mb-3">Lovable Lifts</h3>
-          <p className="mb-2 text-sm">Elevating Spaces, Empowering Futures.</p>
-          <ul className="space-y-1">
-            <li className="flex items-start gap-2">
-              <Phone className="w-4 h-4 mt-[2px]" />
-              <span className="leading-tight">Call us: <strong>+91 99908 58886</strong></span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Mail className="w-4 h-4 mt-[2px]" />
-              <span className="leading-tight">Email us: <strong>lovablelifts@gmail.com</strong></span>
-            </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 mt-[2px]" />
-              <span className="leading-tight">Service Area: Delhi NCR & PAN India</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Clock className="w-4 h-4 mt-[2px]" />
-              <span className="leading-tight">Hours: Mon - Sat, 9:00AM - 6:00PM</span>
-            </li>
-          </ul>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gold">Peak Elevator Group</h2>
+          <p className="text-gray-300">We elevate experiences. Premium lift solutions tailored to your needs.</p>
+          <div className="space-y-1 text-gray-400 text-sm">
+            <p className="flex items-start gap-2">
+              <MapPin size={16} className="mt-0.5" />
+              Plot No. 915, Krishna Apra Business Square,<br /> NSP, Delhi - 110034
+            </p>
+            <p className="flex items-center gap-2">
+              <Mail size={16} />
+              <a href="mailto:Admin@peakelevatorgroup.com" className="hover:underline">Admin@peakelevatorgroup.com</a>
+            </p>
+            <p className="flex items-center gap-2">
+              <Phone size={16} />
+              <a href="tel:+919990858886" className="hover:underline">+91 9990858886</a>
+            </p>
+          </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-base font-semibold text-bottle-green mb-3">Quick Links</h3>
-          <ul className="flex flex-col gap-[3px]">
-            {['Home', 'Products', 'Services', 'Contact'].map((item, index) => (
-              <li key={index}>
-                <Link
-                  to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
-                  className="px-3 py-1 rounded hover:bg-bottle-green/10 hover:text-bottle-green transition-colors"
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+          <h3 className="text-lg font-semibold text-gold mb-2">Quick Links</h3>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li><Link to="/" className="hover:text-gold transition-colors">Home</Link></li>
+            <li><Link to="/about" className="hover:text-gold transition-colors">About Us</Link></li>
+            <li><Link to="/services" className="hover:text-gold transition-colors">Services</Link></li>
+            <li><Link to="/products" className="hover:text-gold transition-colors">Products</Link></li>
+            <li><Link to="/contact" className="hover:text-gold transition-colors">Contact</Link></li>
           </ul>
         </div>
 
-        {/* Products */}
+        {/* Service Hours */}
         <div>
-          <h3 className="text-base font-semibold text-bottle-green mb-3">Our Products</h3>
-          <ul className="flex flex-col gap-[3px]">
-            <li><Link to="/machine-room-lift" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Machine Room Lift</Link></li>
-            <li><Link to="/mrl-elevator" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">MRL Elevator</Link></li>
-            <li><Link to="/hydraulic-passenger-lift" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Hydraulic Passenger Lift</Link></li>
-            <li><Link to="/car-lift" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Car Lift</Link></li>
-            <li><Link to="/hydraulic-goods-lift" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Hydraulic Goods Lift</Link></li>
+          <h3 className="text-lg font-semibold text-gold mb-2">Service Area & Hours</h3>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li className="flex items-center gap-2">
+              <Clock size={16} /> Mon - Sat: 9:00 AM - 6:00 PM
+            </li>
+            <li className="flex items-start gap-2">
+              <MapPin size={16} className="mt-0.5" />
+              Delhi NCR, India
+            </li>
           </ul>
         </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="text-base font-semibold text-bottle-green mb-3">Our Services</h3>
-          <ul className="flex flex-col gap-[3px]">
-            <li><Link to="/amc-services" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Annual Maintenance Contract (AMC)</Link></li>
-            <li><Link to="/lift-modernization" className="px-3 py-1 hover:bg-bottle-green/10 hover:text-bottle-green rounded transition">Lift Modernization</Link></li>
-          </ul>
-        </div>
-
       </div>
-
-      <div className="text-center text-xs text-gray-600 py-4 border-t border-gray-200">
-        &copy; {new Date().getFullYear()} Lovable Lifts. All rights reserved.
+      <div className="mt-10 border-t border-green-800 pt-4 text-center text-gray-500 text-xs">
+        &copy; {new Date().getFullYear()} Peak Elevator Group. All rights reserved.
       </div>
     </footer>
   );
