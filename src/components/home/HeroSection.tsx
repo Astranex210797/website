@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/your-image-path.jpg" // Replace with your image path
+          src="/BG.jpg" // Replace with your image path
           alt="Hero Background"
           className="w-full h-full object-cover object-bottom"
         />
