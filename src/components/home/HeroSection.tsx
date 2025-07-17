@@ -35,7 +35,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative h-[70vh] flex items-center justify-center overflow-hidden"
+        className="relative h-[60vh] flex items-center justify-center overflow-hidden mb-0"
         style={{ opacity, scale, willChange: 'opacity, transform' }}
       >
         {/* Background Image with parallax */}
@@ -65,13 +65,13 @@ const HeroSection = () => {
 
         {/* Foreground Content */}
         <motion.div
-          className="relative z-10 w-full max-w-6xl px-4 text-white bg-pearlescent-subtle/10 backdrop-blur-lg rounded-3xl p-10 border border-white/10 shadow-xl"
+          className="relative z-10 w-full max-w-6xl px-4 py-6 text-white bg-pearlescent-subtle/10 backdrop-blur-lg rounded-3xl border border-white/10 shadow-xl"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.3, ease: 'easeOut' }}
         >
           <motion.div
-            className="flex flex-col items-start justify-center h-full space-y-8 max-h-[90vh]"
+            className="flex flex-col items-start justify-center space-y-6"
             initial="hidden"
             animate="visible"
             variants={{
