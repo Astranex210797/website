@@ -34,7 +34,19 @@ const MachineRoomLiftPage = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 relative">
+      {/* Floating Book a Visit Button (Left Vertical) */}
+      <motion.button
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed left-0 top-1/2 transform -translate-y-1/2 origin-top-left rotate-[-90deg] z-50 bg-bottle-green text-white text-sm px-4 py-2 rounded-r-full shadow-lg tracking-wider transition"
+        onClick={() => window.location.href = '/contact'}
+      >
+        Book a Visit
+      </motion.button>
+
       {/* Top Intro Section with background */}
       <section
         className="relative h-[55vh] flex items-center justify-center bg-cover bg-center text-white px-6 text-center"
