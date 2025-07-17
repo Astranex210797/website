@@ -69,7 +69,9 @@ function App() {
         <Footer />
 
         <QuickEnquiry />
-        <BookVisitButton />
+        <div className="fixed left-4 bottom-20 z-50">
+          <BookVisitButton />
+        </div>
         <FloatingActions />
       </div>
     </Router>
