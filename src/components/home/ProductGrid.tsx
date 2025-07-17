@@ -85,7 +85,7 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-3.5">
           <Link
             to="/products"
             className="inline-flex items-center btn-bottle-green px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
