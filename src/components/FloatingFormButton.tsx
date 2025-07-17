@@ -10,15 +10,15 @@ const FloatingVisitButton = () => {
     address: '',
     floors: '',
     liftType: '',
-    installYear: '',
-    currentAmc: '',
+    installationYear: '',
+    currentAMC: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
     setIsFormOpen(false);
@@ -26,29 +26,30 @@ const FloatingVisitButton = () => {
 
   return (
     <>
-      {/* Vertical Floating Button (bottom to top text) */}
+      {/* Vertical Floating Button */}
       <motion.button
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsFormOpen(true)}
-        className="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-bottle-green text-white text-xs font-semibold py-4 px-2 rounded-r-full tracking-wider shadow-xl flex flex-col items-center justify-center h-[160px] w-[40px]"
-        style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-bottle-green text-white text-[12px] px-2 py-3 rounded-r-md shadow-md"
+        style={{ writingMode: 'vertical-rl', textOrientation: 'upright', letterSpacing: '1px' }}
       >
         Book a Visit
       </motion.button>
 
-      {/* Popup Centered Form */}
+      {/* Centered Popup Form */}
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
           >
-            <div className="relative bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto border border-gray-300">
+            <div className="bg-white p-6 rounded-xl shadow-2xl w-[360px] relative border border-gray-200">
+              {/* Close Button */}
               <button
                 onClick={() => setIsFormOpen(false)}
                 className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
@@ -56,9 +57,7 @@ const FloatingVisitButton = () => {
                 <X size={20} />
               </button>
 
-              <h2 className="text-xl font-semibold mb-6 text-bottle-green text-center">
-                Book a Visit
-              </h2>
+              <h2 className="text-xl font-semibold mb-5 text-bottle-green text-center">Book a Visit</h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
@@ -66,9 +65,9 @@ const FloatingVisitButton = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Name"
-                  required
+                  placeholder="Your Name"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  required
                 />
                 <input
                   type="tel"
@@ -76,15 +75,15 @@ const FloatingVisitButton = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  required
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  required
                 />
                 <input
                   type="text"
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  placeholder="Address"
+                  placeholder="Site Address"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 />
                 <input
@@ -100,7 +99,6 @@ const FloatingVisitButton = () => {
                   value={formData.liftType}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                  required
                 >
                   <option value="">Select Lift Type</option>
                   <option value="MR">MR</option>
@@ -109,18 +107,18 @@ const FloatingVisitButton = () => {
                 </select>
                 <input
                   type="text"
-                  name="installYear"
-                  value={formData.installYear}
+                  name="installationYear"
+                  value={formData.installationYear}
                   onChange={handleChange}
                   placeholder="Installation Year"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 />
                 <input
                   type="text"
-                  name="currentAmc"
-                  value={formData.currentAmc}
+                  name="currentAMC"
+                  value={formData.currentAMC}
                   onChange={handleChange}
-                  placeholder="Current AMC"
+                  placeholder="Current AMC Details"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 />
 
