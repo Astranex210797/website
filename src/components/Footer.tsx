@@ -1,60 +1,97 @@
-// components/Footer.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0e1a16] text-white px-6 md:px-16 py-10 border-t border-green-800 text-sm">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Company Info */}
+    <footer className="bg-pearlescent-subtle border-t border-gray-200/40 text-bottle-green-solid">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm md:text-base">
+        {/* Logo & About */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gold">Peak Elevator Group</h2>
-          <p className="text-gray-300">We elevate experiences. Premium lift solutions tailored to your needs.</p>
-          <div className="space-y-1 text-gray-400 text-sm">
-            <p className="flex items-start gap-2">
-              <MapPin size={16} className="mt-0.5" />
-              Plot No. 915, Krishna Apra Business Square,<br /> NSP, Delhi - 110034
-            </p>
-            <p className="flex items-center gap-2">
-              <Mail size={16} />
-              <a href="mailto:Admin@peakelevatorgroup.com" className="hover:underline">Admin@peakelevatorgroup.com</a>
-            </p>
-            <p className="flex items-center gap-2">
-              <Phone size={16} />
-              <a href="tel:+919990858886" className="hover:underline">+91 9990858886</a>
-            </p>
-          </div>
+          <img
+            src="/logo.jpg"
+            alt="Peak Elevator Group Logo"
+            className="h-12 w-auto object-contain"
+          />
+          <p className="text-bottle-green/80 max-w-xs leading-relaxed">
+            Elevating excellence. We deliver high-performance elevator systems
+            blending safety, innovation, and class.
+          </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-gold mb-2">Quick Links</h3>
-          <ul className="space-y-1 text-sm text-gray-300">
+          <h3 className="font-semibold text-bottle-green mb-3 tracking-wide uppercase">Quick Links</h3>
+          <ul className="space-y-2 text-bottle-green-solid/90">
             <li><Link to="/" className="hover:text-gold transition-colors">Home</Link></li>
-            <li><Link to="/about" className="hover:text-gold transition-colors">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-gold transition-colors">Services</Link></li>
             <li><Link to="/products" className="hover:text-gold transition-colors">Products</Link></li>
+            <li><Link to="/services" className="hover:text-gold transition-colors">Services</Link></li>
             <li><Link to="/contact" className="hover:text-gold transition-colors">Contact</Link></li>
           </ul>
         </div>
 
-        {/* Service Hours */}
-        <div>
-          <h3 className="text-lg font-semibold text-gold mb-2">Service Area & Hours</h3>
-          <ul className="space-y-1 text-sm text-gray-300">
-            <li className="flex items-center gap-2">
-              <Clock size={16} /> Mon - Sat: 9:00 AM - 6:00 PM
+        {/* Contact Info */}
+        <div className="space-y-3">
+          <h3 className="font-semibold text-bottle-green mb-3 tracking-wide uppercase">Contact</h3>
+          <ul className="space-y-3 text-bottle-green-solid/90">
+            <li className="flex items-center space-x-2">
+              <Phone className="w-4 h-4 text-gold" />
+              <span className="leading-none">+91 99908 58886</span>
             </li>
-            <li className="flex items-start gap-2">
-              <MapPin size={16} className="mt-0.5" />
-              Delhi NCR, India
+            <li className="flex items-center space-x-2">
+              <Mail className="w-4 h-4 text-gold" />
+              <span className="leading-none">admin@peakelevatorgroup.com</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <MapPin className="w-4 h-4 text-gold" />
+              <span className="leading-tight">
+                Plot No. 915, Krishna Apra Business Square, NSP, Delhi - 110034
+              </span>
             </li>
           </ul>
+
+          {/* Social Media */}
+          <div className="pt-4 flex space-x-4">
+            <a
+              href="https://www.instagram.com/peakelevatorgroup?igsh=MXB5bmcybGJ6aXY2MA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bottle-green hover:text-gold transition-colors"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bottle-green hover:text-gold transition-colors"
+            >
+              <FaFacebookF className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bottle-green hover:text-gold transition-colors"
+            >
+              <FaLinkedinIn className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        {/* Timings */}
+        <div>
+          <h3 className="font-semibold text-bottle-green mb-3 tracking-wide uppercase">Service Hours</h3>
+          <div className="flex items-center space-x-2 text-bottle-green-solid/90">
+            <Clock className="w-4 h-4 text-gold" />
+            <span className="leading-none">Mon - Sat: 10:00 AM - 6:00 PM</span>
+          </div>
         </div>
       </div>
-      <div className="mt-10 border-t border-green-800 pt-4 text-center text-gray-500 text-xs">
-        &copy; {new Date().getFullYear()} Peak Elevator Group. All rights reserved.
+
+      <div className="text-center text-xs py-4 border-t border-gray-200/30 text-bottle-green/70">
+        © {new Date().getFullYear()} Peak Elevator Group. All rights reserved.
       </div>
     </footer>
   );
