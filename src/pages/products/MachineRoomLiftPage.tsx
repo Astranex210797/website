@@ -190,12 +190,13 @@ const MachineRoomLiftPage = () => {
 
       {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="flex flex-col items-center"
           >
             <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
               Ready to Elevate Your Building?
@@ -204,12 +205,14 @@ const MachineRoomLiftPage = () => {
               Let our experts help you choose the perfect machine room elevator solution 
               for your project. Get a free consultation today.
             </p>
-            <Link to="/contact">
-              <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
-                Book Site Visit
-                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-              </button>
-            </Link>
+            <div className="flex justify-center">
+              <Link to="/contact">
+                <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
+                  Book Site Visit
+                  <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                </button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
