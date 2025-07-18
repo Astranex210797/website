@@ -35,46 +35,53 @@ const HydraulicGoodsLiftPage = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-[#145943] via-[#1ABC9C] to-[#E6FAF4] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[#145943]/60"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-[#E6FAF4]">
-                Hydraulic Goods Lifts
-              </h1>
-              <p className="text-xl text-[#C3E7DF] mb-8 leading-relaxed">
-                Heavy-duty performance, reliable results. Our hydraulic goods lifts are 
-                engineered for industrial and commercial applications where moving weight 
-                with confidence is essential.
-              </p>
-              <button className="bg-[#1ABC9C] text-[#145943] hover:bg-[#E6FAF4] hover:text-[#0D3B2E] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center group shadow-lg">
-                <Link to="/contact">Book Site Visit</Link>
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      {/* HERO SECTION */}
+      <section className="relative py-28 lg:py-36">
+        {/* Background Image */}
+        <div className="absolute inset-0 h-full w-full">
+          <img
+            src="/WhatsApp Image 2025-07-11 at 12.10.03_3d6771cc.jpg"
+            alt="Hydraulic Goods Lift"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[400px]">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-extrabold text-white mb-6"
+          >
+            Hydraulic Goods Lifts
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-10 max-w-3xl"
+          >
+            Heavy-duty Performance, Reliable Results
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
+          >
+            <Link to="/contact">
+              <button className="bg-gradient-to-r from-[#E6FAF4] to-[#1ABC9C] text-[#0D3B2E] px-8 py-4 rounded-full font-bold text-lg shadow-xl flex items-center gap-3 transition-all duration-300 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
+                Book Site Visit
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <img
-                src="/WhatsApp Image 2025-07-11 at 12.10.03_3d6771cc.jpg"
-                alt="Heavy-duty hydraulic goods lift for industrial and commercial use"
-                className="rounded-2xl shadow-2xl border-4 border-[#1ABC9C]/30"
-              />
-            </motion.div>
-          </div>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* FEATURES SECTION */}
       <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -113,7 +120,7 @@ const HydraulicGoodsLiftPage = () => {
         </div>
       </section>
 
-      {/* Specifications Section */}
+      {/* SPECIFICATIONS SECTION */}
       <section className="py-20 bg-[#E6FAF4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -181,9 +188,9 @@ const HydraulicGoodsLiftPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -193,14 +200,16 @@ const HydraulicGoodsLiftPage = () => {
             <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
               Move Weight with Confidence
             </h2>
-            <p className="text-xl text-[#C3E7DF] mb-8">
+            <p className="text-xl text-[#C3E7DF] mb-8 max-w-3xl">
               Streamline your material handling operations with our robust hydraulic goods lifts. 
               Get expert consultation for your specific requirements.
             </p>
-            <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center mx-auto group shadow-lg">
-              <Link to="/contact">Book Site Visit</Link>
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Link to="/contact">
+              <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
+                Book Site Visit
+                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
