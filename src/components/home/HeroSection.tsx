@@ -19,7 +19,7 @@ const HeroSection = () => {
       {/* Text Content with Glass Effect */}
       <div className="relative z-10 text-center text-white px-4">
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 md:p-8">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg bg-gradient-to-r from-[#005f3c] to-[#00b894] text-transparent bg-clip-text">
             Elevate Your Space with Precision
           </h1>
           <p className="mt-4 text-lg md:text-xl drop-shadow">
