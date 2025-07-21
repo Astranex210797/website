@@ -50,11 +50,10 @@ const BookVisitButton = () => {
         <button
           onClick={() => setIsFormOpen(true)}
           className="btn-bottle-green px-3 py-8 rounded-r-lg shadow-lg transition-colors duration-300 flex items-center group"
-          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+          style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
           aria-label="Book a site visit"
         >
-          <ArrowRight className="w-5 h-5 mb-2 group-hover:scale-110 transition-transform" />
-          <span className="font-medium text-sm tracking-wider text-white">Book a Visit</span>
+          <span className="font-medium text-sm tracking-wider text-white">Book A Visit</span>
         </button>
       </div>
 
@@ -72,7 +71,6 @@ const BookVisitButton = () => {
             aria-labelledby="form-title"
           >
             <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg relative border border-emerald-200/50">
-              {/* Close Button */}
               <button
                 onClick={() => setIsFormOpen(false)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-emerald-800 hover:text-emerald-900 transition-colors"
@@ -81,13 +79,12 @@ const BookVisitButton = () => {
                 <X size={18} />
               </button>
 
-              {/* Form Content */}
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Calendar className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h2 id="form-title" className="text-3xl font-bold mb-2 text-emerald-800">
-                Schedule a Site Visit
+                  Schedule a Site Visit
                 </h2>
                 <p className="text-emerald-600 text-sm">Get expert consultation for your elevator needs</p>
               </div>
