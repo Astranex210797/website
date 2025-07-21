@@ -15,6 +15,8 @@ const HeroSection = () => {
           alt="Hero Background"
           className="w-full h-full object-cover object-bottom"
         />
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
         {/* Subtle gradient overlay for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20"></div>
       </div>
@@ -163,25 +165,25 @@ const HeroSection = () => {
       >
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-4 shadow-xl">
           <div className="flex items-center gap-8 text-center">
-            <div className="text-white">
+      {/* Text Content */}
               <div className="text-2xl font-bold text-emerald-400">500+</div>
-              <div className="text-sm opacity-80">Projects</div>
-            </div>
-            <div className="w-px h-8 bg-white/20"></div>
-            <div className="text-white">
-              <div className="text-2xl font-bold text-emerald-400">15+</div>
-              <div className="text-sm opacity-80">Years</div>
-            </div>
-            <div className="w-px h-8 bg-white/20"></div>
-            <div className="text-white">
-              <div className="text-2xl font-bold text-emerald-400">24/7</div>
-              <div className="text-sm opacity-80">Support</div>
-            </div>
-          </div>
-        </div>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-2xl text-white">
+          Elevate Your Space with Precision
+        </h1>
+        <p className="mt-4 text-lg md:text-xl drop-shadow-lg text-white/90">
+          Premium Lift Solutions Tailored for Modern Needs
+        </p>
+        <button
+          onClick={() => navigate('/products')}
+          className="mt-6 inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          Explore Products <ArrowRight size={18} />
+        </button>
       </motion.div>
     </section>
   );
 };
 
 export default HeroSection;
+  )
+}
