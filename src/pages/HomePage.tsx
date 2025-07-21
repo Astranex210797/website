@@ -11,7 +11,7 @@ const HomePage = () => {
       <HeroSection />
 
       {/* Content Sections with tighter spacing */}
-      <div className="px-4 sm:px-6 lg:px-8 space-y-12 pt-6 pb-12">
+      <div className="px-4 sm:px-6 lg:px-8 space-y-8 pt-4 pb-8">
         <ProductGrid />
         <TestimonialsSection />
         <PartnersSection />

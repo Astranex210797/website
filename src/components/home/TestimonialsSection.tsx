@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="pt-24 pb-6 bg-pearlescent-subtle text-bottle-green-solid relative overflow-hidden"
+      className="pt-12 pb-4 bg-pearlescent-subtle text-bottle-green-solid relative overflow-hidden"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-[2.125rem] md:text-[2.875rem] font-bold mb-4 text-bottle-green drop-shadow-lg">
             Client Testimonials
@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="relative h-[22.5rem] overflow-hidden rounded-xl shadow-2xl bg-pearlescent backdrop-blur-xl border border-bottle-green-solid/20">
+          <div className="relative h-[18rem] overflow-hidden rounded-xl shadow-2xl bg-pearlescent backdrop-blur-xl border border-bottle-green-solid/20">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -103,7 +103,7 @@ const TestimonialsSection = () => {
               >
                 <div className="text-center max-w-xl">
                   <Quote className="w-7 h-7 text-bottle-green mx-auto mb-4" />
-                  <blockquote className="text-[0.9375rem] md:text-[1.275rem] italic text-bottle-green-solid mb-6">
+                  <blockquote className="text-[0.9375rem] md:text-[1.275rem] italic text-bottle-green-solid mb-4">
                     "{testimonials[currentIndex].quote}"
                   </blockquote>
                   <div className="flex items-center justify-center gap-3">
@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
           </button>
 
           {/* Dots */}
-          <div className="flex justify-center mt-6 gap-2">
+          <div className="flex justify-center mt-4 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}

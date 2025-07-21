@@ -45,7 +45,7 @@ const ProductGrid = () => {
   return (
     <section className="bg-pearlescent m-0">
       <div className="max-w-7xl mx-auto px-0">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-bold text-bottle-green mb-4 tracking-tight">
             Our Product Range
           </h2>
@@ -54,7 +54,7 @@ const ProductGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {products.map((product) => (
             <div key={product.id}>
               <Link to={product.link} className="group block">
@@ -68,7 +68,7 @@ const ProductGrid = () => {
                       onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
                     />
                   </div>
-                  <div className="p-5">
+                  <div className="p-4">
                     <h3 className="text-xl font-semibold text-bottle-green">
                       {product.title}
                     </h3>
@@ -85,7 +85,7 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        <div className="text-center mt-3.5">
+        <div className="text-center mt-6">
           <Link
             to="/products"
             className="inline-flex items-center btn-bottle-green px-8 py-4 rounded-full font-semibold text-lg shadow-lg"

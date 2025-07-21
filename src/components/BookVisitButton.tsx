@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Send, X, User, Phone, MapPin, Building, Calendar, Wrench } from 'lucide-react';
 
 const BookVisitButton = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -15,6 +16,17 @@ const BookVisitButton = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user scrolls past hero section (approximately 80vh for better trigger point)
+      const heroHeight = window.innerHeight * 0.8;
+      setIsVisible(window.scrollY > heroHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,6 +57,7 @@ const BookVisitButton = () => {
 
   return (
     <>
+<<<<<<< HEAD
       {/* Floating Button - Vertically Oriented on Left Border */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
         <button
@@ -56,6 +69,28 @@ const BookVisitButton = () => {
           <span className="font-medium text-sm tracking-wider text-white">Book A Visit</span>
         </button>
       </div>
+=======
+      {/* Minimal Curved Button - Only appears after scrolling past hero */}
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, x: -50, scale: 0.8 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -50, scale: 0.8 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="fixed left-3 top-1/2 -translate-y-1/2 z-50"
+          >
+            <button
+              onClick={() => setIsFormOpen(true)}
+              className="w-10 h-10 bg-bottle-green hover:bg-bottle-green-solid text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center group hover:scale-110 hover:shadow-xl"
+              aria-label="Book a site visit"
+            >
+              <ArrowRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+>>>>>>> e38ecce56c53c370254b0feaa9d03b1fd422be5e
 
       {/* Popup Form */}
       <AnimatePresence>

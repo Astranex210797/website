@@ -4,8 +4,8 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-pearlescent-subtle border-t border-gray-200 text-bottle-green-solid py-10 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <footer className="bg-pearlescent-subtle border-t border-gray-200 text-bottle-green-solid py-8 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
         {/* Logo Section */}
         <div className="space-y-4">
@@ -17,8 +17,8 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
+          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+          <ul className="space-y-1 text-sm">
             <li><Link to="/" className="hover:text-brand transition">Home</Link></li>
             <li><Link to="/about" className="hover:text-brand transition">About Us</Link></li>
             <li><Link to="/products" className="hover:text-brand transition">Products</Link></li>
@@ -29,8 +29,8 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
-          <ul className="space-y-3 text-sm">
+          <h3 className="text-lg font-semibold mb-2">Contact</h3>
+          <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +91-9999999999</li>
             <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> info@peakelevator.in</li>
             <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Delhi, India</li>
@@ -40,7 +40,7 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+          <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
           <div className="flex space-x-4">
             <a
               href="https://www.instagram.com/peakelevatorgroup?igsh=MXB5bmcybGJ6aXY2MA%3D%3D&utm_source=qr"
@@ -77,7 +77,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-10 border-t border-gray-300 pt-6 text-center text-xs text-bottle-green-solid/60">
+      <div className="mt-6 border-t border-gray-300 pt-4 text-center text-xs text-bottle-green-solid/60">
         &copy; {new Date().getFullYear()} Peak Elevator Group. All rights reserved.
       </div>
     </footer>
