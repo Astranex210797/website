@@ -60,22 +60,22 @@ const PartnersSection = () => {
   }, []);
 
   const partners = [
+    'Toring Drive',
+    'Fermattor',
+    'Wittur',
+    'Monarch',
+    'Arkel',
     'Otis Elevator Company',
     'Schindler Group',
     'KONE Corporation',
     'ThyssenKrupp Elevator',
     'Mitsubishi Electric',
     'Hitachi Elevators',
-    'Fujitec Co. Ltd',
-    'Hyundai Elevator',
-    'Johnson Lifts',
-    'Express Lifts',
-    'Escon Elevators',
-    'Sigma Elevators'
+    'Johnson Lifts'
   ];
 
   return (
-    <section className="py-5 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
+    <section className="py-8 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-3 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ const PartnersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-bottle-green">Trusted Partners</h2>
           <p className="text-lg text-bottle-green-solid/80 max-w-3xl mx-auto">
@@ -123,7 +123,7 @@ const PartnersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-center"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-center"
         >
           <div>
             <div className="text-5xl font-extrabold text-bottle-green mb-2">{projectsCount}+</div>
