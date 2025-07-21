@@ -49,9 +49,7 @@ const ProductGrid = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-bottle-green mb-4 tracking-tight">
             Our Product Range
           </h2>
-          <p className="text-lg text-bottle-green-solid/80 max-w-2xl mx-auto">
-            Residential elegance to industrial might — discover lifts that redefine elevation.
-          </p>
+        
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
