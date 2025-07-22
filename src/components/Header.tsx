@@ -155,10 +155,10 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-pearlescent-subtle transition-colors duration-200"
+            className="md:hidden p-3 rounded-lg hover:bg-pearlescent-subtle transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-bottle-green-solid" /> : <Menu className="w-6 h-6 text-bottle-green-solid" />}
+            {isMenuOpen ? <X className="w-7 h-7 text-bottle-green-solid" /> : <Menu className="w-7 h-7 text-bottle-green-solid" />}
           </button>
         </div>
 

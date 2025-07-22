@@ -139,7 +139,7 @@ const ContactForm = () => {
                 </div>
                 <div className="leading-tight">
                   <h4 className="font-medium text-bottle-green text-base mb-0.5">Email Us</h4>
-                  <p className="text-sm text-bottle-green-solid/80">info@peakelevator.com</p>
+                  <p className="text-sm text-bottle-green-solid/80">Admin@peakelevatorgroup.com</p>
                 </div>
               </div>
 
@@ -148,8 +148,8 @@ const ContactForm = () => {
                   <MapPin className="w-5 h-5 text-bottle-green" />
                 </div>
                 <div className="leading-tight">
-                  <h4 className="font-medium text-bottle-green text-base mb-0.5">Service Area</h4>
-                  <p className="text-sm text-bottle-green-solid/80">Delhi/NCR, India</p>
+                  <h4 className="font-medium text-bottle-green text-base mb-0.5">Address</h4>
+                  <p className="text-sm text-bottle-green-solid/80">Plot No. 915, Krishna Apra Business Square, NSP, Delhi - 110034</p>
                 </div>
               </div>
             </div>

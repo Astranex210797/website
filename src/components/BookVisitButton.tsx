@@ -17,6 +17,7 @@ const BookVisitButton = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -33,6 +34,14 @@ const BookVisitButton = () => {
       // Show button when user scrolls past hero section (approximately 80vh)
       const heroHeight = window.innerHeight * 0.8;
       setShowButton(window.scrollY > heroHeight);
+      
+      // Hide button when footer is visible
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        setIsFooterVisible(footerRect.top < windowHeight);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -46,6 +55,28 @@ const BookVisitButton = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent('Site Visit Request - Peak Elevator Group');
+    const body = encodeURIComponent(`
+Site Visit Request Details:
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Address: ${formData.address}
+Number of Floors: ${formData.floors}
+Lift Type: ${formData.liftType}
+Installation Year: ${formData.installationYear}
+Current AMC/Requirements: ${formData.currentAMC}
+
+Please contact me to schedule a site visit.
+
+Best regards,
+${formData.name}
+    `);
+    
+    const mailtoLink = `mailto:Admin@peakelevatorgroup.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
 
     setTimeout(() => {
       console.log(formData);
@@ -71,7 +102,7 @@ const BookVisitButton = () => {
   return (
     <>
       <AnimatePresence>
-        {showButton && (
+        {showButton && !isFooterVisible && (
           <motion.div
             initial={{ opacity: 0, x: -50, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}

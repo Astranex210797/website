@@ -6,12 +6,21 @@ import { MessageSquare } from 'lucide-react';
 const QuickEnquiry = () => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       // Show button when user scrolls past hero section (approximately 80vh)
       const heroHeight = window.innerHeight * 0.8;
       setIsVisible(window.scrollY > heroHeight);
+      
+      // Hide button when footer is visible
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        setIsFooterVisible(footerRect.top < windowHeight);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,7 +33,7 @@ const QuickEnquiry = () => {
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && !isFooterVisible && (
         <motion.div
           initial={{ opacity: 0, x: 50, scale: 0.8 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}

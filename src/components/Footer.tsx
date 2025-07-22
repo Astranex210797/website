@@ -28,9 +28,9 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
           <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +91-9999999999</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> info@peakelevator.in</li>
-            <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Delhi, India</li>
+            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +91 9990858886</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> Admin@peakelevatorgroup.com</li>
+            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" /> <span>Plot No. 915, Krishna Apra Business Square, NSP, Delhi - 110034</span></li>
             <li className="flex items-center gap-2"><Clock className="w-4 h-4" /> Mon–Sat: 9AM–6PM</li>
           </ul>
         </div>
