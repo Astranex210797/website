@@ -10,9 +10,6 @@ const Footer = () => {
         {/* Logo Section */}
         <div className="space-y-4">
           <img src="/logo.jpg" alt="Peak Elevator Group" className="w-40 rounded-xl" />
-          <p className="text-sm text-bottle-green-solid/80 leading-relaxed">
-            Elevating expectations with quality, safety, and innovation — one lift at a time.
-          </p>
         </div>
 
         {/* Quick Links */}
