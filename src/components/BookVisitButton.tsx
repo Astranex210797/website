@@ -81,18 +81,18 @@ const BookVisitButton = () => {
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-800 hover:to-emerald-700 text-white px-3 py-8 rounded-r-xl shadow-lg transition-all duration-300 flex items-center group hover:scale-105 hover:shadow-2xl hover:pr-4"
+              className="bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-800 hover:to-emerald-700 text-white px-2 py-6 rounded-r-lg shadow-lg transition-all duration-300 flex items-center group hover:scale-105 hover:shadow-2xl"
               style={{
                 writingMode: 'vertical-rl',
                 textOrientation: 'mixed',
               }}
               aria-label="Book a site visit"
             >
-              <Calendar className="w-5 h-5 mb-3 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-              <span className="font-semibold text-sm tracking-wider text-white group-hover:tracking-wide transition-all duration-300">
+              <Calendar className="w-4 h-4 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+              <span className="font-medium text-xs tracking-wider text-white group-hover:tracking-wide transition-all duration-300">
                 Book A Visit
               </span>
-              <ArrowRight className="w-4 h-4 mt-3 group-hover:scale-110 group-hover:translate-x-1 transition-all duration-300" />
+              <ArrowRight className="w-4 h-4 mt-2 group-hover:scale-110 group-hover:translate-x-1 transition-all duration-300" />
             </button>
           </motion.div>
         )}
