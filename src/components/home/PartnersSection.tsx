@@ -64,14 +64,7 @@ const PartnersSection = () => {
     'Fermattor',
     'Wittur',
     'Monarch',
-    'Arkel',
-    'Otis Elevator Company',
-    'Schindler Group',
-    'KONE Corporation',
-    'ThyssenKrupp Elevator',
-    'Mitsubishi Electric',
-    'Hitachi Elevators',
-    'Johnson Lifts'
+    'Arkel'
   ];
 
   return (
