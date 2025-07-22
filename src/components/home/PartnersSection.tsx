@@ -68,7 +68,7 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="py-8 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
+    <section className="pt-8 pb-1 bg-pearlescent text-bottle-green-solid relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-3 bg-cover bg-center" style={{ backgroundImage: 'url(/bg-texture.png)' }}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,8 +1,26 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FloatingActions = () => {
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide buttons when footer is visible
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        setIsFooterVisible(footerRect.top < windowHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleWhatsApp = () => {
     window.open('https://wa.me/919990858886?text=Hi, I would like to know more about your elevator services.', '_blank');
   };
@@ -12,7 +30,7 @@ const FloatingActions = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-0 right-0 z-40 flex justify-between px-6 pointer-events-none">
+    <div className={`fixed bottom-6 left-0 right-0 z-40 flex justify-between px-6 pointer-events-none transition-opacity duration-300 ${isFooterVisible ? 'opacity-0' : 'opacity-100'}`}>
       {/* WhatsApp Button */}
       <motion.button
         initial={{ scale: 0 }}
