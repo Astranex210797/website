@@ -169,34 +169,34 @@ const Header = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="md:hidden bg-white border-t border-bottle-green-solid/20"
+              className="md:hidden bg-white border-t border-bottle-green-solid/20 max-h-[calc(100vh-4rem)] overflow-y-auto"
             >
-              <div className="py-4 space-y-2">
+              <div className="py-3 space-y-1">
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/" onClick={closeMenu} className="block px-4 py-2 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150">Home</Link>
+                  <Link to="/" onClick={closeMenu} className="block px-4 py-2.5 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150 text-base">Home</Link>
                 </motion.div>
-                <motion.div variants={mobileMenuItemVariants} className="px-4 py-2">
-                  <div className="text-bottle-green-solid font-medium mb-2">Products</div>
+                <motion.div variants={mobileMenuItemVariants} className="px-4 py-1">
+                  <div className="text-bottle-green-solid font-medium mb-1.5 text-base">Products</div>
                   {products.map((product) => (
                     <motion.div key={product.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={product.path}
                         onClick={closeMenu}
-                        className="block pl-4 py-1.5 text-bottle-green-solid/70 hover:text-bottle-green transition-colors duration-150"
+                        className="block pl-4 py-1.5 text-bottle-green-solid/70 hover:text-bottle-green transition-colors duration-150 text-sm"
                       >
                         {product.name}
                       </Link>
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div variants={mobileMenuItemVariants} className="px-4 py-2">
-                  <div className="text-bottle-green-solid font-medium mb-2">Services</div>
+                <motion.div variants={mobileMenuItemVariants} className="px-4 py-1">
+                  <div className="text-bottle-green-solid font-medium mb-1.5 text-base">Services</div>
                   {services.map((service) => (
                     <motion.div key={service.path} variants={mobileMenuItemVariants}>
                       <Link
                         to={service.path}
                         onClick={closeMenu}
-                        className="block pl-4 py-1.5 text-bottle-green-solid/70 hover:text-bottle-green transition-colors duration-150"
+                        className="block pl-4 py-1.5 text-bottle-green-solid/70 hover:text-bottle-green transition-colors duration-150 text-sm"
                       >
                         {service.name}
                       </Link>
@@ -204,11 +204,11 @@ const Header = () => {
                   ))}
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants}>
-                  <Link to="/contact" onClick={closeMenu} className="block px-4 py-2 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150">Contact</Link>
+                  <Link to="/contact" onClick={closeMenu} className="block px-4 py-2.5 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150 text-base">Contact</Link>
                 </motion.div>
-                <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2">
+                <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2 pb-2">
                   <Link to="/contact">
-                    <button onClick={closeMenu} className="w-full btn-bottle-green px-6 py-2 rounded-lg transition-colors duration-200 font-medium shadow-md">
+                    <button onClick={closeMenu} className="w-full btn-bottle-green px-4 py-2.5 rounded-lg transition-colors duration-200 font-medium shadow-md text-sm">
                       Book Site Visit
                     </button>
                   </Link>
