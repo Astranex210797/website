@@ -111,29 +111,29 @@ const BookVisitButton = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="bg-white p-6 md:p-8 rounded-3xl shadow-2xl w-full max-w-lg relative border border-emerald-100 backdrop-blur-sm"
+              className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-lg relative border border-emerald-100 backdrop-blur-sm max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setIsFormOpen(false)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-50 hover:bg-red-50 flex items-center justify-center text-gray-500 hover:text-red-500 transition-all duration-200 hover:scale-110 hover:rotate-90"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-50 hover:bg-red-50 flex items-center justify-center text-gray-500 hover:text-red-500 transition-all duration-200 hover:scale-110 hover:rotate-90"
                 aria-label="Close form"
               >
-                <X size={20} />
+                <X size={16} className="sm:w-5 sm:h-5" />
               </button>
 
-              <div className="text-center mb-6 md:mb-8">
+              <div className="text-center mb-4 sm:mb-6 md:mb-8">
                 <motion.div 
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md"
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md"
                 >
-                  <Calendar className="w-8 h-8 text-emerald-600" />
+                  <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
                 </motion.div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent mb-2">
                   Schedule a Site Visit
                 </h2>
-                <p className="text-emerald-600/80 text-sm">Get expert consultation for your elevator needs</p>
+                <p className="text-emerald-600/80 text-xs sm:text-sm">Get expert consultation for your elevator needs</p>
               </div>
 
               {isSubmitted ? (
@@ -143,21 +143,21 @@ const BookVisitButton = () => {
                   transition={{ type: "spring", stiffness: 200 }}
                   className="text-center py-8"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                    <Send className="w-10 h-10 text-green-600" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <Send className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-emerald-800 mb-2">Thank You!</h3>
-                  <p className="text-emerald-600">We'll be in touch soon to schedule your visit.</p>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-800 mb-2">Thank You!</h3>
+                  <p className="text-sm sm:text-base text-emerald-600">We'll be in touch soon to schedule your visit.</p>
                 </motion.div>
               ) : (
-                <motion.form 
+                <motion.form
                   onSubmit={handleSubmit} 
-                  className="space-y-6"
+                  className="space-y-4 sm:space-y-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <InputField 
                       icon={<User />} 
                       name="name" 
@@ -184,7 +184,7 @@ const BookVisitButton = () => {
                     placeholder="Site Address" 
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <InputField 
                       icon={<Building />} 
                       name="floors" 
@@ -203,14 +203,14 @@ const BookVisitButton = () => {
                   </div>
 
                   <div className="relative group">
-                    <Wrench className="absolute left-3 top-3 w-5 h-5 text-emerald-400 group-focus-within:text-emerald-600 group-focus-within:scale-110 transition-all duration-200" />
+                    <Wrench className="absolute left-3 top-3 w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-focus-within:text-emerald-600 group-focus-within:scale-110 transition-all duration-200" />
                     <textarea
                       name="currentAMC"
                       value={formData.currentAMC}
                       onChange={handleChange}
                       placeholder="Current AMC or Other Requirements"
-                      rows={3}
-                      className="w-full pl-10 pr-4 py-3 border border-emerald-200/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 resize-none focus:shadow-md"
+                      rows={2}
+                      className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 resize-none focus:shadow-md text-sm sm:text-base"
                     />
                   </div>
 
@@ -219,7 +219,7 @@ const BookVisitButton = () => {
                       name="liftType"
                       value={formData.liftType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-emerald-200/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 transition-all duration-300 focus:shadow-md"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 transition-all duration-300 focus:shadow-md text-sm sm:text-base"
                       aria-label="Select Lift Type"
                     >
                       <option value="">Select Lift Type</option>
@@ -234,7 +234,7 @@ const BookVisitButton = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-4 px-6 rounded-xl flex items-center justify-center gap-3 font-semibold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl group ${
+                    className={`w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl flex items-center justify-center gap-2 sm:gap-3 font-semibold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl group ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-[0.98]'
                     }`}
                   >
@@ -253,13 +253,15 @@ const BookVisitButton = () => {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                           />
                         </svg>
-                        Submitting Request...
+                        <span className="hidden sm:inline">Submitting Request...</span>
+                        <span className="sm:hidden">Submitting...</span>
                       </>
                     ) : (
                       <>
-                        <Send size={18} className="group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-                        Submit Request
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                        <Send size={16} className="sm:w-[18px] sm:h-[18px] group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                        <span className="hidden sm:inline">Submit Request</span>
+                        <span className="sm:hidden">Submit</span>
+                        <ArrowRight size={14} className="sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </>
                     )}
                   </button>
@@ -301,7 +303,7 @@ const InputField = ({
       onChange={onChange}
       placeholder={placeholder}
       required={required}
-      className="w-full pl-10 pr-4 py-3 border border-emerald-200/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 focus:shadow-md"
+      className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 focus:shadow-md text-sm sm:text-base"
     />
   </div>
 );
