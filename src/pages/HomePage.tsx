@@ -7,23 +7,23 @@ import PartnersSection from '../components/home/PartnersSection';
 const HomePage = () => {
   return (
     <div className="min-h-screen text-brand-text overflow-hidden bg-white">
-      {/* Hero Section - no extra spacing */}
+      {/* Hero Section */}
       <HeroSection />
-
-      {/* Subtle divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-bottle-green-solid/20 to-transparent"></div>
-
-      {/* Content Sections with tighter spacing */}
-      <div className="px-4 sm:px-6 lg:px-8 space-y-2 sm:space-y-8 pt-4 pb-8">
+      
+      {/* Subtle divider with fade effect */}
+      <div className="relative h-px bg-gradient-to-r from-transparent via-bottle-green-solid/30 to-transparent my-2 sm:my-4"></div>
+      
+      {/* Content Sections with refined spacing */}
+      <div className="px-4 sm:px-6 lg:px-8 space-y-6">
         <ProductGrid />
         
-        {/* Subtle divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-bottle-green-solid/20 to-transparent my-8"></div>
+        {/* Subtle divider with fade effect */}
+        <div className="relative h-px bg-gradient-to-r from-transparent via-bottle-green-solid/30 to-transparent my-6 sm:my-8"></div>
         
         <TestimonialsSection />
         
-        {/* Subtle divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-bottle-green-solid/20 to-transparent my-8"></div>
+        {/* Subtle divider with fade effect */}
+        <div className="relative h-px bg-gradient-to-r from-transparent via-bottle-green-solid/30 to-transparent my-6 sm:my-8"></div>
         
         <PartnersSection />
       </div>
