@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Car, Building, Wrench } from 'lucide-react';
-
 const CarLiftPage = () => {
   const specifications = [
     'Vehicle Weight: Up to 3000 kg',
@@ -87,8 +86,8 @@ const CarLiftPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              <span className="block sm:inline">Why Choose Our Car Lifts?</span>
+            <h2 className="text-1xl sm:text-xl font-bold text-[#145943] mb-6 whitespace-nowrap">
+              Why Choose Our Car Lifts?
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

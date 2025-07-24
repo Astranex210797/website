@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Zap, Building, Wrench } from 'lucide-react';
-
 const MRLElevatorPage = () => {
   const specifications = [
     'Capacity: 320–1600 kg',
@@ -14,7 +13,6 @@ const MRLElevatorPage = () => {
     'Advanced safety systems',
     'Modern control technology'
   ];
-
   const features = [
     {
       icon: Zap,
@@ -32,7 +30,6 @@ const MRLElevatorPage = () => {
       description: 'Accessible components reduce maintenance time and costs'
     }
   ];
-
   return (
     <div className="pt-16">
       {/* HERO SECTION */}
@@ -46,7 +43,6 @@ const MRLElevatorPage = () => {
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-
         {/* Foreground Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[400px]">
           <motion.h1
@@ -80,7 +76,6 @@ const MRLElevatorPage = () => {
           </motion.div>
         </div>
       </section>
-
       {/* FEATURES SECTION */}
       <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,11 +86,10 @@ const MRLElevatorPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              <span className="block sm:inline">Why Choose Our MRL Elevators?</span>
+            <h2 className="text-1xl sm:text-xl font-bold text-[#145943] mb-6 whitespace-nowrap">
+              Why Choose Our MRL Elevators?
             </h2>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((feature, index) => (
               <motion.div
@@ -116,7 +110,6 @@ const MRLElevatorPage = () => {
           </div>
         </div>
       </section>
-
       {/* SPECIFICATIONS SECTION */}
       <section className="py-20 bg-[#E6FAF4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,7 +177,6 @@ const MRLElevatorPage = () => {
           </div>
         </div>
       </section>
-
       {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -216,5 +208,4 @@ const MRLElevatorPage = () => {
     </div>
   );
 };
-
 export default MRLElevatorPage;

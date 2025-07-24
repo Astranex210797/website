@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Zap, Shield, Smartphone, Palette } from 'lucide-react';
-
 const ModernizationPage = () => {
   const modernizationFeatures = [
     'Advanced control systems',
@@ -14,7 +13,6 @@ const ModernizationPage = () => {
     'Emergency communication',
     'Accessibility compliance'
   ];
-
   const benefits = [
     {
       icon: Zap,
@@ -37,7 +35,6 @@ const ModernizationPage = () => {
       description: 'Contemporary designs that enhance building appeal'
     }
   ];
-
   return (
     <div className="pt-16">
       {/* HERO SECTION */}
@@ -51,7 +48,6 @@ const ModernizationPage = () => {
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-
         {/* Foreground Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[400px]">
           <motion.h1
@@ -85,7 +81,6 @@ const ModernizationPage = () => {
           </motion.div>
         </div>
       </section>
-
       {/* BENEFITS SECTION */}
       <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,11 +91,10 @@ const ModernizationPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              <span className="block sm:inline">Why Modernize Your Elevator?</span>
+            <h2 className="text-1xl sm:text-xl font-bold text-[#145943] mb-6 whitespace-nowrap">
+              Why Modernize Your Elevator?
             </h2>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
@@ -121,7 +115,6 @@ const ModernizationPage = () => {
           </div>
         </div>
       </section>
-
       {/* BEFORE/AFTER COMPARISON */}
       <section className="py-20 bg-[#E6FAF4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +132,6 @@ const ModernizationPage = () => {
               See how we transform outdated elevator systems into modern marvels.
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Before */}
             <motion.div
@@ -182,7 +174,6 @@ const ModernizationPage = () => {
                 </div>
               </div>
             </motion.div>
-
             {/* After */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -227,7 +218,6 @@ const ModernizationPage = () => {
           </div>
         </div>
       </section>
-
       {/* MODERNIZATION FEATURES */}
       <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -295,7 +285,6 @@ const ModernizationPage = () => {
           </div>
         </div>
       </section>
-
       {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -327,5 +316,4 @@ const ModernizationPage = () => {
     </div>
   );
 };
-
 export default ModernizationPage;
