@@ -44,7 +44,7 @@ const ProductGrid = () => {
 
   return (
     <section className="bg-pearlescent m-0">
-      <div className="max-w-7xl mx-auto px-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold text-bottle-green mb-4 tracking-tight text-left">
             Our Product Range
@@ -55,7 +55,7 @@ const ProductGrid = () => {
             <div key={product.id}>
               <Link 
                 to={product.link} 
-                className="group block relative transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                className="group block relative transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
               >
                 <div className="relative overflow-hidden rounded-2xl bg-pearlescent-subtle border border-gray-200/50 shadow-lg transition-all duration-300 group-hover:border-bottle-green group-hover:shadow-xl">
                   <div className="aspect-[4/3] overflow-hidden rounded-t-2xl relative">
