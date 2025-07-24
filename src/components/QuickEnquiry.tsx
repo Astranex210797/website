@@ -39,10 +39,11 @@ const QuickEnquiry = () => {
         >
           <button
             onClick={handleClick}
-            className="bg-gradient-to-b from-[#0F3D2D] to-[#135C45] text-white px-1.5 py-3 sm:px-2 sm:py-4 flex flex-col items-center justify-center group hover:shadow-lg border border-[#0F3D2D]/30 w-8 sm:w-10"
+            className="bg-gradient-to-b from-emerald-700 to-emerald-600 text-white px-1.5 py-3 sm:px-2 sm:py-4 flex flex-col items-center justify-center group hover:shadow-lg border border-emerald-800/40 w-8 sm:w-10"
             style={{ 
-              writingMode: 'vertical-lr', 
-              textOrientation: 'upright',
+              writingMode: 'vertical-rl', 
+              textOrientation: 'sideways-right',
+              transform: 'rotate(180deg)',
               borderRadius: '0 12px 12px 0',
             }}
             aria-label="Get in touch"
