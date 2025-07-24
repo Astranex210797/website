@@ -72,9 +72,9 @@ const MachineRoomLiftPage = () => {
             className="flex justify-center"
           >
             <Link to="/contact">
-  <button className="bg-gradient-to-r from-[#E6FAF4] to-[#1ABC9C] text-[#0D3B2E] px-6 py-3 rounded-full font-bold text-lg shadow-xl flex items-center gap-3 transition-all duration-300 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
+  <button className="bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4]">
     Book Site Visit
-    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+    <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
   </button>
 </Link>
 </motion.div>
