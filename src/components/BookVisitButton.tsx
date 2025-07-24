@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, X, User, Phone, MapPin, Building, Calendar as Cal, Wrench } from 'lucide-react';
-
+import { X, User, Phone, MapPin, Building, Calendar as Cal, Wrench } from 'lucide-react';
 const BookVisitButton = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
@@ -15,7 +14,6 @@ const BookVisitButton = () => {
     floors: '',
     amc: '',
   });
-
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.8;
@@ -30,17 +28,14 @@ const BookVisitButton = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     setIsFormOpen(false);
   };
-
   return (
     <>
       <AnimatePresence>
@@ -58,7 +53,6 @@ const BookVisitButton = () => {
               style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
               aria-label="Book a visit"
             >
-              <Calendar className="w-4 h-4 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
               <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider">
                 Book a Visit
               </span>
@@ -66,7 +60,6 @@ const BookVisitButton = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
@@ -191,5 +184,4 @@ const BookVisitButton = () => {
     </>
   );
 };
-
 export default BookVisitButton;
