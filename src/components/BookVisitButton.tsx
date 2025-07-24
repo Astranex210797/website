@@ -31,11 +31,9 @@ const BookVisitButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show button when user scrolls past hero section (approximately 80vh)
       const heroHeight = window.innerHeight * 0.8;
       setShowButton(window.scrollY > heroHeight);
       
-      // Hide button when footer is visible
       const footer = document.querySelector('footer');
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
@@ -48,15 +46,14 @@ const BookVisitButton = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create mailto link with form data
     const subject = encodeURIComponent('Site Visit Request - Peak Elevator Group');
     const body = encodeURIComponent(`
 Site Visit Request Details:
@@ -79,7 +76,6 @@ ${formData.name}
     window.location.href = mailtoLink;
 
     setTimeout(() => {
-      console.log(formData);
       setIsSubmitting(false);
       setIsSubmitted(true);
 
@@ -119,11 +115,11 @@ ${formData.name}
               }}
               aria-label="Book a site visit"
             >
-              <Calendar className="w-3 h-3 mb-2 group-hover:scale-105 transition-transform duration-200" />
-              <span className="font-medium text-[9px] tracking-wide text-emerald-600 transform rotate-180">
+              <Calendar className="w-3.5 h-3.5 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
+              <span className="font-medium text-[10px] tracking-tight text-emerald-600 transform rotate-180">
                 Visit
               </span>
-              <ArrowRight className="w-3 h-3 mt-2 group-hover:scale-105 transition-transform duration-200 transform rotate-90" />
+              <ArrowRight className="w-3.5 h-3.5 mt-1.5 group-hover:scale-105 transition-transform duration-200 transform rotate-90" />
             </button>
           </motion.div>
         )}
@@ -132,63 +128,63 @@ ${formData.name}
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-4"
           >
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-lg relative border border-emerald-100 backdrop-blur-sm max-h-[90vh] overflow-y-auto"
+              className="bg-white/95 p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl shadow-xl w-full max-w-[90vw] sm:max-w-md md:max-w-lg relative border border-emerald-100/50 backdrop-blur-sm max-h-[85vh] overflow-y-auto"
             >
               <button
                 onClick={() => setIsFormOpen(false)}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-50 hover:bg-red-50 flex items-center justify-center text-gray-500 hover:text-red-500 transition-all duration-200 hover:scale-110 hover:rotate-90"
+                className="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-100/80 hover:bg-red-100/80 flex items-center justify-center text-gray-500 hover:text-red-500 transition-all duration-200 hover:scale-105"
                 aria-label="Close form"
               >
-                <X size={16} className="sm:w-5 sm:h-5" />
+                <X size={14} className="sm:w-5 sm:h-5" />
               </button>
 
-              <div className="text-center mb-4 sm:mb-6 md:mb-8">
+              <div className="text-center mb-3 sm:mb-4 md:mb-5">
                 <motion.div 
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3 shadow-sm"
                 >
-                  <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
+                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                 </motion.div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent mb-2">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent mb-1 sm:mb-2">
                   Schedule a Site Visit
                 </h2>
-                <p className="text-emerald-600/80 text-xs sm:text-sm">Get expert consultation for your elevator needs</p>
+                <p className="text-emerald-600/80 text-xs sm:text-sm leading-relaxed">Expert consultation for your elevator needs</p>
               </div>
 
               {isSubmitted ? (
                 <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }} 
+                  initial={{ opacity: 0, scale: 0.9 }} 
                   animate={{ opacity: 1, scale: 1 }} 
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="text-center py-8"
+                  className="text-center py-6 sm:py-8"
                 >
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                    <Send className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-100 to-emerald-50 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-sm">
+                    <Send className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" />
                   </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-800 mb-2">Thank You!</h3>
-                  <p className="text-sm sm:text-base text-emerald-600">We'll be in touch soon to schedule your visit.</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-emerald-800 mb-1 sm:mb-2">Thank You!</h3>
+                  <p className="text-xs sm:text-sm text-emerald-600 leading-relaxed">We'll contact you soon to schedule your visit.</p>
                 </motion.div>
               ) : (
                 <motion.form
                   onSubmit={handleSubmit} 
-                  className="space-y-4 sm:space-y-6"
+                  className="space-y-3 sm:space-y-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <InputField 
                       icon={<User />} 
                       name="name" 
@@ -215,13 +211,13 @@ ${formData.name}
                     placeholder="Site Address" 
                   />
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <InputField 
                       icon={<Building />} 
                       name="floors" 
                       value={formData.floors} 
                       onChange={handleChange} 
-                      placeholder="Number of Floors" 
+                      placeholder="Floors" 
                       type="number" 
                     />
                     <InputField 
@@ -229,19 +225,19 @@ ${formData.name}
                       name="installationYear" 
                       value={formData.installationYear} 
                       onChange={handleChange} 
-                      placeholder="Installation Year" 
+                      placeholder="Install Year" 
                     />
                   </div>
 
                   <div className="relative group">
-                    <Wrench className="absolute left-3 top-3 w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-focus-within:text-emerald-600 group-focus-within:scale-110 transition-all duration-200" />
+                    <Wrench className="absolute left-2.5 top-2.5 w-4 h-4 sm:w-4.5 sm:h-4.5 text-emerald-400 group-focus-within:text-emerald-600 transition-all duration-200" />
                     <textarea
                       name="currentAMC"
                       value={formData.currentAMC}
                       onChange={handleChange}
-                      placeholder="Current AMC or Other Requirements"
+                      placeholder="AMC or Requirements"
                       rows={2}
-                      className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 resize-none focus:shadow-md text-sm sm:text-base"
+                      className="w-full pl-8 pr-2 py-2 sm:pl-9 sm:pr-3 sm:py-2.5 border border-emerald-200/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 resize-none text-xs sm:text-sm font-normal leading-relaxed"
                     />
                   </div>
 
@@ -250,7 +246,7 @@ ${formData.name}
                       name="liftType"
                       value={formData.liftType}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 transition-all duration-300 focus:shadow-md text-sm sm:text-base"
+                      className="w-full px-2 sm:px-3 py-2 sm:py-2.5 border border-emerald-200/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 transition-all duration-300 text-xs sm:text-sm font-normal leading-relaxed"
                       aria-label="Select Lift Type"
                     >
                       <option value="">Select Lift Type</option>
@@ -265,14 +261,14 @@ ${formData.name}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl flex items-center justify-center gap-2 sm:gap-3 font-semibold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl group ${
+                    className={`w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg flex items-center justify-center gap-1.5 sm:gap-2 font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-md hover:shadow-lg group ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-[0.98]'
                     }`}
                   >
                     {isSubmitting ? (
                       <>
                         <svg
-                          className="animate-spin h-5 w-5 text-white"
+                          className="animate-spin h-4 w-4 sm:h-5 sm:w-5 text-white"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -284,15 +280,15 @@ ${formData.name}
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                           />
                         </svg>
-                        <span className="hidden sm:inline">Submitting Request...</span>
-                        <span className="sm:hidden">Submitting...</span>
+                        <span className="hidden sm:inline">Submitting...</span>
+                        <span className="sm:hidden">Submit...</span>
                       </>
                     ) : (
                       <>
-                        <Send size={16} className="sm:w-[18px] sm:h-[18px] group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                        <Send size={12} className="sm:w-4 sm:h-4 group-hover:scale-105 transition-all duration-200" />
                         <span className="hidden sm:inline">Submit Request</span>
                         <span className="sm:hidden">Submit</span>
-                        <ArrowRight size={14} className="sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                       </>
                     )}
                   </button>
@@ -314,17 +310,9 @@ const InputField = ({
   placeholder,
   type = 'text',
   required = false,
-}: {
-  icon: React.ReactNode;
-  name: string;
-  value: string;
-  onChange: (e: any) => void;
-  placeholder: string;
-  type?: string;
-  required?: boolean;
 }) => (
   <div className="relative group">
-    <span className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-emerald-400 group-focus-within:text-emerald-600 group-focus-within:scale-110 transition-all duration-200">
+    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-4.5 sm:h-4.5 text-emerald-400 group-focus-within:text-emerald-600 transition-all duration-200">
       {icon}
     </span>
     <input
@@ -334,7 +322,7 @@ const InputField = ({
       onChange={onChange}
       placeholder={placeholder}
       required={required}
-      className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-emerald-200/60 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 focus:shadow-md text-sm sm:text-base"
+      className="w-full pl-8 sm:pl-9 pr-2 sm:pr-3 py-2 sm:py-2.5 border border-emerald-200/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 text-emerald-900 placeholder-emerald-400/70 text-xs sm:text-sm font-normal leading-relaxed"
     />
   </div>
 );
