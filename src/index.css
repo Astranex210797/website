@@ -34,18 +34,23 @@ body {
   color: #1a5f47;
 }
 
-/* Button styles with bottle green */
+/* ✅ Updated Button styles with subtle bottle green gradient for small buttons */
 .btn-bottle-green {
-  background: linear-gradient(135deg, #2d7a5f 0%, #1a5f47 50%, #0f4a36 100%);
-  color: white;
+  background: linear-gradient(135deg, #e6faf4 0%, #b2e5d8 50%, #1abc9c 100%);
+  color: #0d3b2e;
   border: none;
+  padding: 0.5rem 1rem; /* smaller, balanced size */
+  font-size: 0.875rem;  /* Tailwind 'text-sm' */
+  font-weight: 600;
+  border-radius: 9999px; /* fully rounded pill shape */
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(26, 95, 71, 0.15);
 }
 
 .btn-bottle-green:hover {
-  background: linear-gradient(135deg, #0f4a36 0%, #1a5f47 50%, #2d7a5f 100%);
+  background: linear-gradient(135deg, #1abc9c 0%, #58d1ba 50%, #e6faf4 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(26, 95, 71, 0.3);
+  box-shadow: 0 4px 12px rgba(26, 95, 71, 0.25);
 }
 
 /* Performance optimizations */
