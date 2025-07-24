@@ -47,8 +47,7 @@ const QuickEnquiry = () => {
             }}
             aria-label="Get in touch"
           >
-            <MessageSquare className="w-4 h-4 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
-            <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider transform rotate-180">
+            <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider">
               Get In Touch
             </span>
           </button>
