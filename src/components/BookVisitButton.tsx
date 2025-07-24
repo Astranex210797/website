@@ -104,26 +104,26 @@ ${formData.name}
       <AnimatePresence>
         {showButton && !isFooterVisible && (
           <motion.div
-            initial={{ opacity: 0, x: -50, scale: 0.8 }}
+            initial={{ opacity: 0, x: -20, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: -50, scale: 0.8 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed left-0 top-1/2 -translate-y-1/2 z-50 rounded-r-xl overflow-hidden"
+            exit={{ opacity: 0, x: -20, scale: 0.9 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed left-2 top-1/2 -translate-y-1/2 z-50 rounded-r-lg overflow-hidden shadow-sm"
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-800 hover:to-emerald-700 text-white px-3 py-8 shadow-lg transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 hover:shadow-2xl h-full"
+              className="bg-emerald-50/90 hover:bg-emerald-100/90 border border-emerald-200/50 text-emerald-600 px-1.5 py-4 shadow-sm transition-all duration-200 flex flex-col items-center justify-center group hover:shadow-md backdrop-blur-sm"
               style={{
                 writingMode: 'vertical-lr',
                 textOrientation: 'upright',
               }}
               aria-label="Book a site visit"
             >
-              <Calendar className="w-5 h-5 mb-3 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-              <span className="font-medium text-xs tracking-wider text-white group-hover:tracking-wide transition-all duration-300 transform rotate-180">
-                Book A Visit
+              <Calendar className="w-3 h-3 mb-2 group-hover:scale-105 transition-transform duration-200" />
+              <span className="font-medium text-[9px] tracking-wide text-emerald-600 transform rotate-180">
+                Visit
               </span>
-              <ArrowRight className="w-5 h-5 mt-3 group-hover:scale-110 group-hover:translate-y-1 transition-all duration-300 transform rotate-90" />
+              <ArrowRight className="w-3 h-3 mt-2 group-hover:scale-105 transition-transform duration-200 transform rotate-90" />
             </button>
           </motion.div>
         )}
