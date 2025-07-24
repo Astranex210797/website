@@ -1,213 +1,131 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  ArrowRight,
-  Send,
-  X,
-  User,
-  Phone,
-  MapPin,
-  Building,
-  Calendar,
-  Wrench,
-} from 'lucide-react';
+import { Calendar, X, User, Phone, MapPin, Building, Calendar as Cal, Wrench } from 'lucide-react';
 
 const BookVisitButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     address: '',
     liftType: '',
-    installationYear: '',
+    installYear: '',
     floors: '',
     amc: '',
   });
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight * 0.8;
+      setIsVisible(window.scrollY > heroHeight);
+
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        setIsFooterVisible(footerRect.top < windowHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setIsFormOpen(false);
-      setFormSubmitted(false);
-      setFormData({
-        name: '',
-        phone: '',
-        address: '',
-        liftType: '',
-        installationYear: '',
-        floors: '',
-        amc: '',
-      });
-    }, 2000);
+    console.log(formData);
+    setIsFormOpen(false); // Close on submit
   };
 
   return (
     <>
-      {/* Floating Button */}
-      <motion.div
-        initial={{ opacity: 0, x: -20, scale: 0.9 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: -20, scale: 0.9 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-        className="fixed left-2 top-1/2 -translate-y-1/2 z-50 overflow-hidden shadow-md rounded-tr-xl rounded-br-xl"
-      >
-        <button
-          onClick={() => setIsFormOpen(true)}
-          className="bg-gradient-to-b from-emerald-800 to-emerald-600 text-white px-1 py-3 sm:px-1.5 sm:py-4 flex flex-col items-center justify-center group hover:shadow-lg border border-emerald-800/40 w-9 sm:w-10"
-          style={{
-            writingMode: 'vertical-lr',
-            textOrientation: 'upright',
-          }}
-          aria-label="Book a visit"
-        >
-          <Calendar className="w-3.5 h-3.5 mb-1 group-hover:scale-105 transition-transform duration-200" />
-          <span className="font-medium text-[10px] sm:text-[11px] tracking-tight leading-tight">
-            Book a visit
-          </span>
-          <ArrowRight className="w-3.5 h-3.5 mt-1 group-hover:scale-105 transition-transform duration-200 rotate-90" />
-        </button>
-      </motion.div>
+      <AnimatePresence>
+        {isVisible && !isFooterVisible && !isFormOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.8 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 50, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-l-xl overflow-hidden"
+          >
+            <button
+              onClick={() => setIsFormOpen(true)}
+              className="bg-gradient-to-b from-emerald-700 to-emerald-600 text-white px-1.5 py-4 sm:px-2 sm:py-5 flex flex-col items-center justify-center group hover:shadow-lg border border-emerald-800/40 w-10 sm:w-11"
+              style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
+              aria-label="Book a visit"
+            >
+              <Calendar className="w-4 h-4 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
+              <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider rotate-180">
+                Book a Visit
+              </span>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Pop-up Form */}
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.4 }}
+            className="fixed right-4 top-1/2 -translate-y-1/2 z-50 bg-white p-6 rounded-xl shadow-2xl w-[90vw] max-w-sm"
           >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="bg-white rounded-xl p-6 w-full max-w-lg relative"
-            >
-              <button
-                onClick={() => setIsFormOpen(false)}
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-              >
-                <X size={20} />
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-emerald-700">Book a Site Visit</h2>
+              <button onClick={() => setIsFormOpen(false)}>
+                <X className="text-emerald-600 hover:text-red-500 transition duration-150" />
               </button>
+            </div>
 
-              {formSubmitted ? (
-                <div className="text-center py-10">
-                  <Send className="mx-auto mb-4 text-emerald-600" size={40} />
-                  <h2 className="text-xl font-semibold mb-2">
-                    Submitted successfully!
-                  </h2>
-                  <p className="text-gray-600 text-sm">
-                    We’ll get in touch with you shortly.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h2 className="text-xl font-semibold mb-4 text-center">
-                    Book a Site Visit
-                  </h2>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <User className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        className="w-full outline-none"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <Phone className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        className="w-full outline-none"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <MapPin className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="address"
-                        placeholder="Address"
-                        className="w-full outline-none"
-                        value={formData.address}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <Building className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="liftType"
-                        placeholder="Lift Type"
-                        className="w-full outline-none"
-                        value={formData.liftType}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <Calendar className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="installationYear"
-                        placeholder="Installation Year"
-                        className="w-full outline-none"
-                        value={formData.installationYear}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <Wrench className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="floors"
-                        placeholder="Number of Floors"
-                        className="w-full outline-none"
-                        value={formData.floors}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex items-center border rounded-md px-3 py-2">
-                      <Wrench className="mr-2 text-gray-400" size={18} />
-                      <input
-                        type="text"
-                        name="amc"
-                        placeholder="AMC Details"
-                        className="w-full outline-none"
-                        value={formData.amc}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-emerald-600 text-white py-2 rounded-md hover:bg-emerald-700 transition"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </>
-              )}
-            </motion.div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex items-center border-b border-emerald-300">
+                <User className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <Phone className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <MapPin className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="address" placeholder="Site Address" value={formData.address} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <Building className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="liftType" placeholder="Lift Type" value={formData.liftType} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <Cal className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="installYear" placeholder="Installation Year" value={formData.installYear} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <Wrench className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="floors" placeholder="No. of Floors" value={formData.floors} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <div className="flex items-center border-b border-emerald-300">
+                <Wrench className="w-4 h-4 mr-2 text-emerald-500" />
+                <input type="text" name="amc" placeholder="AMC Details" value={formData.amc} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+              </div>
+
+              <button type="submit" className="w-full mt-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm py-2 rounded-lg transition-all">
+                Submit
+              </button>
+            </form>
           </motion.div>
         )}
       </AnimatePresence>

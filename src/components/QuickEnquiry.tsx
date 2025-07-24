@@ -41,16 +41,16 @@ const QuickEnquiry = () => {
         >
           <button
             onClick={handleClick}
-            className="bg-gradient-to-b from-[#0F3D2D] to-[#135C45] text-white px-2 py-4 shadow-md transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 hover:shadow-lg h-full"
+            className="bg-gradient-to-b from-[#0F3D2D] to-[#135C45] text-white px-1.5 py-3 shadow-md transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 hover:shadow-lg h-full"
             style={{
               writingMode: 'vertical-lr',
               textOrientation: 'upright',
-              borderRadius: '12px 0 0 12px',
+              borderRadius: '0 12px 12px 0',
             }}
             aria-label="Get in touch"
           >
-            <MessageSquare className="w-4 h-4 mb-2 group-hover:scale-110 transition-transform" />
-            <span className="font-medium text-[10px] tracking-wider transform rotate-180">Get In Touch</span>
+            <MessageSquare className="w-[14px] h-[14px] mb-1 group-hover:scale-110 transition-transform" />
+            <span className="font-medium text-[9px] tracking-wider transform rotate-180">Get In Touch</span>
           </button>
         </motion.div>
       )}
