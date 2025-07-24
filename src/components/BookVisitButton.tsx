@@ -108,22 +108,22 @@ ${formData.name}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -50, scale: 0.8 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed left-0 top-1/2 -translate-y-1/2 z-50"
+            className="fixed left-0 top-1/2 -translate-y-1/2 z-50 rounded-r-xl overflow-hidden"
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-800 hover:to-emerald-700 text-white px-2 py-6 rounded-r-lg shadow-lg transition-all duration-300 flex items-center group hover:scale-105 hover:shadow-2xl"
+              className="bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-800 hover:to-emerald-700 text-white px-3 py-8 shadow-lg transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 hover:shadow-2xl h-full"
               style={{
-                writingMode: 'vertical-rl',
-                textOrientation: 'mixed',
+                writingMode: 'vertical-lr',
+                textOrientation: 'upright',
               }}
               aria-label="Book a site visit"
             >
-              <Calendar className="w-4 h-4 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-              <span className="font-medium text-xs tracking-wider text-white group-hover:tracking-wide transition-all duration-300">
+              <Calendar className="w-5 h-5 mb-3 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+              <span className="font-medium text-xs tracking-wider text-white group-hover:tracking-wide transition-all duration-300 transform rotate-180">
                 Book A Visit
               </span>
-              <ArrowRight className="w-4 h-4 mt-2 group-hover:scale-110 group-hover:translate-x-1 transition-all duration-300" />
+              <ArrowRight className="w-5 h-5 mt-3 group-hover:scale-110 group-hover:translate-y-1 transition-all duration-300 transform rotate-90" />
             </button>
           </motion.div>
         )}

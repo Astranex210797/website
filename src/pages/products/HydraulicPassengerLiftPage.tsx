@@ -92,11 +92,8 @@ const HydraulicPassengerLiftPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              Why Choose Hydraulic Passenger Lifts?
+              <span className="block sm:inline">Why Choose Hydraulic Passenger Lifts?</span>
             </h2>
-            <p className="text-xl text-[#1ABC9C] max-w-3xl mx-auto">
-              Experience the perfect combination of comfort, reliability, and cost-effectiveness.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

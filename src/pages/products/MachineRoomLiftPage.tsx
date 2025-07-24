@@ -93,11 +93,8 @@ const MachineRoomLiftPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              Why Choose Our Machine Room Elevators?
+              <span className="block sm:inline">Why Choose Our Machine Room Elevators?</span>
             </h2>
-            <p className="text-xl text-[#1ABC9C] max-w-3xl mx-auto">
-              Engineered for performance, designed for comfort, and built to last.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

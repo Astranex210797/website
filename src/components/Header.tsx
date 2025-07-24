@@ -76,6 +76,15 @@ const Header = () => {
               Home
             </Link>
 
+            <Link
+              to="/about"
+              className={`text-bottle-green-solid hover:text-bottle-green transition-colors duration-200 ${
+                location.pathname === '/about' ? 'text-bottle-green font-medium' : ''
+              }`}
+            >
+              About Us
+            </Link>
+
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('products')}
@@ -149,7 +158,7 @@ const Header = () => {
 
             <Link to="/contact">
               <button className="btn-bottle-green px-6 py-2 rounded-lg transition-colors duration-200 font-medium shadow-md">
-                Book Site Visit
+                <span className="text-bottle-green-solid">Book Site Visit</span>
               </button>
             </Link>
           </div>
@@ -174,6 +183,9 @@ const Header = () => {
               <div className="py-3 space-y-1">
                 <motion.div variants={mobileMenuItemVariants}>
                   <Link to="/" onClick={closeMenu} className="block px-4 py-2.5 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150 text-base">Home</Link>
+                </motion.div>
+                <motion.div variants={mobileMenuItemVariants}>
+                  <Link to="/about" onClick={closeMenu} className="block px-4 py-2.5 text-bottle-green-solid hover:bg-pearlescent transition-colors duration-150 text-base">About Us</Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants} className="px-4 py-1">
                   <div className="text-bottle-green-solid font-medium mb-1.5 text-base">Products</div>
@@ -209,7 +221,7 @@ const Header = () => {
                 <motion.div variants={mobileMenuItemVariants} className="px-4 pt-2 pb-2">
                   <Link to="/contact">
                     <button onClick={closeMenu} className="w-full btn-bottle-green px-4 py-2.5 rounded-lg transition-colors duration-200 font-medium shadow-md text-sm">
-                      Book Site Visit
+                      <span className="text-bottle-green-solid">Book Site Visit</span>
                     </button>
                   </Link>
                 </motion.div>

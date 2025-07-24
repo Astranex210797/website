@@ -103,11 +103,8 @@ const AMCPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              Why Choose Our AMC Services?
+              <span className="block sm:inline">Why Choose Our AMC Services?</span>
             </h2>
-            <p className="text-xl text-[#1ABC9C] max-w-3xl mx-auto">
-              Professional maintenance that keeps your elevators safe, reliable, and efficient.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -92,11 +92,8 @@ const MRLElevatorPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#145943] mb-6">
-              Why Choose Our MRL Elevators?
+              <span className="block sm:inline">Why Choose Our MRL Elevators?</span>
             </h2>
-            <p className="text-xl text-[#1ABC9C] max-w-3xl mx-auto">
-              Revolutionary design that maximizes space while delivering superior performance.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

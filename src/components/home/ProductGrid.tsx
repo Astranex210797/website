@@ -46,7 +46,7 @@ const ProductGrid = () => {
     <section className="bg-pearlescent m-0">
       <div className="max-w-7xl mx-auto px-0">
         <div className="text-center mb-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-bottle-green mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-bottle-green mb-4 tracking-tight text-left">
             Our Product Range
           </h2>
         
@@ -55,16 +55,17 @@ const ProductGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {products.map((product) => (
             <div key={product.id}>
-              <Link to={product.link} className="group block">
+              <Link to={product.link} className="group block transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <div className="relative overflow-hidden rounded-2xl bg-pearlescent-subtle border border-gray-200/50 shadow-lg">
-                  <div className="aspect-[4/3] overflow-hidden rounded-t-2xl">
+                  <div className="aspect-[4/3] overflow-hidden rounded-t-2xl relative">
                     <img
                       src={product.image}
                       alt={`Image of ${product.title}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                       onError={(e) => { e.currentTarget.src = '/placeholder.jpg'; }}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-bottle-green">
@@ -74,8 +75,8 @@ const ProductGrid = () => {
                       {product.subtitle}
                     </p>
                   </div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-gray-200/50 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <ArrowRight className="w-4 h-4 text-bottle-green-solid" />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-gray-200/50 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                    <ArrowRight className="w-4 h-4 text-bottle-green-solid transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>

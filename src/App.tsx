@@ -13,6 +13,7 @@ import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 
 import MachineRoomLiftPage from './pages/products/MachineRoomLiftPage';
 import HydraulicPassengerLiftPage from './pages/products/HydraulicPassengerLiftPage';
@@ -53,6 +54,7 @@ function App() {
         <main className="relative z-10 m-0 p-0">
           <Routes>
             <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />
+            <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
             <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
             <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />

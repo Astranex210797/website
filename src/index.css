@@ -41,7 +41,6 @@ body {
   justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #e6faf4 0%, #b2e5d8 50%, #1abc9c 100%);
-  color: #0d3b2e;
   border: none;
   padding: 0.5rem 1.25rem;
   font-size: 0.875rem; /* text-sm */
