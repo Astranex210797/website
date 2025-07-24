@@ -6,7 +6,6 @@ const BookVisitButton = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
-
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -21,7 +20,6 @@ const BookVisitButton = () => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.8;
       setIsVisible(window.scrollY > heroHeight);
-
       const footer = document.querySelector('footer');
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
@@ -29,19 +27,18 @@ const BookVisitButton = () => {
         setIsFooterVisible(footerRect.top < windowHeight);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    setIsFormOpen(false); // Close on submit
+    setIsFormOpen(false);
   };
 
   return (
@@ -49,22 +46,19 @@ const BookVisitButton = () => {
       <AnimatePresence>
         {isVisible && !isFooterVisible && !isFormOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.8 }}
+            initial={{ opacity: 0, x: -50, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 50, scale: 0.8 }}
+            exit={{ opacity: 0, x: -50, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-l-xl overflow-hidden"
+            className="fixed left-0 top-1/2 -translate-y-1/2 z-50 rounded-r-xl overflow-hidden"
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="bg-gradient-to-b from-emerald-700 to-emerald-600 text-white px-1.5 py-4 sm:px-2 sm:py-5 flex flex-col items-center justify-center group hover:shadow-lg border border-emerald-800/40 w-10 sm:w-11"
-              style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
+              className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white px-6 py-3 flex items-center justify-center group hover:shadow-lg border border-emerald-800/40 rounded-lg"
               aria-label="Book a visit"
             >
-              <Calendar className="w-4 h-4 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
-              <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider rotate-180">
-                Book a Visit
-              </span>
+              <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
+              <span className="font-semibold text-sm sm:text-base">Book a Visit</span>
             </button>
           </motion.div>
         )}
@@ -73,11 +67,11 @@ const BookVisitButton = () => {
       <AnimatePresence>
         {isFormOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.4 }}
-            className="fixed right-4 top-1/2 -translate-y-1/2 z-50 bg-white p-6 rounded-xl shadow-2xl w-[90vw] max-w-sm"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white p-6 rounded-xl shadow-2xl w-[90vw] max-w-sm"
           >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-emerald-700">Book a Site Visit</h2>
@@ -85,45 +79,92 @@ const BookVisitButton = () => {
                 <X className="text-emerald-600 hover:text-red-500 transition duration-150" />
               </button>
             </div>
-
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex items-center border-b border-emerald-300">
                 <User className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="name" 
+                  placeholder="Your Name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                  required 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <Phone className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Phone Number" 
+                  value={formData.phone} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                  required 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <MapPin className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="address" placeholder="Site Address" value={formData.address} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="address" 
+                  placeholder="Site Address" 
+                  value={formData.address} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                  required 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <Building className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="liftType" placeholder="Lift Type" value={formData.liftType} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="liftType" 
+                  placeholder="Lift Type" 
+                  value={formData.liftType} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <Cal className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="installYear" placeholder="Installation Year" value={formData.installYear} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="installYear" 
+                  placeholder="Installation Year" 
+                  value={formData.installYear} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <Wrench className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="floors" placeholder="No. of Floors" value={formData.floors} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="floors" 
+                  placeholder="No. of Floors" 
+                  value={formData.floors} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                />
               </div>
-
               <div className="flex items-center border-b border-emerald-300">
                 <Wrench className="w-4 h-4 mr-2 text-emerald-500" />
-                <input type="text" name="amc" placeholder="AMC Details" value={formData.amc} onChange={handleChange} className="w-full py-1 outline-none text-sm" />
+                <input 
+                  type="text" 
+                  name="amc" 
+                  placeholder="AMC Details" 
+                  value={formData.amc} 
+                  onChange={handleChange} 
+                  className="w-full py-1 outline-none text-sm" 
+                />
               </div>
-
-              <button type="submit" className="w-full mt-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm py-2 rounded-lg transition-all">
-                Submit
+              <button 
+                type="submit" 
+                className="w-full mt-4 bg-emerald-700 hover:bg-emerald-800 text-white py-2.5 rounded-lg transition-all font-medium"
+              >
+                Submit Request
               </button>
             </form>
           </motion.div>
