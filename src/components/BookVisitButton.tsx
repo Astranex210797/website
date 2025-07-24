@@ -33,7 +33,7 @@ const BookVisitButton = () => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.8;
       setShowButton(window.scrollY > heroHeight);
-      
+
       const footer = document.querySelector('footer');
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
@@ -71,7 +71,7 @@ Please contact me to schedule a site visit.
 Best regards,
 ${formData.name}
     `);
-    
+
     const mailtoLink = `mailto:Admin@peakelevatorgroup.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
 
@@ -104,22 +104,20 @@ ${formData.name}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -20, scale: 0.9 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed left-2 top-1/2 -translate-y-1/2 z-50 rounded-r-lg overflow-hidden shadow-sm"
+            className="fixed left-2 top-1/2 -translate-y-1/2 z-50 overflow-hidden shadow-md rounded-tr-xl rounded-br-xl"
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="bg-emerald-50/90 hover:bg-emerald-100/90 border border-emerald-200/50 text-emerald-600 px-1.5 py-4 shadow-sm transition-all duration-200 flex flex-col items-center justify-center group hover:shadow-md backdrop-blur-sm"
+              className="bg-gradient-to-b from-emerald-700 to-emerald-600 text-white px-1.5 py-4 sm:px-2 sm:py-5 flex flex-col items-center justify-center group hover:shadow-lg backdrop-blur-sm border border-emerald-800/40 w-10 sm:w-11"
               style={{
                 writingMode: 'vertical-lr',
                 textOrientation: 'upright',
               }}
               aria-label="Book a site visit"
             >
-              <Calendar className="w-3.5 h-3.5 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
-              <span className="font-medium text-[10px] tracking-tight text-emerald-600 transform rotate-180">
-                Visit
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 mt-1.5 group-hover:scale-105 transition-transform duration-200 transform rotate-90" />
+              <Calendar className="w-4 h-4 mb-1.5 group-hover:scale-105 transition-transform duration-200" />
+              <span className="font-semibold text-[11px] sm:text-sm leading-tight tracking-wide">Visit</span>
+              <ArrowRight className="w-4 h-4 mt-1.5 group-hover:scale-105 transition-transform duration-200 rotate-90" />
             </button>
           </motion.div>
         )}
@@ -185,48 +183,15 @@ ${formData.name}
                   transition={{ delay: 0.3 }}
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                    <InputField 
-                      icon={<User />} 
-                      name="name" 
-                      value={formData.name} 
-                      onChange={handleChange} 
-                      placeholder="Your Name" 
-                      required 
-                    />
-                    <InputField 
-                      icon={<Phone />} 
-                      name="phone" 
-                      value={formData.phone} 
-                      onChange={handleChange} 
-                      placeholder="Phone Number" 
-                      required 
-                    />
+                    <InputField icon={<User />} name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
+                    <InputField icon={<Phone />} name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" required />
                   </div>
 
-                  <InputField 
-                    icon={<MapPin />} 
-                    name="address" 
-                    value={formData.address} 
-                    onChange={handleChange} 
-                    placeholder="Site Address" 
-                  />
+                  <InputField icon={<MapPin />} name="address" value={formData.address} onChange={handleChange} placeholder="Site Address" />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                    <InputField 
-                      icon={<Building />} 
-                      name="floors" 
-                      value={formData.floors} 
-                      onChange={handleChange} 
-                      placeholder="Floors" 
-                      type="number" 
-                    />
-                    <InputField 
-                      icon={<Calendar />} 
-                      name="installationYear" 
-                      value={formData.installationYear} 
-                      onChange={handleChange} 
-                      placeholder="Install Year" 
-                    />
+                    <InputField icon={<Building />} name="floors" value={formData.floors} onChange={handleChange} placeholder="Floors" type="number" />
+                    <InputField icon={<Calendar />} name="installationYear" value={formData.installationYear} onChange={handleChange} placeholder="Install Year" />
                   </div>
 
                   <div className="relative group">
