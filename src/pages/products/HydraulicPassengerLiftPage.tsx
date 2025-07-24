@@ -14,7 +14,6 @@ const HydraulicPassengerLiftPage = () => {
     'Minimal Pit Requirements',
     'Energy Efficient System'
   ];
-
   const features = [
     {
       icon: Volume2,
@@ -32,7 +31,6 @@ const HydraulicPassengerLiftPage = () => {
       description: 'Hydraulic technology provides exceptionally smooth rides'
     }
   ];
-
   return (
     <div className="pt-16">
       {/* HERO SECTION */}
@@ -46,7 +44,6 @@ const HydraulicPassengerLiftPage = () => {
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-
         {/* Foreground Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[400px]">
           <motion.h1
@@ -72,15 +69,14 @@ const HydraulicPassengerLiftPage = () => {
             className="flex justify-center"
           >
             <Link to="/contact">
-                          <button className="relative bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl shadow-lg flex items-center justify-center gap-3 transition-all duration-300 hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4]">
-                            <span className="relative z-10">Book Site Visit</span>
-                            <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
-                          </button>
-             </Link>
+              <button className="relative bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl shadow-lg flex items-center justify-center gap-3 transition-all duration-300 hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4]">
+                <span className="relative z-10">Book Site Visit</span>
+                <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
-
       {/* FEATURES SECTION */}
       <section className="py-20 bg-[#F2FCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,7 +91,6 @@ const HydraulicPassengerLiftPage = () => {
               <span className="block sm:inline">Why Choose Hydraulic Passenger Lifts?</span>
             </h2>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((feature, index) => (
               <motion.div
@@ -116,7 +111,6 @@ const HydraulicPassengerLiftPage = () => {
           </div>
         </div>
       </section>
-
       {/* SPECIFICATIONS SECTION */}
       <section className="py-20 bg-[#E6FAF4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,7 +178,6 @@ const HydraulicPassengerLiftPage = () => {
           </div>
         </div>
       </section>
-
       {/* CTA SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#1ABC9C] to-[#145943] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -216,5 +209,4 @@ const HydraulicPassengerLiftPage = () => {
     </div>
   );
 };
-
 export default HydraulicPassengerLiftPage;
