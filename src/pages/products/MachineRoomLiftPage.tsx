@@ -86,7 +86,7 @@ const MachineRoomLiftPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#145943] mb-6 whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#145943] mb-6 whitespace-nowrap">
               Why Choose Our Machine Room Elevators?
             </h2>
           </motion.div>
