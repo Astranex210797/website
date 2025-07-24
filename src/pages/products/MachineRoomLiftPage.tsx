@@ -72,15 +72,14 @@ const MachineRoomLiftPage = () => {
             className="flex justify-center"
           >
             <Link to="/contact">
-  <button className="bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4]">
-    Book Site Visit
-    <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
-  </button>
-</Link>
-</motion.div>
-</div>
-</section>
-
+              <button className="relative bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl shadow-lg flex items-center justify-center gap-3 transition-all duration-300 hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4]">
+                <span className="relative z-10">Book Site Visit</span>
+                <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* FEATURES SECTION */}
       <section className="py-20 bg-[#F2FCF9]">
@@ -205,9 +204,9 @@ const MachineRoomLiftPage = () => {
             </p>
             <div className="flex justify-center">
               <Link to="/contact">
-                <button className="bg-[#E6FAF4] text-[#145943] hover:bg-[#1ABC9C] hover:text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_#E6FAF4]">
-                  Book Site Visit
-                  <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                <button className="relative bg-gradient-to-r from-[#145943] to-[#0D3B2E] text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 hover:border-[#E6FAF4] hover:shadow-[0_0_20px_#E6FAF4] flex items-center justify-center gap-3 shadow-lg">
+                  <span className="relative z-10">Book Site Visit</span>
+                  <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </Link>
             </div>
