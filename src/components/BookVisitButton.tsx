@@ -50,7 +50,11 @@ const BookVisitButton = () => {
             <button
               onClick={() => setIsFormOpen(true)}
               className="bg-gradient-to-b from-emerald-700 to-emerald-600 text-white px-1.5 py-3 sm:px-2 sm:py-4 flex flex-col items-center justify-center group hover:shadow-lg border border-emerald-800/40 w-8 sm:w-10"
-              style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
+              style={{ 
+                writingMode: 'vertical-rl', 
+                textOrientation: 'sideways-right',
+                transform: 'rotate(180deg)',
+              }}
               aria-label="Book a visit"
             >
               <span className="font-semibold text-[10px] sm:text-xs leading-tight tracking-wider">
