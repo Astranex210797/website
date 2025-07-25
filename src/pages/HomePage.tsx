@@ -3,7 +3,6 @@ import HeroSection from '../components/home/HeroSection';
 import ProductGrid from '../components/home/ProductGrid';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import PartnersSection from '../components/home/PartnersSection';
-import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -37,11 +36,15 @@ const HomePage = () => {
         <PartnersSection />
       </div>
       
-      {/* Clear divider between PartnersSection and Footer */}
+      {/* Clear divider between PartnersSection and footer */}
       <div className="relative h-px bg-gradient-to-r from-transparent via-bottle-green-solid/80 to-transparent my-8"></div>
       
-      {/* Main footer */}
-      <Footer />
+      {/* Main footer - simplified version */}
+      <div className="bg-gray-50 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+          <p>© 2023 Company Name. All rights reserved.</p>
+        </div>
+      </div>
     </div>
   );
 };
