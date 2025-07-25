@@ -54,18 +54,14 @@ const MachineRoomLiftPage = () => {
           >
             Machine Room Elevators
           </motion.h1>
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="mb-6"
+            className="text-base sm:text-lg font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-6 max-w-[220px] whitespace-nowrap"
           >
-            <p
-              className="text-base sm:text-lg font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text inline-block max-w-[220px]"
-            >
-              Elevate with Power, Precision, and Style
-            </p>
-          </motion.div>
+            Elevate with Power, Precision, and Style
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
