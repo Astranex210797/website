@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Zap, Building, Wrench } from 'lucide-react';
+
 const MRLElevatorPage = () => {
   const specifications = [
     'Capacity: 320–1600 kg',
@@ -33,7 +34,7 @@ const MRLElevatorPage = () => {
   return (
     <div className="pt-16">
       {/* HERO SECTION */}
-      <section className="relative py-28 lg:py-36">
+      <section className="relative py-20 lg:py-36">
         {/* Background Image */}
         <div className="absolute inset-0 h-full w-full">
           <img
@@ -49,7 +50,7 @@ const MRLElevatorPage = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-6"
+            className="text-3xl md:text-5xl font-extrabold text-white mb-4"
           >
             MRL Elevators
           </motion.h1>
@@ -57,7 +58,7 @@ const MRLElevatorPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-10 max-w-3xl"
+            className="text-lg md:text-xl font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-8 max-w-3xl"
           >
             Space-saving Innovation Without Compromise
           </motion.p>
@@ -86,7 +87,7 @@ const MRLElevatorPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-1xl sm:text-xl font-bold text-[#145943] mb-6 whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#145943] mb-6 whitespace-nowrap">
               Why Choose Our MRL Elevators?
             </h2>
           </motion.div>
@@ -120,7 +121,7 @@ const MRLElevatorPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-[#145943] mb-6">
+              <h2 className="text-3xl font-bold text-[#145943] mb-6">
                 Technical Specifications
               </h2>
               <p className="text-xl text-[#1ABC9C] mb-8">
@@ -187,7 +188,7 @@ const MRLElevatorPage = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-4xl font-bold mb-6 text-[#E6FAF4]">
+            <h2 className="text-3xl font-bold mb-6 text-[#E6FAF4]">
               Experience Space-Saving Innovation
             </h2>
             <p className="text-xl text-[#C3E7DF] mb-8 max-w-3xl">
