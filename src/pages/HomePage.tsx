@@ -39,13 +39,7 @@ const HomePage = () => {
       {/* Clear divider between PartnersSection and footer */}
       <div className="relative h-px bg-gradient-to-r from-transparent via-bottle-green-solid/80 to-transparent my-8"></div>
       
-      {/* Main footer - simplified version */}
-      <div className="bg-gray-50 py-6">
-        <div className="px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-          <p>© 2023 Company Name. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
+         </div>
   );
 };
 
