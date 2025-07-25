@@ -58,7 +58,7 @@ const MachineRoomLiftPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="text-base sm:text-lg font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-6 max-w-[220px] whitespace-nowrap"
+            className="text-base sm:text-lg font-medium bg-gradient-to-r from-[#E6FAF4] via-[#1ABC9C] to-[#145943] text-transparent bg-clip-text mb-6 max-w-[300px] whitespace-nowrap"
           >
             Elevate with Power, Precision, and Style
           </motion.p>
