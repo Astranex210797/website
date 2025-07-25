@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const QuickEnquiry = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const QuickEnquiry = () => {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={{ opacity: 0, x: 50, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-l-none rounded-r-lg overflow-hidden"
+          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-lg overflow-hidden"
         >
           <button
             onClick={handleClick}
@@ -44,7 +44,6 @@ const QuickEnquiry = () => {
               writingMode: 'vertical-rl', 
               textOrientation: 'sideways-right',
               transform: 'rotate(180deg)',
-              borderRadius: '0 12px 12px 0',
             }}
             aria-label="Get in touch"
           >
@@ -57,5 +56,4 @@ const QuickEnquiry = () => {
     </AnimatePresence>
   );
 };
-
 export default QuickEnquiry;
