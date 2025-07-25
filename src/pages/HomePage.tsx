@@ -3,7 +3,7 @@ import HeroSection from '../components/home/HeroSection';
 import ProductGrid from '../components/home/ProductGrid';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import PartnersSection from '../components/home/PartnersSection';
-import Footer from '../components/common/Footer';
+import Footer from '../components/Footer'; // Corrected path
 
 const HomePage = () => {
   return (
