@@ -3,6 +3,8 @@ import HeroSection from '../components/home/HeroSection';
 import ProductGrid from '../components/home/ProductGrid';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import PartnersSection from '../components/home/PartnersSection';
+import Footer from '../components/common/Footer'; // Import Footer component
+
 const HomePage = () => {
   return (
     <div className="min-h-screen text-brand-text overflow-hidden bg-white">
@@ -17,7 +19,10 @@ const HomePage = () => {
         <div className="flex items-start">
           {/* ProductGrid now aligned to the extreme left */}
           <div className="flex-grow">
-            <ProductGrid />
+            {/* Added padding above ProductGrid to make "Our Product Range" feel more connected */}
+            <div className="pt-4">
+              <ProductGrid />
+            </div>
           </div>
         </div>
         
@@ -31,7 +36,18 @@ const HomePage = () => {
         
         <PartnersSection />
       </div>
+      
+      {/* Subtle footer between partners and main footer */}
+      <div className="bg-gray-50 py-4 mt-8">
+        <div className="px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+          <p>© 2023 Company Name. All rights reserved.</p>
+        </div>
+      </div>
+      
+      {/* Main footer */}
+      <Footer />
     </div>
   );
 };
+
 export default HomePage;
